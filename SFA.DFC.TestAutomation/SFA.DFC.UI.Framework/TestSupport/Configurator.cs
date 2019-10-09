@@ -14,7 +14,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
 
         static Configurator()
         {
-            _hostingConfig = InitializeHostingConfig();
+            //_hostingConfig = InitializeHostingConfig();
             _config = InitializeConfig();
         }
 
@@ -30,19 +30,16 @@ namespace SFA.DFC.UI.Framework.TestSupport
 
         private static IConfigurationRoot InitializeConfig()
         {
-            var EnvironmentName = _hostingConfig.GetSection("Release_EnvironmentName").Value;
-            var ProjectName = _hostingConfig.GetSection("ProjectName").Value;
+            //var EnvironmentName = _hostingConfig.GetSection("Release_EnvironmentName").Value;
+            //var ProjectName = _hostingConfig.GetSection("ProjectName").Value;
 
             return ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
-            .AddJsonFile("appsettings.BrowserStack.json", true)
             .AddJsonFile("appsettings.Project.json", true)
-            .AddJsonFile("appsettings.Project.BrowserStack.json", true)
-            .AddJsonFile($"appsettings.{EnvironmentName}.json", true)
             .AddEnvironmentVariables()
-            .AddUserSecrets("BrowserStackSecrets")
-            .AddUserSecrets($"{ProjectName}_{EnvironmentName}_Secrets")
-            .AddUserSecrets("MongoDbSecrets")
+            //.AddUserSecrets("BrowserStackSecrets")
+            //.AddUserSecrets($"{ProjectName}_{EnvironmentName}_Secrets")
+            //.AddUserSecrets("MongoDbSecrets")
             .Build();
         }
 
