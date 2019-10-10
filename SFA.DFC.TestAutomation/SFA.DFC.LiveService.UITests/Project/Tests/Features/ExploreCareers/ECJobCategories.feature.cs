@@ -81,6 +81,16 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I navigate to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.When("I click the category \'Transport\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.Then("I am redirected to the selected Job Category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 8
+  testRunner.And("the category is not listed in the displayed categories", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.When("I select another category \'Healthcare\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("I am redirected to the selected Job Category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 11
+  testRunner.And("the category is not listed in the displayed categories", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

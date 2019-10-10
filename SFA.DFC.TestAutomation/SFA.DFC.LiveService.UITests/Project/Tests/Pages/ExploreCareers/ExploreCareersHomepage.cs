@@ -15,7 +15,7 @@ namespace SFA.DFC.LiveService.UITests.Project.Tests.Pages
         #endregion
 
         #region Page Elements
-
+        private By JobCategoryList => By.CssSelector(".homepage-jobcategories li a");
         #endregion
         protected override string PageTitle => "";
 
@@ -29,8 +29,7 @@ namespace SFA.DFC.LiveService.UITests.Project.Tests.Pages
 
         public ExploreCareersJobCategoryPage SelectJobCategory(string selectedCategory)
         {
-            IWebElement category = _pageHelper.SelectElementFromList(By.CssSelector(".homepage-jobcategories li a"), selectedCategory);
-            _formHelper.ClickElement(category);
+            _formHelper.ClickElement(_pageHelper.SelectElementFromList(JobCategoryList, selectedCategory));
             return new ExploreCareersJobCategoryPage(_context);
         }
     }
