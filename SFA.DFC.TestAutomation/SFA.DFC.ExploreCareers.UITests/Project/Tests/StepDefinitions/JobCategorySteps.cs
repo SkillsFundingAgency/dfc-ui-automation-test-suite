@@ -13,7 +13,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private readonly ScenarioContext _context;
         private Homepage homepage;
         private JobCategoriesPage jobCategoryPage;
-
+        private JobProfilePage jobProfilePage;
         public JobCategorySteps(ScenarioContext context)
         {
             _context = context;
@@ -37,6 +37,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             _context.Add("selectedCategory", selectedCategory);
         }
 
+        [When(@"I select profile no '(.*)' in the list")]
+        public void WhenISelectProfileNoInTheList(int profileNo)
+        {
+            jobProfilePage = jobCategoryPage
+                .SelectJobProfile(profileNo);
+        }
+
+        [When(@"I click the breadcrumb")]
+        public void WhenIClickTheBreadcrumb()
+        {
+            homepage = jobCategoryPage
+                .SelectHomeBreadcrumb();
+        }
+
 
         #endregion
 
@@ -53,6 +67,27 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             jobCategoryPage
                 .VerifySelectedCategoryNotDisplayed();
+        }
+
+        [Then(@"the correct breacrumb is displayed")]
+        public void ThenTheCorrectBreacrumbIsDisplayed()
+        {
+            jobCategoryPage
+                .VerifyCorrectBreadcrumbDisplayed();
+        }
+
+        [Then(@"I am redirected to the profile selected")]
+        public void ThenIAmRedirectedToTheProfileSelected()
+        {
+            jobProfilePage
+                .VerifyCorrectJobProfilePage();
+        }
+
+        [Then(@"I am redirected to the explore careers homepage")]
+        public void ThenIAmRedirectedToTheExploreCareersHomepage()
+        {
+            homepage
+                .VerifyHomePage();
         }
 
         #endregion

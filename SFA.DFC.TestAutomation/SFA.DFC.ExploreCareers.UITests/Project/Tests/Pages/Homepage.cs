@@ -34,5 +34,10 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _formHelper.ClickElement(_pageHelper.GetLinkContains(JobCategoryList, selectedCategory));
             return new JobCategoriesPage(_context);
         }
+
+        public void VerifyHomePage()
+        {
+            _pageHelper.VerifyPage(PageHeader, "Explore careers");
+        }
     }
 }
