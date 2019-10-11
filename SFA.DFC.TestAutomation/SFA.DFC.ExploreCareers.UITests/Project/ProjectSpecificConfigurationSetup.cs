@@ -2,7 +2,7 @@
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
 
-namespace SFA.DFC.LiveService.UITests.Project
+namespace SFA.DFC.ExploreCareers.UITests.Project
 {
     [Binding]
     public class ProjectSpecificConfigurationSetup
