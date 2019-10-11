@@ -193,11 +193,6 @@ namespace SFA.DFC.UI.FrameworkHelpers
             return _webDriver.FindElements(locator).ToList();
         }
 
-        public IWebElement SelectElementFromList(By locator, string text)
-        {
-            return _webDriver.FindElements(locator).Where(x => x.Text.Equals(text)).FirstOrDefault();
-        }
-
         public IWebElement GetLink(By by, Func<string, bool> func) => _webDriver.FindElements(by).ToList().First(x => func(x.GetAttribute("innerText")));
     }
 }
