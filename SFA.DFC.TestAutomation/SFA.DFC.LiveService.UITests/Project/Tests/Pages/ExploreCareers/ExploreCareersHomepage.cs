@@ -29,7 +29,7 @@ namespace SFA.DFC.LiveService.UITests.Project.Tests.Pages
 
         public ExploreCareersJobCategoryPage SelectJobCategory(string selectedCategory)
         {
-            _formHelper.ClickElement(_pageHelper.SelectElementFromList(JobCategoryList, selectedCategory));
+            _formHelper.ClickElement(_pageHelper.GetLinkContains(JobCategoryList, selectedCategory));
             return new ExploreCareersJobCategoryPage(_context);
         }
     }

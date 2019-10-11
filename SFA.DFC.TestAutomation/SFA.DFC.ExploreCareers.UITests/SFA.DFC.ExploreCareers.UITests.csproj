@@ -29,7 +29,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Project\Tests\Features\JobProfiles\" />
     <Folder Include="Project\Tests\Features\Search\" />
   </ItemGroup>
   
