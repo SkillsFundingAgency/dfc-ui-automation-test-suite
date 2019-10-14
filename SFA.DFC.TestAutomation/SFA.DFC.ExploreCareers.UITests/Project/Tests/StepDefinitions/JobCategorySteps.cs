@@ -76,13 +76,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
                 .VerifyCorrectBreadcrumbDisplayed();
         }
 
-        [Then(@"I am redirected to the profile selected")]
-        public void ThenIAmRedirectedToTheProfileSelected()
-        {
-            jobProfilePage
-                .VerifyCorrectJobProfilePage();
-        }
-
         [Then(@"I am redirected to the explore careers homepage")]
         public void ThenIAmRedirectedToTheExploreCareersHomepage()
         {
