@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobCategory
+namespace SFA.DFC.FindACourse.UITests.Project.Tests.Features
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobCategory
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("JobCategoryEndToEnd")]
-    public partial class JobCategoryEndToEndFeature
+    [NUnit.Framework.DescriptionAttribute("FindACourseandVisitCourseDetailsPage")]
+    public partial class FindACourseandVisitCourseDetailsPageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "JobCategoryEndToEnd.feature"
+#line 1 "FindACourseandVisitCourseDetailsPage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "JobCategoryEndToEnd", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FindACourseandVisitCourseDetailsPage", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,27 +70,29 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobCategory
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("End to End Job Category to Job Profile")]
-        [NUnit.Framework.CategoryAttribute("ExploreCareers")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void EndToEndJobCategoryToJobProfile()
+        [NUnit.Framework.DescriptionAttribute("Find a valid course and check course details page")]
+        [NUnit.Framework.CategoryAttribute("Findacourse")]
+        public virtual void FindAValidCourseAndCheckCourseDetailsPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("End to End Job Category to Job Profile", null, new string[] {
-                        "ExploreCareers",
-                        "Smoke"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find a valid course and check course details page", null, new string[] {
+                        "Findacourse"});
 #line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
-testRunner.Given("I navigate to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have navigated to Find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("I click the category \'Retail and sales\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I have searched for a valid course \'Maths\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.Then("I am redirected to the selected Job Category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click the Find a course button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.When("I select profile no \'2\' in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("the results for the course should be listed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
- testRunner.Then("I am redirected to the profile selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click the first course", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("I should be taken to the course details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.And("I should be able to validate the links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -60,6 +60,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         public static void SetWebDriver(this ScenarioContext context, IWebDriver webDriver)
         {
             Set(context, webDriver, WebDriverKey);
+            
         }
 
         public static IWebDriver GetWebDriver(this ScenarioContext context)

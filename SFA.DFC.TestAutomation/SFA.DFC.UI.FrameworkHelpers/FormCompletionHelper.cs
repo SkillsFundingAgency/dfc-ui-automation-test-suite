@@ -102,6 +102,7 @@ namespace SFA.DFC.UI.FrameworkHelpers
         public void SelectRadioOptionByText(By locator, String text)
         {
             IList<IWebElement> radios = _webDriver.FindElements(locator);
+            
 
             for (int i = 0; i < radios.Count; i++)
             {
@@ -117,6 +118,7 @@ namespace SFA.DFC.UI.FrameworkHelpers
         private SelectElement SelectElement(IWebElement element)
         {
             return new SelectElement(element);
+            
         }
     }
 }
