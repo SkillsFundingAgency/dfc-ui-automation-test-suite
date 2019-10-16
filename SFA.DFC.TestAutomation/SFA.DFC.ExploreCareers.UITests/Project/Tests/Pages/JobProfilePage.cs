@@ -15,12 +15,11 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private ScenarioContext _context;
         private PageInteractionHelper _pageHelper;
         private FormCompletionHelper _formHelper;
+        private readonly ObjectContext _objectContext;
         #endregion
 
         #region Page Attributes
         protected override string PageTitle => "";
-        private string JobProfileSelected;
-        private string RelatedCareerSelected;
         private By RelatedCareersSection => By.ClassName("job-profile-related");
         private By RelatedCareersList => By.CssSelector(".list-big li");
         private By CourseSection => By.CssSelector(".dfc-code-jp-trainingCourse .opportunity-item");
@@ -34,7 +33,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By JPFeedbackThankYouText => By.ClassName("job-profile-feedback-end-yes");
         private By JPFeedbackAdditionalSurveyText => By.ClassName("job-profile-feedback-end-no");
         private By JPAdditionalFeedbackSurvey => By.Id("job-profile-feedback-survey");
-
+        private By JPSearchField => By.ClassName("search-input");
+        private By SubmitJPSearch => By.ClassName("submit");
         #region JobProfile Segments
         private By JobProfileHeroContainer => By.Id("MainContentTop_T41A29498007_Col00");
         private By JobProfileAnchorLinks => By.ClassName("job-profile-anchorlinks");
@@ -56,19 +56,26 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _context = context;
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
+            _objectContext = context.Get<ObjectContext>();
         }
 
         public void VerifyCorrectJobProfilePage()
         {
-            _context.TryGetValue("JCProfileSelected", out JobProfileSelected);
-            _context.TryGetValue("RelatedCareerSelected", out RelatedCareerSelected);
-            if (!string.IsNullOrEmpty(JobProfileSelected))
+            string JobCategoryProfileSelected = _objectContext.Get("JCProfileSelected");
+            string RelatedCareerSelected = _objectContext.Get("RelatedCareerSelected");
+            string SearchJobProfileSelected = _objectContext.Get("searchResultSelected");
+
+            if (!string.IsNullOrEmpty(JobCategoryProfileSelected))
             {
-                _pageHelper.VerifyText(PageHeader, JobProfileSelected);
+                _pageHelper.VerifyText(PageHeader, JobCategoryProfileSelected);
+            }
+            else if (!string.IsNullOrEmpty(RelatedCareerSelected))
+            {
+                _pageHelper.VerifyText(PageHeader, RelatedCareerSelected);
             }
             else
             {
-                _pageHelper.VerifyText(PageHeader, RelatedCareerSelected);
+                _pageHelper.VerifyText(PageHeader, SearchJobProfileSelected);
             }
         }
 
@@ -124,7 +131,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void AddElementTextToContext(string contextKey, By listOfElements, int elementIndex)
         {
-            _context.Add(contextKey, _pageHelper.FindElements(listOfElements)[elementIndex].Text);
+            _objectContext.Set(contextKey, _pageHelper.FindElements(listOfElements)[elementIndex].Text);
         }
 
         public void VerifyAllProfileSegments()
@@ -169,9 +176,17 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _formHelper.ClickElement(JPAdditionalFeedbackSurvey);
         }
 
+        public SearchResultsPage SearchOnJobProfile(string searchTerm)
+        {
+            _objectContext.Set("JPSearchTerm", searchTerm);
+            _formHelper.EnterText(JPSearchField, searchTerm);
+            _formHelper.ClickElement(SubmitJPSearch);
+            return new SearchResultsPage(_context);
+        }
+
         #region SurveyMonkeyScreens     
         private By QuestionTitle => By.ClassName("ss-question-title");
-        private By Submit => By.Id("cmdGo");
+        private By SubmitJPFeedbackSurvey => By.Id("cmdGo");
         private By TextInput => By.ClassName("ss-input-textarea");
         public void VerifySurveyMonkeyScreen()
         {
@@ -181,7 +196,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public JobProfileFeedbackThankYouPage EnterFeedback(string feedback)
         {
             _formHelper.EnterText(TextInput, feedback);
-            _formHelper.ClickElement(Submit);
+            _formHelper.ClickElement(SubmitJPFeedbackSurvey);
             return new JobProfileFeedbackThankYouPage(_context);
         }
         #endregion

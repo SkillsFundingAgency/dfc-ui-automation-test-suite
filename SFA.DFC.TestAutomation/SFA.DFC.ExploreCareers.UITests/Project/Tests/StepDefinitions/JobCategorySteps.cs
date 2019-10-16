@@ -1,4 +1,5 @@
 ﻿using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
+using SFA.DFC.UI.Framework.TestSupport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +12,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     public class JobCategorySteps
     {
         private readonly ScenarioContext _context;
+        private readonly ObjectContext _objectContext;
         private Homepage homepage;
         private JobCategoriesPage jobCategoryPage;
         private JobProfilePage jobProfilePage;
         public JobCategorySteps(ScenarioContext context)
         {
             _context = context;
+            _objectContext = context.Get<ObjectContext>();
         }
 
         #region Whens
@@ -25,7 +28,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             jobCategoryPage = new Homepage(_context)
                 .SelectJobCategory(selectedCategory);
-            _context.Add("selectedCategory", selectedCategory);
         }
 
         [When(@"I select another category '(.*)'")]
@@ -33,8 +35,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             jobCategoryPage
                 .SelectJobCategory(selectedCategory);
-            _context.Remove("selectedCategory");
-            _context.Add("selectedCategory", selectedCategory);
         }
 
         [When(@"I select profile no '(.*)' in the list")]

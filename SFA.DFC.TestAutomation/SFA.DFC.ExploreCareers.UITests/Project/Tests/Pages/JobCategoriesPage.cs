@@ -13,12 +13,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private readonly ScenarioContext _context;
         private readonly PageInteractionHelper _pageHelper;
         private readonly FormCompletionHelper _formHelper;
+        private readonly ObjectContext _objectContext;
         #endregion
 
         #region Page Attributes
         protected override string PageTitle => "";
 
-        private string selectedCategory = string.Empty;
+        private string SelectedCategory;
         protected override By PageHeader => By.ClassName("heading-xlarge");
         private By JobCategoryList => By.CssSelector(".govuk-related-items ul li a");
         private By Breadcrumb => By.ClassName("breadcrumbs");
@@ -32,10 +33,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _context = context;
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
+            _objectContext = context.Get<ObjectContext>();
         }
 
         public JobCategoriesPage SelectJobCategory(string selectedCategory)
         {
+            _objectContext.Replace("selectedCategory", selectedCategory);
             _formHelper.ClickElement(_pageHelper.GetLinkContains(JobCategoryList, selectedCategory));
             return this;
         }
@@ -43,7 +46,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public JobProfilePage SelectJobProfile(int profileNo)
         {
             List<IWebElement> listOfJPs = _pageHelper.FindElements(listOfProfiles);
-            _context.Add("JCProfileSelected", listOfJPs[profileNo-1].Text);
+            _objectContext.Set("JCProfileSelected", listOfJPs[profileNo - 1].Text);
             _formHelper.ClickElement(listOfJPs[profileNo-1]);
             return new JobProfilePage(_context);
         }
@@ -56,8 +59,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyCorrectJobCategoryPage()
         {
-            _context.TryGetValue("selectedCategory", out selectedCategory);
-            _pageHelper.VerifyText(PageHeader, selectedCategory);
+            SelectedCategory = _objectContext.Get("selectedCategory");
+            _pageHelper.VerifyText(PageHeader, SelectedCategory);
         }
 
         public void VerifySelectedCategoryNotDisplayed()
@@ -67,7 +70,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
             foreach (var category in listOfCategories)
             {
-                if (!category.Text.Contains(selectedCategory))
+                if (!category.Text.Contains(SelectedCategory))
                 {
                     isCategorydisplayed = false;
                 }
@@ -79,7 +82,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public void VerifyCorrectBreadcrumbDisplayed()
         {
             _pageHelper.VerifyText(Breadcrumb, "Home: Explore careers");
-            _pageHelper.VerifyText(Breadcrumb, selectedCategory);
+            _pageHelper.VerifyText(Breadcrumb, SelectedCategory);
         }
 
     }
