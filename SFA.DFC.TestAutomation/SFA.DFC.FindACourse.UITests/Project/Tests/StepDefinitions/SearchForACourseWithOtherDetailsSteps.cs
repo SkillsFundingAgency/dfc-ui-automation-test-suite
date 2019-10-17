@@ -37,24 +37,23 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.StepDefinitions
         [When(@"I change the provider '(.*)' and location '(.*)'")]
         public void WhenIChangeTheProviderAndLocation(string strProv1, string strLocation1)
         {
-            _context.Remove("ProvName");
-            _context.Add("ProvName", strProv1);
+            _objectContext.Replace("ProvName", strProv1);
             fACHomePage.EnterProvider(strProv1);
-            _context.Remove("LocationName");
-            _context.Add("LocationName", strLocation1);
+            _objectContext.Replace("LocationName", strLocation1);
             fACHomePage.EnterLocation(strLocation1);
         }
         
-        [Then(@"the results for the new provider and location should be displayed")]
-        public void ThenTheResultsForTheNewProviderAndLocationShouldBeDisplayed()
-        {
-            courseSearchPage = new CourseSearchPage(_context);
-        }
+        
         [When(@"I have clicked the Apply Filter button")]
         public void WhenIHaveClickedTheApplyFilterButton()
         {
             courseSearchPage = new CourseSearchPage(_context);
             courseSearchPage.ClickApplyFilter();
+        }
+        [Then(@"the results for the new provider '(.*)' and location '(.*)' should be displayed")]
+        public void ThenTheResultsForTheNewProviderAndLocationShouldBeDisplayed(string prov, string location)
+        {
+            courseSearchPage.ValidateFilters(prov, location);
         }
 
     }

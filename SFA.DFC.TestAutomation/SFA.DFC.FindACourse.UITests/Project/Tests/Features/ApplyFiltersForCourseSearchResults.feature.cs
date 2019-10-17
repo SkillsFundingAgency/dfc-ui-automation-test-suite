@@ -73,33 +73,27 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search for course and Apply filters")]
         [NUnit.Framework.CategoryAttribute("Findacourse")]
-        [NUnit.Framework.TestCaseAttribute("Maths", "Full time", "Online", "From Today", null)]
-        public virtual void SearchForCourseAndApplyFilters(string courseName, string courseHours, string courseType, string startDate, string[] exampleTags)
+        public virtual void SearchForCourseAndApplyFilters()
         {
-            string[] @__tags = new string[] {
-                    "Findacourse"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for course and Apply filters", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for course and Apply filters", null, new string[] {
+                        "Findacourse"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
  testRunner.Given("I have navigated to Find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And(string.Format("I have searched for a valid course \'{0}\'", courseName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I have searched for a  course \'Maths\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.When("I click the Find a course button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
  testRunner.Then("the results for the course should be listed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.When(string.Format("I apply the filter hours \'{0}\', type \'{1}\' and start date \'{2}\'", courseHours, courseType, startDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I apply the filter hours \'Full time\', type \'Online\' and start date \'From Today\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.And("I have clicked the Apply Filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.Then(string.Format("the following filters {0}, {1}, {2} are selected", courseHours, courseType, startDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the following filters \'Full time\', \'Online\', \'From today\' are selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

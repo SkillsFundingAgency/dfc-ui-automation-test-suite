@@ -21,11 +21,11 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private By SearchPageHeader = By.CssSelector(".govuk-heading-xl");
         private By CourseSearchList = By.CssSelector(".govuk-heading-m");
         private By FilterButton = By.CssSelector("button.js-enabled");
-        private By CourseHours = By.Name("CourseHours");
-        private By CourseType = By.Name("CourseType");
-        private By StartDate = By.Name("StartDate");
-        private By ErrorMsg = By.CssSelector(".govuk-body-s > p:nth-child(1)");     
-        
+        private By ErrorMsg = By.CssSelector(".govuk-body-s > p:nth-child(1)");
+        private By Provider = By.Id("Provider");
+        private By Location=By.Id("Location");
+        private List<IWebElement> FiltersList => _pageHelper.FindElements(By.ClassName("govuk-radios__input"));
+
 
         #endregion
         public CourseSearchPage(ScenarioContext context) : base(context)
@@ -39,52 +39,76 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         {
             _pageHelper.VerifyText(SearchPageHeader, "Search");
         }
-
         public CourseSearchPage ValidateErrorMessage(string errmsg)
         {
             _pageHelper.VerifyText(ErrorMsg, errmsg);
             return this;
-        }
-
-        public CourseSearchPage SelectCourseType(string type)
+        }        
+        public void SelectFilter(string filter)
         {
-            _formHelper.SelectRadioButton(By.Id("CourseType_" + type.Replace(" ", "")));
-            return this;
-        }
-
-        public CourseSearchPage SelectStartDate(string date)
+           if (!string.IsNullOrWhiteSpace(filter))
+                {
+                    var filteredText = filter.Replace(" ", string.Empty).ToUpper();
+                    foreach (var button in FiltersList)
+                    {
+                    var buttonText = button.GetAttribute("value").Replace(" ", string.Empty).ToUpper();
+                        if (buttonText.Contains(filteredText))
+                        {
+                            button.Click();
+                        }
+                    }
+                }
+            }
+        public bool IsCourseFilterSelected(string filter)
         {
-            _formHelper.SelectRadioButton(By.Id("StartDate_" + date.Replace(" ", "")));
-            return this;
+            var selected = false;
+
+            if (!string.IsNullOrWhiteSpace(filter))
+            {
+                var filteredText = filter.Replace(" ", string.Empty).ToUpper();
+                foreach (var button in FiltersList)
+                {
+                    var buttonText = button.GetAttribute("value").Replace(" ", string.Empty).ToUpper();
+                    if (buttonText.Contains(filteredText))
+                    {
+                        if (button.Selected == true)
+                        {
+                            selected = true;
+                        }
+                        else
+                        {
+                            selected = false;
+                        }
+                    }
+                }
+            }
+
+            return selected;
         }
-
-        public CourseSearchPage SelectCourseHours(string hours)
-        {
-
-            _formHelper.SelectRadioButton(By.Id("CourseHours_" + hours.Replace(" ", "")));
-            return this;
-        }
-
-        public CourseSearchPage ClickSelectedCourse()
-        {
+        
+        public CourseDetailsPage ClickSelectedCourse()
+        {            
             _formHelper.ClickElement(CourseSearchList);
-            _context.Add("CourseHeader", _pageHelper.GetText(CourseSearchList));           
-
-            return this;
+            return new CourseDetailsPage(_context);
         }
 
         internal void ValidateResults(string selectedCourseText)
         {
-
+            _context.Add("CourseHeader", _pageHelper.GetText(CourseSearchList));
             _pageHelper.VerifyText(CourseSearchList, selectedCourseText);
-            
-            
+            _context.Set(_pageHelper.GetText(CourseSearchList), "CourseDetail");
         }
 
         public CourseSearchPage ClickApplyFilter()
         {
             _formHelper.ClickElement(FilterButton);
             return this;
+        }
+        public void ValidateFilters(string prov, string location)
+        {
+            
+            _pageHelper.VerifyValueAttributeOfAnElement(Provider, prov);
+            _pageHelper.VerifyValueAttributeOfAnElement (Location, location);
         }
         
     }

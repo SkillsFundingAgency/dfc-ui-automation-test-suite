@@ -26,60 +26,57 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.StepDefinitions
             _webDriver = context.GetWebDriver();
             _config = context.GetProjectConfig<ProjectConfig>();
             _objectContext = context.Get<ObjectContext>();
+            
         }
         [Given(@"I have navigated to Find a course page")]
         public void GivenIHaveNavigatedToFindACoursePage()
         {
             _webDriver.Url = _config.BaseUrl + "/find-a-course";
         }
-        
-        [Given(@"I have searched for a valid course '(.*)'")]
-        public void GivenIHaveSearchedForAValidCourse(string strCourseName)
+        [Given(@"I have searched for a  course '(.*)'")]
+        public void GivenIHaveSearchedForACourse(string strCourseName)
         {
-            fACHomePage = new FACHomePage(_context).EnterSearchCriteria(strCourseName);
-            _context.Add("CourseName", strCourseName);
-            
+            fACHomePage = new FACHomePage(_context);
+            fACHomePage.EnterSearchCriteria(strCourseName);
+            _objectContext.Set("CourseName", strCourseName);
         }
         
         [When(@"I click the Find a course button")]
         public void WhenIClickTheFindACourseButton()
         {
-            fACHomePage = new FACHomePage(_context);
-            fACHomePage.ClickFindACourse();
-        }
-        
-       
+           courseSearchPage= fACHomePage.ClickFindACourse();
+        }              
         
         [When(@"I click the first course")]
         public void WhenIClickTheFirstCourse()
         {
-            courseSearchPage.ClickSelectedCourse();
+            courseDetailsPage= courseSearchPage.ClickSelectedCourse();
         }
-
-
         [Then(@"the results for the course should be listed")]
         public void ThenTheResultsForTheCourseShouldBeListed()
         {
-            courseSearchPage = new CourseSearchPage(_context);
-            _context.TryGetValue("CourseName", out string selectedCourseText);
+            string selectedCourseText = _objectContext.Get("CourseName");
             courseSearchPage.ValidateResults(selectedCourseText);
-            
-
         }
         
         [Then(@"I should be taken to the course details page")]
         public void ThenIShouldBeTakenToTheCourseDetailsPage()
         {
-            courseDetailsPage = new CourseDetailsPage(_context);
             
-
-            
+            courseDetailsPage.VerifyCourseHeader(_objectContext.Get("CourseDetail"));
         }
         [Then(@"I should be able to validate the links")]
         public void ThenIShouldBeAbleToValidateTheLinks()
         {
             courseDetailsPage.ValidateLinks();
+            
         }
+        [Then(@"I should be able to click the links to access the information")]
+        public void ThenIShouldBeAbleToClickTheLinksToAccessTheInformation()
+        {
+            courseDetailsPage.ClickLinks();
+        }
+
 
     }
 }

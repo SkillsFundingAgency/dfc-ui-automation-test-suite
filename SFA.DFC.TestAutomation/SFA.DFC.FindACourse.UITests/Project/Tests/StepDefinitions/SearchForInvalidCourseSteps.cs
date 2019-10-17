@@ -25,11 +25,6 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.StepDefinitions
             _config = context.GetProjectConfig<ProjectConfig>();
             _objectContext = context.Get<ObjectContext>();
         }
-        [Given(@"I have searched for a Invalid course '(.*)'")]
-        public void GivenIHaveSearchedForAInvalidCourse(string coursename)
-        {
-            fACHomePage = new FACHomePage(_context).EnterSearchCriteria(coursename);
-        }
         
         [Then(@"an error message should be returned")]
         public void ThenAnErrorMessageShouldBeReturned()

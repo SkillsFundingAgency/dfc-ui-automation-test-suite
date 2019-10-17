@@ -18,8 +18,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private readonly ScenarioContext _context;
         #endregion
         #region Page Elements
-        //private By CourseHeader = By.CssSelector(".govuk-heading-l");
-        
+        private By CourseHeader = By.CssSelector(".govuk-heading-l");
         private By QualDetails = By.LinkText("Qualification details");
         private By CourseDesc = By.LinkText("Course description");
         private By EntryReqs = By.LinkText("Entry requirements");
@@ -32,10 +31,9 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         {
             _context = context;
             _pageHelper = context.Get<PageInteractionHelper>();
-            _formHelper = context.Get<FormCompletionHelper>();
-           // VerifyPageHeader();
+            _formHelper = context.Get<FormCompletionHelper>();           
         }
-        public CourseDetailsPage ValidateLinks()
+        public void  ValidateLinks()
         {
             _pageHelper.VerifyText(QualDetails, "Qualification details");
             _pageHelper.VerifyText(CourseDesc , "Course description");
@@ -43,14 +41,22 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _pageHelper.VerifyText(EquipReqd , "Equipment required");
             _pageHelper.VerifyText(AssessMethod , "Assessment method");
             _pageHelper.VerifyText(Venue , "Venue");
-            _pageHelper.VerifyText(OtherDatesandVenues , "Other dates and venues");
-            return this;
+            _pageHelper.VerifyText(OtherDatesandVenues , "Other dates and venues");            
         }
-        /*public void VerifyPageHeader()
+        public void ClickLinks()
         {
-            _context.TryGetValue("CourseHeader", out string CourseHeaderTitle);
-            _pageHelper.VerifyText(CourseHeader,CourseHeaderTitle );
-            //return this;
-        }*/
+            _formHelper.ClickElement(QualDetails);
+            _formHelper.ClickElement(CourseDesc);
+            _formHelper.ClickElement(EntryReqs);
+            _formHelper.ClickElement(EquipReqd);
+            _formHelper.ClickElement(AssessMethod);
+            _formHelper.ClickElement(Venue);
+            _formHelper.ClickElement(OtherDatesandVenues);
+        }
+        public void VerifyCourseHeader(string courseHeader)
+        {
+            _pageHelper.VerifyText(CourseHeader, courseHeader);
+        }
+        
     }    
 }
