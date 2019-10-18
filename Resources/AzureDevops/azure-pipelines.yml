@@ -1,0 +1,51 @@
+variables:
+    ArmTemplateRoot: '$(Build.SourcesDirectory)\Resources\ArmTemplates'     
+    SolutionBaseName: 'SFA.DFC.TestAutomation'
+    BuildPlatform: 'any cpu'
+    BuildConfiguration: 'release'
+
+resources:
+  repositories:
+  - repository: self
+
+jobs:
+
+#Build and test application
+- job: BuildDotNetCore
+  displayName: Build-DotNetCore
+  pool:
+    name: Continuous Integration 02 - SSD - 160ACU
+    demands:
+    - msbuild
+    - visualstudio
+
+  steps:
+  # Build SFA.DFC.ExploreCareers.UITests
+  - task: DotNetCoreCLI@2
+    displayName: 'Build - dotnet build SFA.DFC.ExploreCareers.UITests'
+    inputs:
+      command: 'build'
+      projects: 'SFA.DFC.TestAutomation\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\"'  
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: SFA.DFC.ExploreCareers.UITests'
+    inputs:
+      pathtoPublish: $(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\
+      artifactName: SFA.DFC.ExploreCareers.UITests
+      publishLocation: container
+
+  # Build SFA.DFC.LiveService.UITests
+  - task: DotNetCoreCLI@2
+    displayName: 'Build - dotnet build SFA.DFC.LiveService.UITests'
+    inputs:
+      command: 'build'
+      projects: 'SFA.DFC.TestAutomation\SFA.DFC.LiveService.UITests\SFA.DFC.LiveService.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.LiveService.UITests\"'  
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: SFA.DFC.LiveService.UITests'
+    inputs:
+      pathtoPublish: $(build.artifactstagingdirectory)\SFA.DFC.LiveService.UITests\
+      artifactName: SFA.DFC.LiveService.UITests
+      publishLocation: container
+
+
