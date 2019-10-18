@@ -131,7 +131,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void AddElementTextToContext(string contextKey, By listOfElements, int elementIndex)
         {
-            _objectContext.Set(contextKey, _pageHelper.FindElements(listOfElements)[elementIndex].Text);
+            _objectContext.Set(contextKey, _pageHelper.GetText(_pageHelper.FindElements(listOfElements)[elementIndex]));
         }
 
         public void VerifyAllProfileSegments()

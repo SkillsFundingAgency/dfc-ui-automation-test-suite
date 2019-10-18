@@ -14,12 +14,23 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
         private SearchResultsPage searchResultsPage;
+        private Homepage homepage;
 
         public SearchSteps(ScenarioContext context)
         {
             _context = context;
             _objectContext = context.Get<ObjectContext>();
             searchResultsPage = _objectContext.Get<SearchResultsPage>();
+            homepage = new Homepage(_context);
+        }
+
+        #region Whens
+
+        [When(@"I search for '(.*)'")]
+        public void WhenISearchFor(string searchTerm)
+        {
+            searchResultsPage = homepage
+                .Search(searchTerm);
         }
 
         [When(@"I select search result '(.*)'")]
@@ -28,6 +39,23 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             searchResultsPage
                 .SelectSearchResult(profileToSelect);
         }
+        #endregion
+
+        #region Thens
+        [Then(@"I am redirected to the search results page")]
+        public void ThenIAmRedirectedToTheSearchResultsPage()
+        {
+            searchResultsPage
+                .VerifySearchResultsPage();
+        }
+
+        [Then(@"the search term is displayed in the search field")]
+        public void ThenTheSearchTermIsDisplayedInTheSearchField()
+        {
+            searchResultsPage
+                .VerifySearchTermIsDisplayedOnResultsPage();
+        }
+        #endregion
 
     }
 }

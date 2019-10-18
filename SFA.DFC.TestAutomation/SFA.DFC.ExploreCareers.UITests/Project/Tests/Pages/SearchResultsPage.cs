@@ -10,13 +10,19 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 {
     public class SearchResultsPage : BasePage
     {
+        #region Helpers
         private readonly ScenarioContext _context;
         private PageInteractionHelper _pageHelper;
         private FormCompletionHelper _formHelper;
         private readonly ObjectContext _objectContext;
+        #endregion
+
+        #region Attributes
         protected override string PageTitle => "";
         private By SearchResultsPageTitle => By.ClassName("search-title");
         private By ProfileResults => By.ClassName("dfc-code-search-jpTitle");
+        private By SearchField => By.ClassName("search-input");
+        #endregion
 
         public SearchResultsPage(ScenarioContext context) : base(context)
         {
@@ -26,17 +32,22 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _objectContext = context.Get<ObjectContext>();
         }
 
+        public JobProfilePage SelectSearchResult(int resultToSelect)
+        {
+           var listOfResults = _pageHelper.FindElements(ProfileResults);
+            _objectContext.Set("searchResultSelected", _pageHelper.GetText(listOfResults[resultToSelect - 1]));
+            _formHelper.ClickElement(listOfResults[resultToSelect - 1]);
+            return new JobProfilePage(_context);
+        }
         public void VerifySearchResultsPage()
         {
             _pageHelper.IsElementDisplayed(SearchResultsPageTitle);
         }
 
-        public JobProfilePage SelectSearchResult(int resultToSelect)
+        public void VerifySearchTermIsDisplayedOnResultsPage()
         {
-           var listOfResults = _pageHelper.FindElements(ProfileResults);
-            _objectContext.Set("searchResultSelected", listOfResults[resultToSelect - 1].Text);
-            _formHelper.ClickElement(listOfResults[resultToSelect - 1]);
-            return new JobProfilePage(_context);
+            string searchTerm = _objectContext.Get("searchResultSelected");
+            _pageHelper.VerifyText(SearchField, searchTerm);
         }
     }
 }

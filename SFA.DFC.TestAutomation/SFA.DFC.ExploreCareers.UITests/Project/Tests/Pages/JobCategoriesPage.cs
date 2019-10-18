@@ -46,7 +46,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public JobProfilePage SelectJobProfile(int profileNo)
         {
             List<IWebElement> listOfJPs = _pageHelper.FindElements(listOfProfiles);
-            _objectContext.Set("JCProfileSelected", listOfJPs[profileNo - 1].Text);
+            _objectContext.Set("JCProfileSelected", _pageHelper.GetText(listOfJPs[profileNo - 1]));
             _formHelper.ClickElement(listOfJPs[profileNo-1]);
             return new JobProfilePage(_context);
         }

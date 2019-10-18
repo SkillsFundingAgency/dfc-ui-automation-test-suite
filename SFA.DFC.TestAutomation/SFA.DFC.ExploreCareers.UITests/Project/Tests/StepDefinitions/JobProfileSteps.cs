@@ -98,7 +98,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
                 .EnterFeedback(feedback);
         }
 
-        [When(@"I search for '(.*)' under the search feature")]
+        [When(@"I search for '(.*)' under the JP search feature")]
         public void WhenISearchForTermUnderTheSearchFeature(string searchTerm)
         {
             searchResultsPage = jobProfilePage
@@ -205,13 +205,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             jobProfileFeedbackThankYouPage
                 .VerifyThankYouMessage();
-        }
-
-        [Then(@"I am redirected to the search results page")]
-        public void ThenIAmRedirectedToTheSearchResultsPage()
-        {
-            searchResultsPage
-                .VerifySearchResultsPage();
         }
         #endregion
     }
