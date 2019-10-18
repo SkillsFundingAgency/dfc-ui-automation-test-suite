@@ -22,10 +22,10 @@ jobs:
   steps:
   # Build SFA.DFC.ExploreCareers.UITests
   - task: DotNetCoreCLI@2
-    displayName: 'Build - dotnet build application'
+    displayName: 'Build - dotnet build SFA.DFC.ExploreCareers.UITests'
     inputs:
       command: 'build'
-      projects: 'SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
+      projects: 'SFA.DFC.TestAutomation\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
       arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\"'  
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: SFA.DFC.ExploreCareers.UITests'
@@ -36,10 +36,10 @@ jobs:
 
   # Build SFA.DFC.LiveService.UITests
   - task: DotNetCoreCLI@2
-    displayName: 'Build - dotnet build application'
+    displayName: 'Build - dotnet build SFA.DFC.LiveService.UITests'
     inputs:
       command: 'build'
-      projects: 'SFA.DFC.LiveService.UITests\SFA.DFC.LiveService.UITests.csproj'
+      projects: 'SFA.DFC.TestAutomation\SFA.DFC.LiveService.UITests\SFA.DFC.LiveService.UITests.csproj'
       arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.LiveService.UITests\"'  
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: SFA.DFC.LiveService.UITests'
