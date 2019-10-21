@@ -103,7 +103,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             searchResultsPage = jobProfilePage
                 .SearchOnJobProfile(searchTerm);
-            _objectContext.Set(searchResultsPage);
         }
 
 
