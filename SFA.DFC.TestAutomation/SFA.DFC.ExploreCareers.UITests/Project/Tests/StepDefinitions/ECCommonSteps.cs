@@ -16,8 +16,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private readonly ProjectConfig _config;
         private readonly ObjectContext _objectContext;
         private readonly IWebDriver _webDriver;
-        private Homepage homepage;
-        private SearchResultsPage searchResultsPage;
 
         public ECCommonSteps(ScenarioContext context)
         {
