@@ -20,7 +20,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             _context = context;
             _objectContext = context.Get<ObjectContext>();
-            searchResultsPage = new SearchResultsPage(_context);
+            searchResultsPage = _objectContext.Get<SearchResultsPage>();
             homepage = new Homepage(_context);
         }
 

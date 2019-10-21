@@ -20,14 +20,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             _context = context;
             _objectContext = context.Get<ObjectContext>();
-            homepage = new Homepage(_context);
         }
 
         #region Whens
         [When(@"I click the category '(.*)'")]
         public void WhenIClickTheCategory(string selectedCategory)
         {
-            jobCategoryPage = homepage
+            jobCategoryPage = new Homepage(_context)
                 .SelectJobCategory(selectedCategory);
         }
 
