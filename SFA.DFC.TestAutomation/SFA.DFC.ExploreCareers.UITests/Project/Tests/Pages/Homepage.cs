@@ -15,6 +15,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
+        private readonly IWebDriver _webDriver;
+        private readonly ProjectConfig _config;
         #endregion
 
         #region Page Elements
@@ -31,6 +33,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
             _objectContext = context.Get<ObjectContext>();
+            _webDriver = context.GetWebDriver();
+            _config = context.GetProjectConfig<ProjectConfig>();
+        }
+
+        public Homepage NavigateToHomepage()
+        {
+            _webDriver.Url = _config.BaseUrl + "/explore-careers";
+            return this;
         }
 
         public JobCategoriesPage SelectJobCategory(string selectedCategory)

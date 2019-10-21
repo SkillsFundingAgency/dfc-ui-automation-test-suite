@@ -11,14 +11,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 {
     public class JobProfilePage : BasePage
     {
-        #region Helpers and Context
+        #region Helpers
         private ScenarioContext _context;
         private PageInteractionHelper _pageHelper;
         private FormCompletionHelper _formHelper;
         private readonly ObjectContext _objectContext;
         #endregion
 
-        #region Page Attributes
+        #region Page Elements
         protected override string PageTitle => "";
         private By RelatedCareersSection => By.ClassName("job-profile-related");
         private By RelatedCareersList => By.CssSelector(".list-big li");

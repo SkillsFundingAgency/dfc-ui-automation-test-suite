@@ -15,7 +15,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private PageInteractionHelper _pageHelper;
         #endregion
 
-        #region Page attributes
+        #region Page Elements
         protected override string PageTitle => "";
         private By Header => By.ClassName("govuk-heading-xl");
         #endregion

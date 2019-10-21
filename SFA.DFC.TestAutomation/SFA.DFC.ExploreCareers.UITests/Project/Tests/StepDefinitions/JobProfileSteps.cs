@@ -13,6 +13,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     public class JobProfileSteps
     {
 
+        #region Helpers
         private readonly ScenarioContext _context;
         private readonly IWebDriver _webDriver;
         private readonly ProjectConfig _config;
@@ -22,6 +23,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private ApprenticeshipDetailsPage apprenticeshipDetailsPage;
         private JobProfileFeedbackThankYouPage jobProfileFeedbackThankYouPage;
         private SearchResultsPage searchResultsPage;
+
+        #endregion
 
         public JobProfileSteps(ScenarioContext context)
         {
@@ -111,7 +114,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         [Then(@"the related careers section should be displayed")]
         public void ThenTheRelatedCareersSectionShouldBeDisplayed()
         {
-            jobProfilePage.VerifyRelatedCareersSectionDisplayed();
+            jobProfilePage
+                .VerifyRelatedCareersSectionDisplayed();
         }
 
         [Then(@"there should be no more than (.*) careers")]
@@ -124,7 +128,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         [Then(@"I am redirected to the profile selected")]
         public void ThenIAmRedirectedToTheProfileSelected()
         {
-            jobProfilePage.VerifyCorrectJobProfilePage();
+            jobProfilePage
+                .VerifyCorrectJobProfilePage();
         }
 
         [Then(@"related courses are displayed")]

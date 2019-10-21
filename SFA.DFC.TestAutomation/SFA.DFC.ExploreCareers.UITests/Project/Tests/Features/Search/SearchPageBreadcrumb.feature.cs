@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
+namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
 {
     using TechTalk.SpecFlow;
     
@@ -18,20 +18,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("UsingSearchOnJobProfile")]
-    public partial class UsingSearchOnJobProfileFeature
+    [NUnit.Framework.DescriptionAttribute("SearchPageBreadcrumb")]
+    public partial class SearchPageBreadcrumbFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "UsingSearchOnJobProfile.feature"
+#line 1 "SearchPageBreadcrumb.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UsingSearchOnJobProfile", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SearchPageBreadcrumb", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,25 +70,21 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Valid Search on Job Profile Page")]
-        [NUnit.Framework.CategoryAttribute("ExploreCareers")]
-        [NUnit.Framework.CategoryAttribute("JobProfile")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void ValidSearchOnJobProfilePage()
+        [NUnit.Framework.DescriptionAttribute("Search Page displays the correct breadcrumb and links to the Homepage")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        public virtual void SearchPageDisplaysTheCorrectBreadcrumbAndLinksToTheHomepage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Valid Search on Job Profile Page", null, new string[] {
-                        "ExploreCareers",
-                        "JobProfile",
-                        "Smoke"});
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Page displays the correct breadcrumb and links to the Homepage", null, new string[] {
+                        "mytag"});
+#line 4
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 5
+ testRunner.Given("I search for \'test\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.When("I click the \'search\' breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
- testRunner.Given("I navigate to the \'acupuncturist\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.When("I search for \'firefighter\' under the JP search feature", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
- testRunner.Then("I am redirected to the search results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I am redirected to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -11,10 +11,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     [Binding]
     public class JobCategorySteps
     {
+        #region Helpers
         private readonly ScenarioContext _context;
         private Homepage homepage;
         private JobCategoriesPage jobCategoryPage;
         private JobProfilePage jobProfilePage;
+
+        #endregion
         public JobCategorySteps(ScenarioContext context)
         {
             _context = context;
@@ -43,13 +46,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
                 .SelectJobProfile(profileNo);
         }
 
-        [When(@"I click the breadcrumb")]
-        public void WhenIClickTheBreadcrumb()
-        {
-            homepage = jobCategoryPage
-                .SelectHomeBreadcrumb();
-        }
-
 
         #endregion
 
@@ -73,13 +69,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             jobCategoryPage
                 .VerifyCorrectBreadcrumbDisplayed();
-        }
-
-        [Then(@"I am redirected to the explore careers homepage")]
-        public void ThenIAmRedirectedToTheExploreCareersHomepage()
-        {
-            homepage
-                .VerifyHomePage();
         }
 
         #endregion

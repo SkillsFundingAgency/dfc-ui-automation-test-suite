@@ -1,4 +1,5 @@
-﻿using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
+﻿using OpenQA.Selenium;
+using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
 using SFA.DFC.UI.Framework.TestSupport;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,32 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     [Binding]
     public class SearchSteps
     {
+        #region Helpers
         private readonly ScenarioContext _context;
+        private readonly IWebDriver _webDriver;
         private SearchResultsPage searchResultsPage;
         private Homepage homepage;
+        #endregion
 
         public SearchSteps(ScenarioContext context)
         {
             _context = context;
+            _webDriver = context.GetWebDriver();
             searchResultsPage = new SearchResultsPage(_context);
             homepage = new Homepage(_context);
+
         }
 
+        #region Givens
+        [Given(@"I search for '(.*)'")]
+        public void GivenISearchFor(string searchTerm)
+        {
+            searchResultsPage = homepage
+                .NavigateToHomepage()
+                .Search(searchTerm);
+        }
+
+        #endregion
         #region Whens
 
         [When(@"I search for '(.*)'")]
@@ -37,6 +53,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             searchResultsPage
                 .SelectSearchResult(profileToSelect);
         }
+
         #endregion
 
         #region Thens
@@ -53,6 +70,21 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             searchResultsPage
                 .VerifySearchTermIsDisplayedOnResultsPage();
         }
+
+        [Then(@"a list of results are displayed")]
+        public void ThenAListOfResultsAreDisplayed()
+        {
+            searchResultsPage
+                .VerifyListOfResultsAredisplayed();
+        }
+
+        [Then(@"the no results message is displaed")]
+        public void ThenTheNoResultsMessageIsDisplaed()
+        {
+            searchResultsPage
+                .VerifyNoSearchResultsMessage();
+        }
+
         #endregion
 
     }

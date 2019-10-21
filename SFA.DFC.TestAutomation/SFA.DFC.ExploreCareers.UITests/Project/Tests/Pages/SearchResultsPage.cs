@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
@@ -17,11 +18,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private readonly ObjectContext _objectContext;
         #endregion
 
-        #region Attributes
+        #region Page Elements
         protected override string PageTitle => "";
         private By SearchResultsPageTitle => By.ClassName("search-title");
         private By ProfileResults => By.ClassName("dfc-code-search-jpTitle");
         private By SearchField => By.ClassName("search-input");
+        private By ResultCount => By.ClassName("result-count");
+        private By HomeBreadcrumbLink => By.ClassName("govuk-breadcrumbs__link");
+
         #endregion
 
         public SearchResultsPage(ScenarioContext context) : base(context)
@@ -39,6 +43,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _formHelper.ClickElement(listOfResults[resultToSelect - 1]);
             return new JobProfilePage(_context);
         }
+
+        public Homepage SelectHomeBreadcrumb()
+        {
+            _formHelper.ClickElement(HomeBreadcrumbLink);
+            return new Homepage(_context);
+        }
         public void VerifySearchResultsPage()
         {
             _pageHelper.IsElementDisplayed(SearchResultsPageTitle);
@@ -48,6 +58,17 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         {
             string searchTerm = _objectContext.Get("searchResultSelected");
             _pageHelper.VerifyText(SearchField, searchTerm);
+        }
+
+        public void VerifyListOfResultsAredisplayed()
+        {
+            _pageHelper.GetCountOfElementsGroup(ProfileResults).Should().BeGreaterThan(0);
+        }
+
+        public void VerifyNoSearchResultsMessage()
+        {
+            _pageHelper.IsElementDisplayed(ResultCount);
+            _pageHelper.GetText(ResultCount).Should().Contain("0 results found");
         }
     }
 }

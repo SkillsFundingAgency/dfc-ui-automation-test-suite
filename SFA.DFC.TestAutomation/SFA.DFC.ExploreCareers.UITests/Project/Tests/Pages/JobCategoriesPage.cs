@@ -16,7 +16,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private readonly ObjectContext _objectContext;
         #endregion
 
-        #region Page Attributes
+        #region Page Elements
         protected override string PageTitle => "";
 
         private string SelectedCategory;

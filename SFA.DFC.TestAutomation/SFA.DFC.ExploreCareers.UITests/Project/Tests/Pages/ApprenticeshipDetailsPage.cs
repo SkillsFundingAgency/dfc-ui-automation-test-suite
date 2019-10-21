@@ -10,11 +10,16 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 {
     public class ApprenticeshipDetailsPage : BasePage
     {
+        #region Helpers
         private ScenarioContext _context;
         private readonly PageInteractionHelper _pageHelper;
         private readonly ObjectContext _objectContext;
+        #endregion
+        #region Page Elements
         protected override string PageTitle => "";
         private By AppVacancyId => By.Id("vacancy-title");
+
+        #endregion
 
         public ApprenticeshipDetailsPage(ScenarioContext context) : base(context)
         {
