@@ -16,7 +16,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private readonly ScenarioContext _context;
         private readonly IWebDriver _webDriver;
         private readonly ProjectConfig _config;
-        private readonly ObjectContext _objectContext;
         private JobProfilePage jobProfilePage;
         private CourseDetailsPage courseDetailsPage;
         private FindACourseHomePage findACourseHomePage;
@@ -29,7 +28,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             _context = context;
             _webDriver = context.GetWebDriver();
             _config = context.GetProjectConfig<ProjectConfig>();
-            _objectContext = context.Get<ObjectContext>();
             jobProfilePage = new JobProfilePage(_context);
         }
         #region Givens

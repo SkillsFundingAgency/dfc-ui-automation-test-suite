@@ -14,17 +14,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     {
         private readonly ScenarioContext _context;
         private readonly ProjectConfig _config;
-        private readonly ObjectContext _objectContext;
         private readonly IWebDriver _webDriver;
-        private Homepage homepage;
-        private SearchResultsPage searchResultsPage;
 
         public ECCommonSteps(ScenarioContext context)
         {
             _context = context;
             _webDriver = context.GetWebDriver();
             _config = context.GetProjectConfig<ProjectConfig>();
-            _objectContext = context.Get<ObjectContext>();
         }
 
         #region Givens

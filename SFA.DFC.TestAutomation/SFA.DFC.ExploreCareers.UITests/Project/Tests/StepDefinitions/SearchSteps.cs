@@ -12,14 +12,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     public class SearchSteps
     {
         private readonly ScenarioContext _context;
-        private readonly ObjectContext _objectContext;
         private SearchResultsPage searchResultsPage;
         private Homepage homepage;
 
         public SearchSteps(ScenarioContext context)
         {
             _context = context;
-            _objectContext = context.Get<ObjectContext>();
             searchResultsPage = new SearchResultsPage(_context);
             homepage = new Homepage(_context);
         }
