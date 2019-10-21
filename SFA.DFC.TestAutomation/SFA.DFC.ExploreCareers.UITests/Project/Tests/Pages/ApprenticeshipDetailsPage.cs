@@ -12,19 +12,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
     {
         private ScenarioContext _context;
         private readonly PageInteractionHelper _pageHelper;
+        private readonly ObjectContext _objectContext;
         protected override string PageTitle => "";
-        private string AppSelected;
         private By AppVacancyId => By.Id("vacancy-title");
 
         public ApprenticeshipDetailsPage(ScenarioContext context) : base(context)
         {
             _context = context;
             _pageHelper = context.Get<PageInteractionHelper>();
+            _objectContext = context.Get<ObjectContext>();
         }
 
         public void VerifyCorrectApprenticeshipPage()
         {
-            _context.TryGetValue("ApprenticeshipSelected", out AppSelected);
+             string AppSelected = _objectContext.Get("ApprenticeshipSelected");
             _pageHelper.VerifyText(AppVacancyId, AppSelected);
         }
     }
