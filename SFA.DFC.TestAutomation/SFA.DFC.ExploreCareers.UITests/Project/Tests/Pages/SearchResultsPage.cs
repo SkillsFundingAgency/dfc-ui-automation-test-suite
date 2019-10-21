@@ -39,8 +39,16 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public JobProfilePage SelectSearchResult(int resultToSelect)
         {
            var listOfResults = _pageHelper.FindElements(ProfileResults);
-            _objectContext.Set("searchResultSelected", _pageHelper.GetText(listOfResults[resultToSelect - 1]));
-            _formHelper.ClickElement(listOfResults[resultToSelect - 1]);
+            if (listOfResults.Count >= resultToSelect)
+            {
+                _objectContext.Set("searchResultSelected", _pageHelper.GetText(listOfResults[resultToSelect - 1]));
+                _formHelper.ClickElement(listOfResults[resultToSelect - 1]);
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("Number of results is lower than selected value");
+            }
+
             return new JobProfilePage(_context);
         }
 
