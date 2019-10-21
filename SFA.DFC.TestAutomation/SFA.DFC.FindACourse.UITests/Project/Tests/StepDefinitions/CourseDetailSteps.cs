@@ -7,29 +7,31 @@ using SFA.DFC.FindACourse.UITests.Project.Tests.Pages;
 namespace SFA.DFC.FindACourse.UITests.Project.Tests.StepDefinitions
 {
     [Binding]
-    public class SearchForInvalidCourseSteps
+   public class CourseDetailSteps
     {
         private readonly ScenarioContext _context;
         private readonly ProjectConfig _config;
         private readonly ObjectContext _objectContext;
         private readonly IWebDriver _webDriver;
 
-
-        private FACHomePage fACHomePage;
-        private CourseSearchPage courseSearchPage;
-        
-        public SearchForInvalidCourseSteps (ScenarioContext context)
+        private CourseDetailsPage courseDetailsPage;
+        public CourseDetailSteps(ScenarioContext context)
         {
             _context = context;
-            _webDriver = context.GetWebDriver();
             _config = context.GetProjectConfig<ProjectConfig>();
             _objectContext = context.Get<ObjectContext>();
+            courseDetailsPage = new CourseDetailsPage(_context);
         }
-        
-        [Then(@"an error message should be returned")]
-        public void ThenAnErrorMessageShouldBeReturned()
+        [Then(@"I should be able to validate the links")]
+        public void ThenIShouldBeAbleToValidateTheLinks()
         {
-            courseSearchPage = new CourseSearchPage(_context).ValidateErrorMessage("We didn't find any results for 'NoCourse' with the active filters you've applied. Try searching again.");
+            courseDetailsPage.ValidateLinks();
+        }
+        [Then(@"I should be able to click the links to access the information")]
+        public void ThenIShouldBeAbleToClickTheLinksToAccessTheInformation()
+        {
+            courseDetailsPage.ClickLinks();
         }
     }
+
 }

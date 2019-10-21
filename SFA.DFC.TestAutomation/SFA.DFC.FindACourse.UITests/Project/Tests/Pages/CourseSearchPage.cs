@@ -15,6 +15,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private readonly PageInteractionHelper _pageHelper;
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
+        private readonly ObjectContext _objectContext;
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
@@ -31,6 +32,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         public CourseSearchPage(ScenarioContext context) : base(context)
         {
             _context = context;
+            _objectContext = context.Get<ObjectContext>();
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
             VerifyPageHeader();
@@ -82,7 +84,6 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
                     }
                 }
             }
-
             return selected;
         }
         
@@ -91,12 +92,12 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _formHelper.ClickElement(CourseSearchList);
             return new CourseDetailsPage(_context);
         }
-
-        internal void ValidateResults(string selectedCourseText)
+        public void ValidateResults(string selectedCourseText)
         {
-            _context.Add("CourseHeader", _pageHelper.GetText(CourseSearchList));
+            
+            _objectContext.Set("CourseHeader", _pageHelper.GetText(CourseSearchList));            
             _pageHelper.VerifyText(CourseSearchList, selectedCourseText);
-            _context.Set(_pageHelper.GetText(CourseSearchList), "CourseDetail");
+            _objectContext.Set("CourseDetail", _pageHelper.GetText(CourseSearchList));
         }
 
         public CourseSearchPage ClickApplyFilter()
@@ -110,6 +111,15 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _pageHelper.VerifyValueAttributeOfAnElement(Provider, prov);
             _pageHelper.VerifyValueAttributeOfAnElement (Location, location);
         }
-        
+        public void  EnterLocation(string strLocation)
+        {
+            _formHelper.EnterText(Location, strLocation);           
+        }
+
+        public void EnterProvider(string strProv)
+        {
+            _formHelper.EnterText(Provider, strProv);            
+        }
+
     }
 }

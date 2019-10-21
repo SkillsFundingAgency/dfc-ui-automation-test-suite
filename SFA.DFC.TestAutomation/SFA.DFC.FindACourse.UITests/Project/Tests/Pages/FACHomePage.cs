@@ -35,22 +35,17 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _formHelper = context.Get<FormCompletionHelper>();
             VerifyPageHeader();
         }
-
-        public FACHomePage EnterLocation(string strLocation)
+        public void EnterLocation(string strLocation)
         {
-            _formHelper.EnterText(Location,strLocation);
-            return this;
+            _formHelper.EnterText(Location,strLocation);           
         }
-
-        public FACHomePage EnterProvider(string strProv)
+        public void EnterProvider(string strProv)
         {
-            _formHelper.EnterText(ProviderName, strProv);
-            return this;
+            _formHelper.EnterText(ProviderName, strProv);            
         }
-
-        public void VerifyPageHeader()
+        public void  VerifyPageHeader()
         {
-            _pageHelper.VerifyText(FACHeader, "Find a course");
+            _pageHelper.VerifyText(FACHeader, "Find a course");            
         }
 
         public CourseSearchPage ClickFindACourse()

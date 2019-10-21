@@ -4,8 +4,8 @@
 @Findacourse
 Scenario: Find a valid course and check course details page
 	Given I have navigated to Find a course page
-	And I have searched for a  course 'Maths'
-	When I click the Find a course button
+	When I have searched for a  course 'Maths'
+	And I click the Find a course button
 	Then the results for the course should be listed
 	When I click the first course 
 	Then I should be taken to the course details page 
