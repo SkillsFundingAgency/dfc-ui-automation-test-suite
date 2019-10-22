@@ -22,10 +22,9 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         protected override string PageTitle => "";
         private By SearchResultsPageTitle => By.ClassName("search-title");
         private By ProfileResults => By.ClassName("dfc-code-search-jpTitle");
-        private By SearchField => By.ClassName("search-input");
+        private By SearchField => By.Id("search-main");
         private By ResultCount => By.ClassName("result-count");
         private By HomeBreadcrumbLink => By.ClassName("govuk-breadcrumbs__link");
-
         #endregion
 
         public SearchResultsPage(ScenarioContext context) : base(context)
@@ -41,7 +40,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
            var listOfResults = _pageHelper.FindElements(ProfileResults);
             if (listOfResults.Count >= resultToSelect)
             {
-                _objectContext.Set("searchResultSelected", _pageHelper.GetText(listOfResults[resultToSelect - 1]));
+                _objectContext.Set("JPSearchResultSelected", _pageHelper.GetText(listOfResults[resultToSelect - 1]));
                 _formHelper.ClickElement(listOfResults[resultToSelect - 1]);
             }
             else
@@ -57,6 +56,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _formHelper.ClickElement(HomeBreadcrumbLink);
             return new Homepage(_context);
         }
+
         public void VerifySearchResultsPage()
         {
             _pageHelper.IsElementDisplayed(SearchResultsPageTitle);
@@ -64,8 +64,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifySearchTermIsDisplayedOnResultsPage()
         {
-            string searchTerm = _objectContext.Get("searchResultSelected");
-            _pageHelper.VerifyText(SearchField, searchTerm);
+            string searchTerm = _objectContext.Get("searchedTerm");
+            _pageHelper.VerifyValueAttributeOfAnElement(SearchField, searchTerm);
         }
 
         public void VerifyListOfResultsAredisplayed()

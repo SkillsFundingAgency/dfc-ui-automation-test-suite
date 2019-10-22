@@ -82,14 +82,10 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobCategory
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
- testRunner.Given("I navigate to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to the category \'Transport\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("I click the category \'Transport\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
- testRunner.Then("I am redirected to the selected Job Category page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 9
  testRunner.When("I click the \'job category\' breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
+#line 8
  testRunner.Then("I am redirected to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -71,19 +71,23 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search Page displays the correct breadcrumb and links to the Homepage")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("ExploreCareers")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void SearchPageDisplaysTheCorrectBreadcrumbAndLinksToTheHomepage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Page displays the correct breadcrumb and links to the Homepage", null, new string[] {
-                        "mytag"});
-#line 4
+                        "ExploreCareers",
+                        "Search",
+                        "Smoke"});
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
- testRunner.Given("I search for \'test\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
- testRunner.When("I click the \'search\' breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
+ testRunner.Given("I search for \'test\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.When("I click the \'search\' breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
  testRunner.Then("I am redirected to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

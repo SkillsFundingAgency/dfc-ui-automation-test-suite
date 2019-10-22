@@ -63,7 +63,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         {
             string JobCategoryProfileSelected = _objectContext.Get("JCProfileSelected");
             string RelatedCareerSelected = _objectContext.Get("RelatedCareerSelected");
-            string SearchJobProfileSelected = _objectContext.Get("searchResultSelected");
+            string SearchJobProfileSelected = _objectContext.Get("JPSearchResultSelected");
 
             if (!string.IsNullOrEmpty(JobCategoryProfileSelected))
             {

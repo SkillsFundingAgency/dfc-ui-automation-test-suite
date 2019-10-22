@@ -71,21 +71,23 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search End To End Test")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("ExploreCareers")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void SearchEndToEndTest()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search End To End Test", null, new string[] {
-                        "mytag"});
-#line 4
+                        "ExploreCareers",
+                        "Search",
+                        "Smoke"});
+#line 6
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
- testRunner.Given("I navigate to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
- testRunner.When("I search for \'doctor\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
-  testRunner.And("I select search result \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I search for \'doctor\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
+ testRunner.When("I select search result \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
  testRunner.Then("I am redirected to the profile selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

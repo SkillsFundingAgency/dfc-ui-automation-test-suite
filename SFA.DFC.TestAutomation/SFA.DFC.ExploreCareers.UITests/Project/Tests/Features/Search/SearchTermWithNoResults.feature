@@ -1,7 +1,7 @@
 ﻿Feature: SearchTermWithNoResults
 
 @ExploreCareers
-@JobProfile
+@Search
 @Smoke
 Scenario: Perform a search that will return 0 results
 	Given I search for 'return0results'

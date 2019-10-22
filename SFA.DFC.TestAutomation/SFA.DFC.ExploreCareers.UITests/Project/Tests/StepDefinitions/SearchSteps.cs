@@ -54,6 +54,27 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
                 .SelectSearchResult(profileToSelect);
         }
 
+        [When(@"I enter an incomplete search '(.*)'")]
+        public void WhenIEnterAnIncompleteSearch(string incompleteSearch)
+        {
+            homepage
+                .EnterSearchTerm(incompleteSearch);
+        }
+
+        [When(@"I select result '(.*)' from the auto suggest list")]
+        public void WhenISelectResultFromTheAutoSuggestList(int resultToSelect)
+        {
+            homepage
+                .SelectAutoSuggestResult(resultToSelect);
+        }
+
+        [When(@"click the Search button")]
+        public void WhenClickTheSearchButton()
+        {
+            searchResultsPage = homepage
+                .ClickSearchButton();
+        }
+
         #endregion
 
         #region Thens

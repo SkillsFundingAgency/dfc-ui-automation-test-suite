@@ -25,6 +25,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By JobCategoryList => By.CssSelector(".homepage-jobcategories li a");
         private By SearchField => By.ClassName("search-input");
         private By SubmitSearch => By.ClassName("submit");
+        private By AutoSuggestList => By.ClassName("ui-menu-item");
+
         #endregion
 
         public Homepage(ScenarioContext context) : base(context)
@@ -58,6 +60,26 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return new SearchResultsPage(_context);
         }
 
+        public SearchResultsPage ClickSearchButton()
+        {
+            _formHelper.ClickElement(SubmitSearch);
+            return new SearchResultsPage(_context);
+        }
+
+        public Homepage EnterSearchTerm(string incompleteSearchTerm)
+        {
+            _formHelper.EnterText(SearchField, incompleteSearchTerm);
+            return new Homepage(_context);
+        }
+
+        public Homepage SelectAutoSuggestResult(int resultToSelect)
+        {
+            List<IWebElement> list = _pageHelper.FindElements(AutoSuggestList);
+            _objectContext.Replace("searchedTerm", _pageHelper.GetText(list[resultToSelect - 1]));
+            _formHelper.ClickElement(list[resultToSelect - 1]);
+
+            return new Homepage(_context);
+        }
         public void VerifyHomePage()
         {
             _pageHelper.VerifyPage(PageHeader, "Explore careers");

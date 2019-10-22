@@ -18,20 +18,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SearchWithEscapedCharacters")]
-    public partial class SearchWithEscapedCharactersFeature
+    [NUnit.Framework.DescriptionAttribute("SearchAutoSuggest")]
+    public partial class SearchAutoSuggestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SearchWithEscapedCharacters.feature"
+#line 1 "SearchAutoSuggest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SearchWithEscapedCharacters", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SearchAutoSuggest", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,15 +70,15 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Performing a search with text within escaped characters that will return a result" +
-            "")]
+        [NUnit.Framework.DescriptionAttribute("Starting a search displays Auto Suggest, and when selected, populates the searchb" +
+            "ox")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void PerformingASearchWithTextWithinEscapedCharactersThatWillReturnAResult()
+        public virtual void StartingASearchDisplaysAutoSuggestAndWhenSelectedPopulatesTheSearchbox()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Performing a search with text within escaped characters that will return a result" +
-                    "", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Starting a search displays Auto Suggest, and when selected, populates the searchb" +
+                    "ox", null, new string[] {
                         "ExploreCareers",
                         "Search",
                         "Smoke"});
@@ -86,13 +86,17 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
- testRunner.Given("I search for \'<Police Officer>\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.Then("I am redirected to the search results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I enter an incomplete search \'pla\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
-  testRunner.And("the search term is displayed in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I select result \'1\' from the auto suggest list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-  testRunner.And("a list of results are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("click the Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.Then("I am redirected to the search results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+  testRunner.And("the search term is displayed in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

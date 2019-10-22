@@ -72,13 +72,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Perform a search that will return 0 results")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
-        [NUnit.Framework.CategoryAttribute("JobProfile")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void PerformASearchThatWillReturn0Results()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Perform a search that will return 0 results", null, new string[] {
                         "ExploreCareers",
-                        "JobProfile",
+                        "Search",
                         "Smoke"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);

@@ -72,13 +72,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("When searching for a profile, the user can see a list of profiles and select one")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
-        [NUnit.Framework.CategoryAttribute("JobProfile")]
+        [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void WhenSearchingForAProfileTheUserCanSeeAListOfProfilesAndSelectOne()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When searching for a profile, the user can see a list of profiles and select one", null, new string[] {
                         "ExploreCareers",
-                        "JobProfile",
+                        "Search",
                         "Smoke"});
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -91,6 +91,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I am redirected to the search results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
   testRunner.And("the search term is displayed in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.When("I select search result \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.Then("I am redirected to the profile selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

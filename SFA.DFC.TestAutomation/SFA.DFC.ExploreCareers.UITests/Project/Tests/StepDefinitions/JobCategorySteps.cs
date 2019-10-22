@@ -24,6 +24,15 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             homepage = new Homepage(_context);
         }
 
+        #region Givens
+        [Given(@"I navigate to the category '(.*)'")]
+        public void GivenINavigateToTheCategory(string category)
+        {
+            jobCategoryPage = homepage
+                .NavigateToHomepage()
+                .SelectJobCategory(category);
+        }
+        #endregion
         #region Whens
         [When(@"I click the category '(.*)'")]
         public void WhenIClickTheCategory(string selectedCategory)
