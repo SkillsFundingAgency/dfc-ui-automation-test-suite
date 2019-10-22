@@ -36,14 +36,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _objectContext = context.Get<ObjectContext>();
         }
 
-        public JobCategoriesPage SelectJobCategory(string selectedCategory)
+        public JobCategoriesPage ClickJobCategory(string selectedCategory)
         {
             _objectContext.Replace("selectedCategory", selectedCategory);
             _formHelper.ClickElement(_pageHelper.GetLinkContains(JobCategoryList, selectedCategory));
             return this;
         }
 
-        public JobProfilePage SelectJobProfile(int profileNo)
+        public JobProfilePage ClickJobProfile(int profileNo)
         {
             List<IWebElement> listOfJPs = _pageHelper.FindElements(listOfProfiles);
             _objectContext.Set("JCProfileSelected", _pageHelper.GetText(listOfJPs[profileNo - 1]));
@@ -51,7 +51,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return new JobProfilePage(_context);
         }
 
-        public Homepage SelectHomeBreadcrumb()
+        public Homepage ClickHomeBreadcrumb()
         {
             _formHelper.ClickElement(HomeBreadcrumbLink);
             return new Homepage(_context);
@@ -66,17 +66,17 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public void VerifySelectedCategoryNotDisplayed()
         {
             var listOfCategories = _pageHelper.FindElements(JobCategoryList);
-            bool isCategorydisplayed = true;
+            bool isCategoryDisplayed = true;
 
             foreach (var category in listOfCategories)
             {
                 if (!category.Text.Contains(SelectedCategory))
                 {
-                    isCategorydisplayed = false;
+                    isCategoryDisplayed = false;
                 }
             }
 
-            isCategorydisplayed.Should().BeFalse();
+            isCategoryDisplayed.Should().BeFalse();
         }
 
         public void VerifyCorrectBreadcrumbDisplayed()

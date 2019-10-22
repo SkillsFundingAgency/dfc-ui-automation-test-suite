@@ -45,7 +45,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return this;
         }
 
-        public JobCategoriesPage SelectJobCategory(string selectedCategory)
+        public JobCategoriesPage ClickJobCategory(string selectedCategory)
         {
             _objectContext.Set("selectedCategory", selectedCategory);
             _formHelper.ClickElement(_pageHelper.GetLinkContains(JobCategoryList, selectedCategory));
@@ -72,7 +72,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return new Homepage(_context);
         }
 
-        public Homepage SelectAutoSuggestResult(int resultToSelect)
+        public Homepage ClickAutoSuggestResult(int resultToSelect)
         {
             List<IWebElement> list = _pageHelper.FindElements(AutoSuggestList);
             _objectContext.Replace("searchedTerm", _pageHelper.GetText(list[resultToSelect - 1]));

@@ -47,28 +47,28 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void WhenIClickOnCareerTitle(int careerSelected)
         {
             jobProfilePage
-                .SelectRelatedCareer(careerSelected);
+                .ClickRelatedCareer(careerSelected);
         }
 
         [When(@"I select course title '(.*)'")]
         public void WhenISelectCourseTitle(int courseToSelect)
         {
             courseDetailsPage = jobProfilePage
-                .SelectCourse(courseToSelect);
+                .ClickCourse(courseToSelect);
         }
 
         [When(@"I click the Find courses near you link")]
         public void WhenIClickTheFindCoursesNearYouLink()
         {
             findACourseHomePage = jobProfilePage
-                .SelectFindCoursesNearYouLink();
+                .ClickFindCoursesNearYouLink();
         }
 
         [When(@"I select apprenticeship title '(.*)'")]
         public void WhenISelectApprenticeshipTitle(int appToSelect)
         {
             apprenticeshipDetailsPage = jobProfilePage
-                .SelectApprenticeship(appToSelect);
+                .ClickApprenticeship(appToSelect);
         }
 
         [When(@"I click yes to job profile feedback")]

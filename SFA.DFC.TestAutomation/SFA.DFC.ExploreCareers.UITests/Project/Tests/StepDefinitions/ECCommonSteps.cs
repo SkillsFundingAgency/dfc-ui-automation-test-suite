@@ -50,11 +50,11 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             {
                 case "job category":
                     jobCategoryPage
-                        .SelectHomeBreadcrumb();
+                        .ClickHomeBreadcrumb();
                     break;
                 case "search":
                     searchResultsPage
-                        .SelectHomeBreadcrumb();
+                        .ClickHomeBreadcrumb();
                     break;
                 default:
                     throw new NotFoundException("Page not found");

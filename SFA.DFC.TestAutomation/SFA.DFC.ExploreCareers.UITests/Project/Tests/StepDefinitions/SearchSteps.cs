@@ -17,6 +17,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private readonly IWebDriver _webDriver;
         private SearchResultsPage searchResultsPage;
         private Homepage homepage;
+        private JobCategoriesPage jobCategoyPage;
         #endregion
 
         public SearchSteps(ScenarioContext context)
@@ -51,7 +52,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void WhenISelectSearchResult(int profileToSelect)
         {
             searchResultsPage
-                .SelectSearchResult(profileToSelect);
+                .ClickSearchResult(profileToSelect);
         }
 
         [When(@"I enter an incomplete search '(.*)'")]
@@ -65,7 +66,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void WhenISelectResultFromTheAutoSuggestList(int resultToSelect)
         {
             homepage
-                .SelectAutoSuggestResult(resultToSelect);
+                .ClickAutoSuggestResult(resultToSelect);
         }
 
         [When(@"click the Search button")]
@@ -73,6 +74,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             searchResultsPage = homepage
                 .ClickSearchButton();
+        }
+
+        [When(@"I click the did you mean suggestion")]
+        public void WhenIClickTheDidYouMeanSuggestion()
+        {
+            searchResultsPage
+                .ClickDidYouMeanSuggestion();
+        }
+
+        [When(@"I select search category '(.*)'")]
+        public void WhenISelectSearchAtegory(int categoryToSelect)
+        {
+            jobCategoyPage = searchResultsPage
+                .ClickSearchCategory(categoryToSelect);
         }
 
         #endregion
@@ -104,6 +119,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             searchResultsPage
                 .VerifyNoSearchResultsMessage();
+        }
+
+        [Then(@"I am shown the did you mean option")]
+        public void ThenIAmShownTheDidYouMeanOption()
+        {
+            searchResultsPage
+                .VerifyDidYouMeanIsDisplayed();
+        }
+
+        [Then(@"I can see job categories under the search results")]
+        public void ThenICanSeeJobCategoriesUnderTheSearchResults()
+        {
+            searchResultsPage
+                .VerifyJobCategoryDisplayedOnSearch();
         }
 
         #endregion

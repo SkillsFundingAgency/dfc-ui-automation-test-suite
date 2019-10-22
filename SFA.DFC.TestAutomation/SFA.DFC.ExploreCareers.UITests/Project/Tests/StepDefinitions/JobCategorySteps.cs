@@ -22,6 +22,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             _context = context;
             homepage = new Homepage(_context);
+            jobCategoryPage = new JobCategoriesPage(_context);
         }
 
         #region Givens
@@ -30,7 +31,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             jobCategoryPage = homepage
                 .NavigateToHomepage()
-                .SelectJobCategory(category);
+                .ClickJobCategory(category);
         }
         #endregion
         #region Whens
@@ -38,21 +39,21 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void WhenIClickTheCategory(string selectedCategory)
         {
             jobCategoryPage = homepage
-                .SelectJobCategory(selectedCategory);
+                .ClickJobCategory(selectedCategory);
         }
 
         [When(@"I select another category '(.*)'")]
         public void WhenISelectAnotherCategory(string selectedCategory)
         {
             jobCategoryPage
-                .SelectJobCategory(selectedCategory);
+                .ClickJobCategory(selectedCategory);
         }
 
         [When(@"I select profile no '(.*)' in the list")]
         public void WhenISelectProfileNoInTheList(int profileNo)
         {
             jobProfilePage = jobCategoryPage
-                .SelectJobProfile(profileNo);
+                .ClickJobProfile(profileNo);
         }
 
 
