@@ -16,7 +16,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private readonly ObjectContext _objectContext;
         #endregion
 
-        #region Page attributes
+        #region Page Elements
         protected override string PageTitle => "";
         private By CourseTitle => By.ClassName("govuk-heading-l");
 

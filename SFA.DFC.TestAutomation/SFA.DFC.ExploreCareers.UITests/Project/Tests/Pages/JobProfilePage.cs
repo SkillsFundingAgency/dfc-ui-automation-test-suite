@@ -11,14 +11,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 {
     public class JobProfilePage : BasePage
     {
-        #region Helpers and Context
+        #region Helpers
         private ScenarioContext _context;
         private PageInteractionHelper _pageHelper;
         private FormCompletionHelper _formHelper;
         private readonly ObjectContext _objectContext;
         #endregion
 
-        #region Page Attributes
+        #region Page Elements
         protected override string PageTitle => "";
         private By RelatedCareersSection => By.ClassName("job-profile-related");
         private By RelatedCareersList => By.CssSelector(".list-big li");
@@ -63,7 +63,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         {
             string JobCategoryProfileSelected = _objectContext.Get("JCProfileSelected");
             string RelatedCareerSelected = _objectContext.Get("RelatedCareerSelected");
-            string SearchJobProfileSelected = _objectContext.Get("searchResultSelected");
+            string SearchJobProfileSelected = _objectContext.Get("JPSearchResultSelected");
 
             if (!string.IsNullOrEmpty(JobCategoryProfileSelected))
             {
@@ -79,7 +79,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             }
         }
 
-        public JobProfilePage SelectRelatedCareer(int relatedCareer)
+        public JobProfilePage ClickRelatedCareer(int relatedCareer)
         {
             int careerIndex = relatedCareer - 1;
             AddElementTextToContext("RelatedCareerSelected", RelatedCareersList, careerIndex);
@@ -87,7 +87,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return this;
         }
 
-        public CourseDetailsPage SelectCourse(int courseToSelect)
+        public CourseDetailsPage ClickCourse(int courseToSelect)
         {
             int courseIndex = courseToSelect - 1;
             AddElementTextToContext("CourseSelected", ListOfCourses, courseIndex);
@@ -95,13 +95,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return new CourseDetailsPage(_context);
         }
 
-        public FindACourseHomePage SelectFindCoursesNearYouLink()
+        public FindACourseHomePage ClickFindCoursesNearYouLink()
         {
             _formHelper.ClickElement(CoursesNearYouLink);
             return new FindACourseHomePage(_context);
         }
 
-        public ApprenticeshipDetailsPage SelectApprenticeship(int appToSelect)
+        public ApprenticeshipDetailsPage ClickApprenticeship(int appToSelect)
         {
             int appIndex = appToSelect - 1;
             AddElementTextToContext("ApprenticeshipSelected", ListOfApprenticeships, appIndex);

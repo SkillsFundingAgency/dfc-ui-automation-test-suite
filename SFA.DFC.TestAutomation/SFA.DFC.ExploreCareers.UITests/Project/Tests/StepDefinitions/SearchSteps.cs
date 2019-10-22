@@ -1,4 +1,5 @@
-﻿using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
+﻿using OpenQA.Selenium;
+using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
 using SFA.DFC.UI.Framework.TestSupport;
 using System;
 using System.Collections.Generic;
@@ -11,19 +12,33 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     [Binding]
     public class SearchSteps
     {
+        #region Helpers
         private readonly ScenarioContext _context;
-        private readonly ObjectContext _objectContext;
+        private readonly IWebDriver _webDriver;
         private SearchResultsPage searchResultsPage;
         private Homepage homepage;
+        private JobCategoriesPage jobCategoyPage;
+        #endregion
 
         public SearchSteps(ScenarioContext context)
         {
             _context = context;
-            _objectContext = context.Get<ObjectContext>();
+            _webDriver = context.GetWebDriver();
             searchResultsPage = new SearchResultsPage(_context);
             homepage = new Homepage(_context);
+
         }
 
+        #region Givens
+        [Given(@"I search for '(.*)'")]
+        public void GivenISearchFor(string searchTerm)
+        {
+            searchResultsPage = homepage
+                .NavigateToHomepage()
+                .Search(searchTerm);
+        }
+
+        #endregion
         #region Whens
 
         [When(@"I search for '(.*)'")]
@@ -37,8 +52,44 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void WhenISelectSearchResult(int profileToSelect)
         {
             searchResultsPage
-                .SelectSearchResult(profileToSelect);
+                .ClickSearchResult(profileToSelect);
         }
+
+        [When(@"I enter an incomplete search '(.*)'")]
+        public void WhenIEnterAnIncompleteSearch(string incompleteSearch)
+        {
+            homepage
+                .EnterSearchTerm(incompleteSearch);
+        }
+
+        [When(@"I select result '(.*)' from the auto suggest list")]
+        public void WhenISelectResultFromTheAutoSuggestList(int resultToSelect)
+        {
+            homepage
+                .ClickAutoSuggestResult(resultToSelect);
+        }
+
+        [When(@"click the Search button")]
+        public void WhenClickTheSearchButton()
+        {
+            searchResultsPage = homepage
+                .ClickSearchButton();
+        }
+
+        [When(@"I click the did you mean suggestion")]
+        public void WhenIClickTheDidYouMeanSuggestion()
+        {
+            searchResultsPage
+                .ClickDidYouMeanSuggestion();
+        }
+
+        [When(@"I select search category '(.*)'")]
+        public void WhenISelectSearchAtegory(int categoryToSelect)
+        {
+            jobCategoyPage = searchResultsPage
+                .ClickSearchCategory(categoryToSelect);
+        }
+
         #endregion
 
         #region Thens
@@ -55,6 +106,35 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             searchResultsPage
                 .VerifySearchTermIsDisplayedOnResultsPage();
         }
+
+        [Then(@"a list of results are displayed")]
+        public void ThenAListOfResultsAreDisplayed()
+        {
+            searchResultsPage
+                .VerifyListOfResultsAredisplayed();
+        }
+
+        [Then(@"the no results message is displaed")]
+        public void ThenTheNoResultsMessageIsDisplaed()
+        {
+            searchResultsPage
+                .VerifyNoSearchResultsMessage();
+        }
+
+        [Then(@"I am shown the did you mean option")]
+        public void ThenIAmShownTheDidYouMeanOption()
+        {
+            searchResultsPage
+                .VerifyDidYouMeanIsDisplayed();
+        }
+
+        [Then(@"I can see job categories under the search results")]
+        public void ThenICanSeeJobCategoriesUnderTheSearchResults()
+        {
+            searchResultsPage
+                .VerifyJobCategoryDisplayedOnSearch();
+        }
+
         #endregion
 
     }
