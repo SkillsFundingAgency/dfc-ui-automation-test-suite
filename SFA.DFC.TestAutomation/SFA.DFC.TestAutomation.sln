@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.UI.FrameworkHelpers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.UI.Framework", "SFA.DFC.UI.Framework\SFA.DFC.UI.Framework.csproj", "{493ADDA1-FFE3-4BB7-A256-7173A90446D5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.LiveService.UITests", "SFA.DFC.LiveService.UITests\SFA.DFC.LiveService.UITests.csproj", "{2653BA61-5B35-46FD-BFA0-833B937B74E7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{75E174D7-DBD6-413B-8FD1-BBAA55901242}"
 	ProjectSection(SolutionItems) = preProject
 		NUnitConfigurator.cs = NUnitConfigurator.cs
@@ -33,10 +31,6 @@ Global
 		{493ADDA1-FFE3-4BB7-A256-7173A90446D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{493ADDA1-FFE3-4BB7-A256-7173A90446D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{493ADDA1-FFE3-4BB7-A256-7173A90446D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2653BA61-5B35-46FD-BFA0-833B937B74E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2653BA61-5B35-46FD-BFA0-833B937B74E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2653BA61-5B35-46FD-BFA0-833B937B74E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2653BA61-5B35-46FD-BFA0-833B937B74E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9EFB6F1-B42F-4571-BC9E-93ABDB26E2D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9EFB6F1-B42F-4571-BC9E-93ABDB26E2D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9EFB6F1-B42F-4571-BC9E-93ABDB26E2D5}.Release|Any CPU.ActiveCfg = Release|Any CPU

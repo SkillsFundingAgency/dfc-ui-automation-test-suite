@@ -1,9 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
@@ -15,7 +12,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private PageInteractionHelper _pageHelper;
         #endregion
 
-        #region Page attributes
+        #region Page Elements
         protected override string PageTitle => "";
         private By Header => By.ClassName("govuk-heading-xl");
         #endregion
