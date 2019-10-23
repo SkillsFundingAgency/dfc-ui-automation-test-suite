@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
 using SFA.DFC.UI.Framework.TestSupport;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
@@ -16,7 +12,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         #region Helpers
         private readonly ScenarioContext _context;
         private readonly IWebDriver _webDriver;
-        private readonly ProjectConfig _config;
+        private readonly ExploreCareersConfig _config;
         private JobProfilePage jobProfilePage;
         private CourseDetailsPage courseDetailsPage;
         private FindACourseHomePage findACourseHomePage;
@@ -30,7 +26,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         {
             _context = context;
             _webDriver = context.GetWebDriver();
-            _config = context.GetProjectConfig<ProjectConfig>();
+            _config = context.GetExploreCareersConfig<ExploreCareersConfig>();
             jobProfilePage = new JobProfilePage(_context);
         }
         #region Givens

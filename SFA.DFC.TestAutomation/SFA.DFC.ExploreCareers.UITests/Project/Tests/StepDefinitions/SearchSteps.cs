@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
 using SFA.DFC.UI.Framework.TestSupport;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
@@ -14,7 +10,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     {
         #region Helpers
         private readonly ScenarioContext _context;
-        private readonly IWebDriver _webDriver;
         private SearchResultsPage searchResultsPage;
         private Homepage homepage;
         private JobCategoriesPage jobCategoyPage;
@@ -23,7 +18,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public SearchSteps(ScenarioContext context)
         {
             _context = context;
-            _webDriver = context.GetWebDriver();
             searchResultsPage = new SearchResultsPage(_context);
             homepage = new Homepage(_context);
 
