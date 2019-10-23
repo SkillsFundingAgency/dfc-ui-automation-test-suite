@@ -10,12 +10,13 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.StepDefinitions
     public class FACCommonStep
     {
         
-        private readonly ProjectConfig _config;        
+        private readonly FindACourseConfig _config;        
         private readonly IWebDriver _webDriver;
     public FACCommonStep(ScenarioContext context)
         {
+
             
-            _config = context.GetProjectConfig<ProjectConfig>();
+            _config = context.GetFindACourseConfig<FindACourseConfig>();
             _webDriver = context.GetWebDriver();
            
         }

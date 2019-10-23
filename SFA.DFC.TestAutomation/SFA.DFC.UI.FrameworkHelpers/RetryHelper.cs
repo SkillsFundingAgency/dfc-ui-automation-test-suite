@@ -22,7 +22,6 @@ namespace SFA.DFC.UI.FrameworkHelpers
         {
             return Policy
                  .Handle<Exception>((x) => x.Message.Contains("verification failed"))
-                 .Or<WebDriverException>()
                  .WaitAndRetry(TimeOut, (exception, timeSpan, retryCount, context) =>
                  {
                      TestContext.Progress.WriteLine($"Retry Count : {retryCount}, Exception : {exception.Message}");
@@ -37,12 +36,13 @@ namespace SFA.DFC.UI.FrameworkHelpers
                  });
         }
 
-        internal void RetryOnElementClickInterceptedException(IWebElement element, bool useAction)
+        internal void RetryOnElementClickInterceptedException(IWebElement element)
         {
 
             Action beforeAction = null, afterAction = null;
             Policy
                  .Handle<ElementClickInterceptedException>()
+                 .Or<WebDriverException>()
                  .WaitAndRetry(TimeOut, (exception, timeSpan, retryCount, context) =>
                  {
                      TestContext.Progress.WriteLine($"Retry Count : {retryCount}, Exception : {exception.Message}");
@@ -66,22 +66,16 @@ namespace SFA.DFC.UI.FrameworkHelpers
                      using (var testcontext = new NUnit.Framework.Internal.TestExecutionContext.IsolatedContext())
                      {
                          beforeAction?.Invoke();
-                         ClickEvent(useAction, element).Invoke();
+                         ClickEvent(element).Invoke();
                          afterAction?.Invoke();
                      }
                  });
         }
 
-        private Action ClickEvent(bool useAction, IWebElement element)
+        private Action ClickEvent(IWebElement element)
         {
-            if (useAction)
-            {
-                return () => new Actions(_webDriver).MoveToElement(element).Click(element).Perform();
-            }
-            else
-            {
-                return () => element.Click();
-            }
+            ((IJavaScriptExecutor)_webDriver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
+            return () => new Actions(_webDriver).Click(element).Perform();
         }
 
         private static TimeSpan[] TimeOut => new[]
