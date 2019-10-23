@@ -71,33 +71,37 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Submit a Give Feedback form with Yes in additional contact")]
+        [NUnit.Framework.CategoryAttribute("Contactus")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void SubmitAGiveFeedbackFormWithYesInAdditionalContact()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Submit a Give Feedback form with Yes in additional contact", null, ((string[])(null)));
-#line 2
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Submit a Give Feedback form with Yes in additional contact", null, new string[] {
+                        "Contactus",
+                        "Smoke"});
+#line 4
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 3
- testRunner.Given("I have navigated to the contact us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 4
- testRunner.And("I have clicked the link to online message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 5
- testRunner.And("I have selected \'Give feedback\' option to continue onto the first contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have navigated to the contact us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.Then("I am directed to the first contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I have clicked the link to online message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
+ testRunner.And("I have selected \'Give feedback\' option to continue onto the first contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.Then("I am directed to the first contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 9
  testRunner.When("I complete the first form with \'Customer service\' option and \'Contact for feedbac" +
                     "k\' query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
+#line 10
  testRunner.And("I complete the feedback form with details \'Automated\',\'Test\',\'automatedtestesfa@m" +
                     "ailinator.com\',\'automatedtestesfa@mailinator.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
- testRunner.And("I select \'No\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
- testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select \'No\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
+ testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
  testRunner.Then("I am directed to the confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

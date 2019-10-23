@@ -13,7 +13,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
     public class ContactUsCommonSteps
     {
         private readonly ScenarioContext _context;
-        private readonly ProjectConfig _config;
+        private readonly ContactUs _config;
         private readonly IWebDriver _webDriver;
 
         private ContactUsHomePage contactUsHomePage;
@@ -23,7 +23,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
         {
             _context = context;
             _webDriver = context.GetWebDriver();
-            _config = context.GetProjectConfig<ProjectConfig>();            
+            _config = context.GetContactUsConfig<ContactUs>();            
         }
         [Given(@"I have navigated to the contact us page")]
         public void GivenIHaveNavigatedToTheContactUsPage()

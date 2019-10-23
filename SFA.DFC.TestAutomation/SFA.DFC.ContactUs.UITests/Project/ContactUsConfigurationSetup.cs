@@ -5,13 +5,13 @@ using TechTalk.SpecFlow;
 namespace SFA.DFC.ContactUs.UITests.Project
 {
     [Binding]
-    public class ProjectSpecificConfigurationSetup
+    public class ContactUsConfigurationSetup
     {
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
         private readonly IConfigSection _configSection;
 
-        public ProjectSpecificConfigurationSetup(ScenarioContext context)
+        public ContactUsConfigurationSetup(ScenarioContext context)
         {
             _context = context;
             _configSection = context.Get<IConfigSection>();
@@ -21,13 +21,15 @@ namespace SFA.DFC.ContactUs.UITests.Project
         [BeforeScenario(Order = 2)]
         public void SetUpProjectSpecificConfiguration()
         {
-            var config = _configSection.GetConfigSection<ProjectConfig>();
-            _context.SetProjectConfig(config);
+            var config = _configSection.GetConfigSection<ContactUs>();
+            
+           // _context.SetProjectConfig(config);
+            _context.SetContactUsConfig(config);
 
             var mongoDbconfig = _configSection.GetConfigSection<MongoDbConfig>();
             _context.SetMongoDbConfig(mongoDbconfig);
 
-            _objectContext.ReplaceBrowser(config.Browser);
+            _objectContext.Replace("browser", config.Browser);
         }
     }
 }

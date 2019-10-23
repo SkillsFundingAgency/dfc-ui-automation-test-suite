@@ -12,6 +12,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         #region Constants
         private const string ExploreCareersConfigKey = "explorecareersconfig";
         private const string FindACourseConfigKey = "findacourseconfig";
+        private const string ContactUsConfigKey = "contactusconfig";
         private const string MongoDbConfigKey = "mongodbconfig";
         private const string WebDriverKey = "webdriver";
         #endregion
@@ -21,6 +22,10 @@ namespace SFA.DFC.UI.Framework.TestSupport
             Set(context, value, ExploreCareersConfigKey);
         }
 
+        public static void SetContactUsConfig<T>(this ScenarioContext context, T value)
+        {
+            Set(context, value, ContactUsConfigKey);
+        }
         public static void SetFindACourseConfig<T>(this ScenarioContext context, T value)
         {
             Set(context, value, FindACourseConfigKey);
@@ -34,6 +39,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
         public static T GetFindACourseConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, FindACourseConfigKey);
+        }
+
+        public static T GetContactUsConfig<T>(this ScenarioContext context)
+        {
+            return Get<T>(context, ContactUsConfigKey);
         }
 
         public static void SetMongoDbConfig(this ScenarioContext context, MongoDbConfig value)
