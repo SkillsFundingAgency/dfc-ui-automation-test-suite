@@ -1,5 +1,4 @@
-﻿Feature: SearchForACourseWithOtherDetails
-	
+﻿Feature: SearchForACourseWithOtherDetails	
 
 @Findacourse
 Scenario: Search for course and other information
