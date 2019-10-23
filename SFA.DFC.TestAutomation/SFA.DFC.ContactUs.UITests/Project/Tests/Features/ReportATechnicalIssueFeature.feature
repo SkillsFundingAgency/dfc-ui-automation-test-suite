@@ -1,4 +1,6 @@
 ﻿Feature: Report a Technical Issue
+@Contactus
+@Smoke
 Scenario: Report a Technical Issue
 	Given I have navigated to the contact us page
 	And I have clicked the link to online message

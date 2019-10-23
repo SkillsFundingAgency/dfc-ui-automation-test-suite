@@ -1,6 +1,7 @@
 ﻿Feature: ContactAnAdviser	
 
 @Contactus
+@Smoke
 Scenario: Contact an Adviser
 	Given I have navigated to the contact us page
 	And I have clicked the link to online message

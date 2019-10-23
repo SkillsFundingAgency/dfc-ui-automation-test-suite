@@ -21,6 +21,11 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By Message = By.Id("Message");
         private By Feedback = By.Id("Feedback");
         private By ContinueButton = By.Id("send-feedback-details");
+        private By CategoryErrorMessage = By.LinkText("Choose a category");
+        private By MessageErrorMessage = By.Id("Message-error");
+
+
+
         private List<IWebElement> OptionsList => _pageHelper.FindElements(By.ClassName("govuk-radios__input"));
         #endregion
         public FirstContactFormPage(ScenarioContext context): base(context)

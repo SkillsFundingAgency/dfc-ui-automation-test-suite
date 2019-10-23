@@ -1,4 +1,6 @@
 ﻿Feature: Give Feedback with Yes in addtional contact
+@Contactus
+@Smoke
 Scenario: Submit a Give Feedback form with Yes in additional contact 
 	Given I have navigated to the contact us page
 	And I have clicked the link to online message
