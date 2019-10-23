@@ -18,9 +18,11 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
 
         private readonly IConfigSection _configSection;
 
+        private readonly ObjectContext _objectContext;
         public ConfigurationSetup(ScenarioContext context)
         {
             _context = context;
+            _objectContext = context.Get<ObjectContext>();
             _configurationRoot = Configurator.GetConfig();
             _configSection = new ConfigSection(_configurationRoot);
         }
@@ -34,15 +36,18 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
             {
                 TimeOutConfig = _configSection.GetConfigSection<TimeOutConfig>(),
                 BrowserStackSetting = _configSection.GetConfigSection<BrowserStackSetting>(),
-                TakeEveryPageScreenShot = TestsExecutionInVsts()
+                TakeEveryPageScreenShot = Configurator.IsVstsExecution
             };
 
             _context.Set(configuration);
-        }
 
-        private bool TestsExecutionInVsts()
-        {
-            return !string.IsNullOrEmpty(_configurationRoot.GetAgentMachineName());
+            var executionConfig = new EnvironmentConfig { EnvironmentName = Configurator.EnvironmentName, ProjectName = Configurator.ProjectName };
+
+            _context.Set(executionConfig);
+
+            var testExecutionConfig = _configSection.GetConfigSection<TestExecutionConfig>();
+
+            _objectContext.SetBrowser(testExecutionConfig.Browser);
         }
     }
 }

@@ -10,41 +10,30 @@ namespace SFA.DFC.UI.Framework.TestSupport
     public static class ScenarioContextExtension
     {
         #region Constants
-        private const string ProjectConfigKey = "projectconfig";
-        private const string ApprovalsProjectConfigKey = "approvalsprojectconfig";
-        private const string TransfersProjectConfigKey = "transfersprojectconfig";
+        private const string ExploreCareersConfigKey = "explorecareersconfig";
+        private const string FindACourseConfigKey = "findacourseconfig";
         private const string MongoDbConfigKey = "mongodbconfig";
         private const string WebDriverKey = "webdriver";
         #endregion
 
-        public static void SetProjectConfig<T>(this ScenarioContext context, T value)
+        public static void SetExploreCareersConfig<T>(this ScenarioContext context, T value)
         {
-            Set(context, value, ProjectConfigKey);
+            Set(context, value, ExploreCareersConfigKey);
         }
 
-        public static void SetApprovalsConfig<T>(this ScenarioContext context, T value)
+        public static void SetFindACourseConfig<T>(this ScenarioContext context, T value)
         {
-            Set(context, value, ApprovalsProjectConfigKey);
+            Set(context, value, FindACourseConfigKey);
         }
 
-        public static void SetTransfersConfig<T>(this ScenarioContext context, T value)
+        public static T GetExploreCareersConfig<T>(this ScenarioContext context)
         {
-            Set(context, value, TransfersProjectConfigKey);
+            return Get<T>(context, ExploreCareersConfigKey);
         }
 
-        public static T GetProjectConfig<T>(this ScenarioContext context)
+        public static T GetFindACourseConfig<T>(this ScenarioContext context)
         {
-            return Get<T>(context, ProjectConfigKey);
-        }
-
-        public static T GetApprovalsConfig<T>(this ScenarioContext context)
-        {
-            return Get<T>(context, ApprovalsProjectConfigKey);
-        }
-
-        public static T GetTransfersConfig<T>(this ScenarioContext context)
-        {
-            return Get<T>(context, TransfersProjectConfigKey);
+            return Get<T>(context, FindACourseConfigKey);
         }
 
         public static void SetMongoDbConfig(this ScenarioContext context, MongoDbConfig value)

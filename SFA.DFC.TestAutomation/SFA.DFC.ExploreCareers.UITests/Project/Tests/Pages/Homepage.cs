@@ -1,9 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
@@ -16,7 +14,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
         private readonly IWebDriver _webDriver;
-        private readonly ProjectConfig _config;
+        private readonly ExploreCareersConfig _config;
         #endregion
 
         #region Page Elements
@@ -36,7 +34,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _formHelper = context.Get<FormCompletionHelper>();
             _objectContext = context.Get<ObjectContext>();
             _webDriver = context.GetWebDriver();
-            _config = context.GetProjectConfig<ProjectConfig>();
+            _config = context.GetExploreCareersConfig<ExploreCareersConfig>();
         }
 
         public Homepage NavigateToHomepage()
