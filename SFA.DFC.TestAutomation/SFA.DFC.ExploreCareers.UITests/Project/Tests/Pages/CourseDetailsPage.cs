@@ -1,9 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
@@ -13,11 +10,11 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         #region Helpers
         private readonly ScenarioContext _context;
         private PageInteractionHelper _pageHelper;
+        private readonly ObjectContext _objectContext;
         #endregion
 
-        #region Page attributes
+        #region Page Elements
         protected override string PageTitle => "";
-        private string CourseSelectedFromJP;
         private By CourseTitle => By.ClassName("govuk-heading-l");
 
         #endregion
@@ -25,11 +22,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         {
             _context = context;
             _pageHelper = context.Get<PageInteractionHelper>();
+            _objectContext = context.Get<ObjectContext>();
         }
 
         public void VerifyCorrectCourseDetailsPage()
         {
-            _context.TryGetValue("CourseSelected", out CourseSelectedFromJP);
+            string CourseSelectedFromJP = _objectContext.Get("CourseSelected");
             _pageHelper.VerifyText(CourseTitle, CourseSelectedFromJP);
         }
     }

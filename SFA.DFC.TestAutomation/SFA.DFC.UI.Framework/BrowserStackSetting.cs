@@ -31,5 +31,7 @@ namespace SFA.DFC.UI.Framework
         public string Name { get; internal set; }
 
         public bool EnableNetworkLogs { get; set; }
+
+        internal string TimeZone => "London";
     }
 }

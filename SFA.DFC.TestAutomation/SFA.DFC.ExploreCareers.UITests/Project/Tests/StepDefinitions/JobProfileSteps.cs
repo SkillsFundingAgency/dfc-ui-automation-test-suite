@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
 using SFA.DFC.UI.Framework.TestSupport;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
@@ -13,20 +9,24 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
     public class JobProfileSteps
     {
 
+        #region Helpers
         private readonly ScenarioContext _context;
         private readonly IWebDriver _webDriver;
-        private readonly ProjectConfig _config;
+        private readonly ExploreCareersConfig _config;
         private JobProfilePage jobProfilePage;
         private CourseDetailsPage courseDetailsPage;
         private FindACourseHomePage findACourseHomePage;
         private ApprenticeshipDetailsPage apprenticeshipDetailsPage;
         private JobProfileFeedbackThankYouPage jobProfileFeedbackThankYouPage;
+        private SearchResultsPage searchResultsPage;
+
+        #endregion
 
         public JobProfileSteps(ScenarioContext context)
         {
             _context = context;
             _webDriver = context.GetWebDriver();
-            _config = context.GetProjectConfig<ProjectConfig>();
+            _config = context.GetExploreCareersConfig<ExploreCareersConfig>();
             jobProfilePage = new JobProfilePage(_context);
         }
         #region Givens
@@ -43,28 +43,28 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void WhenIClickOnCareerTitle(int careerSelected)
         {
             jobProfilePage
-                .SelectRelatedCareer(careerSelected);
+                .ClickRelatedCareer(careerSelected);
         }
 
         [When(@"I select course title '(.*)'")]
         public void WhenISelectCourseTitle(int courseToSelect)
         {
             courseDetailsPage = jobProfilePage
-                .SelectCourse(courseToSelect);
+                .ClickCourse(courseToSelect);
         }
 
         [When(@"I click the Find courses near you link")]
         public void WhenIClickTheFindCoursesNearYouLink()
         {
             findACourseHomePage = jobProfilePage
-                .SelectFindCoursesNearYouLink();
+                .ClickFindCoursesNearYouLink();
         }
 
         [When(@"I select apprenticeship title '(.*)'")]
         public void WhenISelectApprenticeshipTitle(int appToSelect)
         {
             apprenticeshipDetailsPage = jobProfilePage
-                .SelectApprenticeship(appToSelect);
+                .ClickApprenticeship(appToSelect);
         }
 
         [When(@"I click yes to job profile feedback")]
@@ -95,6 +95,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
                 .EnterFeedback(feedback);
         }
 
+        [When(@"I search for '(.*)' under the JP search feature")]
+        public void WhenISearchForTermUnderTheSearchFeature(string searchTerm)
+        {
+            searchResultsPage = jobProfilePage
+                .SearchOnJobProfile(searchTerm);
+        }
+
+
         #endregion
 
         #region Thens
@@ -102,7 +110,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         [Then(@"the related careers section should be displayed")]
         public void ThenTheRelatedCareersSectionShouldBeDisplayed()
         {
-            jobProfilePage.VerifyRelatedCareersSectionDisplayed();
+            jobProfilePage
+                .VerifyRelatedCareersSectionDisplayed();
         }
 
         [Then(@"there should be no more than (.*) careers")]
@@ -115,7 +124,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         [Then(@"I am redirected to the profile selected")]
         public void ThenIAmRedirectedToTheProfileSelected()
         {
-            jobProfilePage.VerifyCorrectJobProfilePage();
+            jobProfilePage
+                .VerifyCorrectJobProfilePage();
         }
 
         [Then(@"related courses are displayed")]

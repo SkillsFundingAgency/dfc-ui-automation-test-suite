@@ -22,7 +22,7 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
         {
             string directory = AppDomain.CurrentDomain.BaseDirectory
              + "../../"
-             + "\\Project\\Screenshots\\"
+             + "Project\\Screenshots\\"
              + DateTime.Now.ToString("dd-MM-yyyy")
              + "\\";
 
