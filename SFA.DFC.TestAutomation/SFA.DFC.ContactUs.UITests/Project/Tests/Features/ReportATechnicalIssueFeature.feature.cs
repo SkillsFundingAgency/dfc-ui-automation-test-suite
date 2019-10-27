@@ -82,26 +82,22 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
- testRunner.Given("I have navigated to the contact us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have selected \'Report a technical issue\' option to continue onto the first cont" +
+                    "act form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.And("I have clicked the link to online message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 7
- testRunner.And("I have selected \'Report a technical issue\' option to continue onto the first cont" +
-                    "act form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
  testRunner.Then("I am redirected to the first technical contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 9
+#line 7
  testRunner.When("I complete the first technical form with \'Unable to access website\' query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
-    testRunner.And("I complete the feedback form with details \'Automated\',\'Test\',\'automatedtestesfa@m" +
+#line 8
+     testRunner.And("I complete the feedback form with details \'Automated\',\'Test\',\'automatedtestesfa@m" +
                     "ailinator.com\',\'automatedtestesfa@mailinator.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+  testRunner.And("I select \'Yes\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+  testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("I select \'Yes\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
  testRunner.Then("I am directed to the confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

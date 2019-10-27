@@ -12,14 +12,12 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
     public class SelectAnOptionPage : BasePage 
     {
         #region Helpers
-        private readonly PageInteractionHelper _pageHelper;
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By OptionPageTitle = By.CssSelector(".govuk-fieldset__heading");
         private By ContactAdviser = By.CssSelector("#ContactOptionType_ContactAdviser");
         private By TechnicalIssue = By.Id("ContactOptionType_Technical");
         private By Feedback = By.Id("ContactOptionType_Feedback");
@@ -28,32 +26,28 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         public SelectAnOptionPage(ScenarioContext context): base(context)
         {
             _context = context;
-            _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
-            _objectContext = context.Get<ObjectContext>();
-            VerifyOptionPage();
+            _objectContext = context.Get<ObjectContext>();          
         }
-        public SelectAnOptionPage SelectContactOption(string strOption)
+
+        public SelectAnOptionPage SelectContactOption(string option)
         {
-            if (strOption == "Contact an adviser")
+            if (option == "Contact an adviser")
             {
                 _formHelper.SelectRadioButton(ContactAdviser);
             }
-            else if (strOption == "Report a technical issue")
+            else if (option == "Report a technical issue")
             {
                 _formHelper.SelectRadioButton(TechnicalIssue);
             }
-            else if (strOption == "Give feedback")
+            else if (option == "Give feedback")
             {
                 _formHelper.SelectRadioButton(Feedback);
             }
-            _objectContext.Set("SelectOption", strOption);
+            _objectContext.Set("SelectOption", option);
             return this;
         }
-        public void VerifyOptionPage()
-        {
-            _pageHelper.VerifyPage(OptionPageTitle, "Why would you like to contact us?");
-        }
+        
         public FirstContactFormPage ClickContinue()
         {
              _formHelper.ClickElement(ContinueButton);

@@ -11,29 +11,32 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
     public class ContactUsHomePage : BasePage 
     {
         #region Helpers
-        private readonly PageInteractionHelper _pageHelper;
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
+        private readonly ContactUs _config;
+        private readonly IWebDriver _webDriver;
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By ContactusPageTitle = By.CssSelector(".govuk-heading-xl");
         private By OnlineMessageLink = By.LinkText("Send us an online message");
         
         #endregion
         public ContactUsHomePage(ScenarioContext context): base(context)
         {
             _context = context;
-            _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
-            VerifyContactusPage();
+            _webDriver = context.GetWebDriver();
+            _config = context.GetContactUsConfig<ContactUs>();
+            
         }
-        public void VerifyContactusPage()
+        
+        public ContactUsHomePage  NavigateToContactUsPage()
         {
-            _pageHelper.VerifyPage(ContactusPageTitle, "Contact us");
+            _webDriver.Url = _config.BaseUrl + "/contact-us";
+            return this;
         }
 
-        public SelectAnOptionPage ClickOnlineMessageLink()
+      public SelectAnOptionPage ClickOnlineMessageLink()
         {
             _formHelper.ClickElement(OnlineMessageLink);
             return new SelectAnOptionPage(_context);

@@ -13,9 +13,10 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
     public class ReportATechnicalIssueSteps
     {
         private readonly ScenarioContext _context;
-
+        #region Pages
         private ReportaTechnicalIssuePage reportaTechnicalIssuePage;
         private EnterDetailsPage enterDetailsPage;
+        #endregion
         public ReportATechnicalIssueSteps(ScenarioContext context)
         {
             _context = context;

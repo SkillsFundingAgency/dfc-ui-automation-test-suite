@@ -23,7 +23,7 @@ namespace SFA.DFC.ContactUs.UITests.Project
         {
             var config = _configSection.GetConfigSection<ContactUs>();
             
-           // _context.SetProjectConfig(config);
+          
             _context.SetContactUsConfig(config);
 
             var mongoDbconfig = _configSection.GetConfigSection<MongoDbConfig>();

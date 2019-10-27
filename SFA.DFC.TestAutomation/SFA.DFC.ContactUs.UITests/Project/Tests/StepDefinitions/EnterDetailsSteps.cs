@@ -13,15 +13,17 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
     public class EnterDetailsSteps
     {
         private readonly ScenarioContext _context;
+        #region Pages
         private EnterDetailsPage enterDetailsPage;
         private ConfirmationPage confirmationPage;
-        
+        #endregion 
 
-    public EnterDetailsSteps(ScenarioContext context)
+        public EnterDetailsSteps(ScenarioContext context)
         {
             _context = context;
             enterDetailsPage = new EnterDetailsPage(_context);
         }
+        #region Whens
         [When(@"I complete the form with details '(.*)','(.*)','(.*)','(.*)','(.*)','(.*)'")]
         public void WhenICompleteTheFormWithDetails(string fname, string lname, string email, string confemail, string dob, string postcode)
         {
@@ -37,11 +39,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
         {
             confirmationPage = enterDetailsPage.ClickSend();
         }
-        [Then(@"I am directed to the confirmation page")]
-        public void ThenIAmDirectedToTheConfirmationPage()
-        {
-            confirmationPage.VerifyConfirmPage();
-        }
+       
         [When(@"I complete the feedback form with details '(.*)','(.*)','(.*)','(.*)'")]
         public void WhenICompleteTheFeedbackFormWithDetails(string fname, string lname, string email, string confemail)
         {
@@ -52,5 +50,13 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
         {
             enterDetailsPage.SelectAddContact(consent);
         }
+        #endregion
+        #region Thens
+        [Then(@"I am directed to the confirmation page")]
+        public void ThenIAmDirectedToTheConfirmationPage()
+        {
+            confirmationPage.VerifyConfirmPage();
+        }
+        #endregion 
     }
 }

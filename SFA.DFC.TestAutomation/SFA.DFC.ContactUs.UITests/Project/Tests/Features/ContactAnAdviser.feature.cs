@@ -82,25 +82,21 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
- testRunner.Given("I have navigated to the contact us page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have selected \'Contact an adviser\' option to continue onto the first contact fo" +
+                    "rm", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("I have clicked the link to online message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
- testRunner.And("I have selected \'Contact an adviser\' option to continue onto the first contact fo" +
-                    "rm", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
  testRunner.Then("I am directed to the first contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 10
+#line 8
  testRunner.When("I complete the first form with \'Funding\' option and \'Contact an Adviser Form\' que" +
                     "ry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
+#line 9
  testRunner.And("I complete the form with details \'Automated\',\'Test\',\'automatedtestesfa@mailinator" +
                     ".com\',\'automatedtestesfa@mailinator.com\',\'20/11/2000\',\'CV3 5FE\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+#line 10
  testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
+#line 11
  testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
+#line 12
  testRunner.Then("I am directed to the confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
