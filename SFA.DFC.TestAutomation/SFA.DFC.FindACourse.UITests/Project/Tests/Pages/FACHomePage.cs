@@ -52,10 +52,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _objectContext.Set("ProvName", strProv);
             return this;
         }
-        public void VerifyPageHeader()
-        {
-            _pageHelper.VerifyText(FACHeader, "Find a course");            
-        }
+       
         public CourseResultsPage ClickFindACourse()
         {
             _formHelper.ClickElement(FindACourseButton);
