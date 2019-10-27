@@ -22,7 +22,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private By SearchPageHeader = By.CssSelector(".govuk-heading-xl");
         private By CourseSearchList = By.CssSelector(".govuk-heading-m");
         private By FilterButton = By.CssSelector("button.js-enabled");
-        private By ErrorMsg = By.CssSelector(".govuk-body-s > p:nth-child(1)");
+        private By ErrorMsg = By.CssSelector(".govuk-body-s .govuk-body");
         private By Provider = By.Id("Provider");
         private By Location=By.Id("Location");
         private List<IWebElement> FiltersList => _pageHelper.FindElements(By.ClassName("govuk-radios__input"));
@@ -35,33 +35,43 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _objectContext = context.Get<ObjectContext>();
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
-            VerifyPageHeader();
+            
         }
         public void VerifyPageHeader()
         {
             _pageHelper.VerifyText(SearchPageHeader, "Search");
         }
-        public void VerifyErrorMessage(string errmsg)
+        public void VerifyErrorMessage()
         {
+            var errmsg = "We didn't find any results for '" + _objectContext.Get("CourseName") + "' with the active filters you've applied. Try searching again.";
             _pageHelper.VerifyText(ErrorMsg, errmsg);
-            //return this;
-        }        
+            
+        }
         public void SelectFilter(string filter)
         {
-           if (!string.IsNullOrWhiteSpace(filter))
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(filter))
                 {
                     var filteredText = filter.Replace(" ", string.Empty).ToUpper();
                     foreach (var button in FiltersList)
                     {
-                    var buttonText = button.GetAttribute("value").Replace(" ", string.Empty).ToUpper();
+                        var buttonText = button.GetAttribute("value").Replace(" ", string.Empty).ToUpper();
                         if (buttonText.Contains(filteredText))
                         {
                             button.Click();
+                            button.Selected.Should().BeTrue();
                         }
+
                     }
                 }
             }
-        public bool VerifyIsCourseFilterSelected(string filter)
+            catch
+            {
+                throw new Exception(filter + "not found");
+            }
+        }
+        public void VerifyIsCourseFilterSelected(string filter)
         {
             var selected = false;
 
@@ -84,12 +94,13 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
                     }
                 }
             }
-            return selected;
+            selected.Should().BeTrue();
+            
         }        
         public CourseDetailsPage ClickSelectedCourse(int courseNo)
         {
             List<IWebElement> listOfCourses = _pageHelper.FindElements(CourseSearchList);
-            _context.Add("CourseHeader", listOfCourses[courseNo - 1].Text);
+            _objectContext.Set("CourseHeader", _pageHelper.GetText(listOfCourses[courseNo - 1]));
             _formHelper.ClickElement(listOfCourses[courseNo-1]);
             return new CourseDetailsPage(_context);
         }
@@ -106,9 +117,9 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         }
         public void VerifyFilters()
         {
-            
+
             _pageHelper.VerifyValueAttributeOfAnElement(Provider, _objectContext.Get("ProvName"));
-            _pageHelper.VerifyValueAttributeOfAnElement (Location, _objectContext.Get("Location"));
+            _pageHelper.VerifyValueAttributeOfAnElement (Location, _objectContext.Get("LocationName"));
         }
         public void  EnterLocation(string strLocation)
         {

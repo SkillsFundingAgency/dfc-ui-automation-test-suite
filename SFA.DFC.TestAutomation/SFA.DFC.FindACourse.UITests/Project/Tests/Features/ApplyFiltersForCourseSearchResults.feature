@@ -3,15 +3,15 @@
 
 @Findacourse
 Scenario: Search for course and Apply filters
-	Given I have navigated to Find a course page
-	And I have searched for 'Maths'
+	Given I have searched for 'Maths'
+	Then I should be able to view the results
 	When I apply the filter 'Full time'
-	And I apply the filter 'Online'
-	And I apply the filter 'From Today'
-	And I have clicked the Apply Filter button
+		And I apply the filter 'Online'
+		And I apply the filter 'From today'
+		And I have clicked the Apply Filter button
 	Then the filter 'Full time' is selected
-	And the filter 'Online' is selected
-	And the filter 'From Today' is selected
+		And the filter 'Online' is selected
+		And the filter 'From today' is selected
 	
 	
 

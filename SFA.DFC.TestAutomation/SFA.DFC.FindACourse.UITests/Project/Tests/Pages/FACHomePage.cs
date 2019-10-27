@@ -15,6 +15,8 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
+        private readonly IWebDriver _webDriver;
+        private readonly FindACourseConfig _config;
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
@@ -30,19 +32,27 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
             _objectContext = context.Get<ObjectContext>();
-            VerifyPageHeader();
+            _config = context.GetFindACourseConfig<FindACourseConfig>();
+            _webDriver = context.GetWebDriver();          
         }
-        public void EnterLocation(string strLocation)
+        public FACHomePage NavigateToFACHomepage()
+        {
+            _webDriver.Url = _config.BaseUrl + "/find-a-course";
+            return this;
+        }
+        public FACHomePage EnterLocation(string strLocation)
         {
             _formHelper.EnterText(Location,strLocation);
-            _objectContext.Set("LocationName", strLocation);           
+            _objectContext.Set("LocationName", strLocation);
+            return this;
         }
-        public void EnterProvider(string strProv)
-        {
+        public FACHomePage EnterProvider(string strProv)
+        {             
             _formHelper.EnterText(ProviderName, strProv);
             _objectContext.Set("ProvName", strProv);
+            return this;
         }
-        public void  VerifyPageHeader()
+        public void VerifyPageHeader()
         {
             _pageHelper.VerifyText(FACHeader, "Find a course");            
         }
@@ -50,12 +60,12 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         {
             _formHelper.ClickElement(FindACourseButton);
             return new CourseResultsPage(_context);
-        }
-        public void EnterSearchCriteria(string strCourseName)
+        } 
+        public FACHomePage EnterSearchCriteria(string strCourseName)
         {
             _objectContext.Set("CourseName", strCourseName);
             _formHelper.EnterText(CourseNameSearchTerm, strCourseName);
-            
+            return this;
         }
     }
 }

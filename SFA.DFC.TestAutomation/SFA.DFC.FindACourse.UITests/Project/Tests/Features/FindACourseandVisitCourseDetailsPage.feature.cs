@@ -80,11 +80,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
- testRunner.Given("I have navigated to Find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.When("I have entered \'Maths\' in the course name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
- testRunner.And("I click the Find a course button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I have searched for \'Chemistry\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
  testRunner.Then("the results for the course should be listed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
@@ -92,9 +88,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 11
  testRunner.Then("I should be taken to the course details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 12
- testRunner.And("I should be able to validate the links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I should be able to validate the links", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.And("I should be able to click the links to access the information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I should be able to click the links to access the information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
