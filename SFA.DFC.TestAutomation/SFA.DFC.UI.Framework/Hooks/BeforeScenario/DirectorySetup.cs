@@ -25,7 +25,7 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
              + "Project\\Screenshots\\"
              + DateTime.Now.ToString("dd-MM-yyyy")
              + "\\";
-
+            
             if (!Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);
