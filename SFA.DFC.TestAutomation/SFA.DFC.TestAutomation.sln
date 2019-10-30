@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{75E174
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.ExploreCareers.UITests", "SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj", "{B9EFB6F1-B42F-4571-BC9E-93ABDB26E2D5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.FindACourse.UITests", "SFA.DFC.FindACourse.UITests\SFA.DFC.FindACourse.UITests.csproj", "{30CC3D49-3AC4-41DB-B15F-685948D6B0B5}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFA.DFC.SkillsAssessment.UITests", "SFA.DFC.SkillsAssessment.UITests\SFA.DFC.SkillsAssessment.UITests.csproj", "{6DF36EE8-CB1C-486A-A660-BE476236A05B}"
 EndProject
 Global
@@ -39,6 +41,10 @@ Global
 		{6DF36EE8-CB1C-486A-A660-BE476236A05B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DF36EE8-CB1C-486A-A660-BE476236A05B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DF36EE8-CB1C-486A-A660-BE476236A05B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CC3D49-3AC4-41DB-B15F-685948D6B0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CC3D49-3AC4-41DB-B15F-685948D6B0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CC3D49-3AC4-41DB-B15F-685948D6B0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CC3D49-3AC4-41DB-B15F-685948D6B0B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
