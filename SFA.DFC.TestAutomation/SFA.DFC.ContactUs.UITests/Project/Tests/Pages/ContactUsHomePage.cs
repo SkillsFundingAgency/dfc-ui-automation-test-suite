@@ -26,17 +26,14 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
             _context = context;
             _formHelper = context.Get<FormCompletionHelper>();
             _webDriver = context.GetWebDriver();
-            _config = context.GetContactUsConfig<ContactUs>();
-            
-        }
-        
+            _config = context.GetContactUsConfig<ContactUs>();            
+        }        
         public ContactUsHomePage  NavigateToContactUsPage()
         {
             _webDriver.Url = _config.BaseUrl + "/contact-us";
             return this;
         }
-
-      public SelectAnOptionPage ClickOnlineMessageLink()
+        public SelectAnOptionPage ClickOnlineMessageLink()
         {
             _formHelper.ClickElement(OnlineMessageLink);
             return new SelectAnOptionPage(_context);
