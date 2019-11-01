@@ -64,11 +64,12 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         }
         public FirstContactFormPage EnterQuery(string strQuery)
         {
-            if (_objectContext.Get("SelectOption") == "Contact an adviser")
+            string option = _objectContext.Get("SelectOption");
+            if(option.Equals("Contact an adviser",StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.EnterText(Message, strQuery);
             }
-            else if (_objectContext.Get("SelectOption") == "Give feedback")
+            else if (option.Equals("Give feedback", StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.EnterText(Feedback, strQuery);
             }
