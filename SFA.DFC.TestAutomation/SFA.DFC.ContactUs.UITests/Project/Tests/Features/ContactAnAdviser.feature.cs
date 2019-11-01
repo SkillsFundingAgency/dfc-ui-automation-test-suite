@@ -90,13 +90,11 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete the first form with \'Funding\' option and \'Contact an Adviser Form\' que" +
                     "ry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
- testRunner.And("I complete the form with details \'Automated\',\'Test\',\'automatedtestesfa@mailinator" +
-                    ".com\',\'automatedtestesfa@mailinator.com\',\'20/11/2000\',\'CV3 5FE\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I complete the form with details \'Automated Test\',\'automatedtestesfa@mailinator.c" +
+                    "om\',\'automatedtestesfa@mailinator.com\',\'20/11/2000\',\'CV3 5FE\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
  testRunner.Then("I am directed to the confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

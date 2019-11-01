@@ -1,4 +1,5 @@
-﻿using SFA.DFC.UI.Framework.TestSupport;
+﻿using SFA.DFC.UI.Framework;
+using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
 
@@ -30,6 +31,10 @@ namespace SFA.DFC.ContactUs.UITests.Project
             _context.SetMongoDbConfig(mongoDbconfig);
 
             _objectContext.Replace("browser", config.Browser);
+            _objectContext.Replace("build", config.Build);
+            _objectContext.Replace("EnvironmentName", config.EnvironmentName);
+            
+            
         }
     }
 }

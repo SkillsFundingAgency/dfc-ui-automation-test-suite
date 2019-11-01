@@ -31,15 +31,15 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
             
         }
         public void VerifyTechnicalPage()
-        { 
-        
+        {         
             _pageHelper.VerifyText(TechnicalPageTitle, "Report a technical issue");
         }
-        public void EnterTechnicalQuery(string query)
+        public ReportaTechnicalIssuePage  EnterTechnicalQuery(string query)
         {
-            _formHelper.EnterText(Message, query);
+            _formHelper.EnterText(Message, query);            
+            return this;
         }
-        public EnterDetailsPage ClickContinueonTechnicalForm()
+        public EnterDetailsPage  ClickContinueonTechnicalForm()
         {
             _formHelper.ClickElement(ContinueButton);
             return new EnterDetailsPage(_context);

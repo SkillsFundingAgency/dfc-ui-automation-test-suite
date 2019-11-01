@@ -25,9 +25,12 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
         [When(@"I complete the first technical form with '(.*)' query")]
         public void WhenICompleteTheFirstTechnicalFormWithQuery(string query)
         {
-            reportaTechnicalIssuePage.EnterTechnicalQuery(query);
-            enterDetailsPage = reportaTechnicalIssuePage.ClickContinueonTechnicalForm();
-            enterDetailsPage.VerifyDetailsPage();
+
+            enterDetailsPage = reportaTechnicalIssuePage
+                    .EnterTechnicalQuery(query)
+                    .ClickContinueonTechnicalForm()
+                    .VerifyDetailsPage();
+            
         }
     }
 }

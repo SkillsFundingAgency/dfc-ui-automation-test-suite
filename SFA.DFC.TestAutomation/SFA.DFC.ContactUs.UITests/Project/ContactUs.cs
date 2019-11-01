@@ -4,5 +4,9 @@
     {
         public string Browser { get; set; }
         public string BaseUrl { get; set; }
+
+        public string Build { get; set; }
+
+        public string EnvironmentName { get; set; }
     }
 }

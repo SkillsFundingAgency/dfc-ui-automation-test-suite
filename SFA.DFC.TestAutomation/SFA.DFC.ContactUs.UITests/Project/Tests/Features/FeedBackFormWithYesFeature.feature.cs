@@ -89,15 +89,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I complete the first form with \'Customer service\' option and \'Contact for feedbac" +
                     "k\' query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
-  testRunner.And("I complete the feedback form with details \'Automated\',\'Test\',\'automatedtestesfa@m" +
-                    "ailinator.com\',\'automatedtestesfa@mailinator.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I complete the feedback form with details \'Automated Test\',\'automatedtestesfa@mai" +
+                    "linator.com\',\'automatedtestesfa@mailinator.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
   testRunner.And("I select \'Yes\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
-  testRunner.And("I select the terms and conditions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
   testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+#line 11
  testRunner.Then("I am directed to the confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

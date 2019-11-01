@@ -18,7 +18,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By ContactAdviser = By.CssSelector("#ContactOptionType_ContactAdviser");
+        private By ContactAdviser = By.Id("ContactOptionType_ContactAdviser");
         private By TechnicalIssue = By.Id("ContactOptionType_Technical");
         private By Feedback = By.Id("ContactOptionType_Feedback");
         private By ContinueButton = By.Id("show-basic-details");
@@ -32,15 +32,16 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
 
         public SelectAnOptionPage SelectContactOption(string option)
         {
-            if (option == "Contact an adviser")
+           // if (option == "Contact an adviser")
+            if(option.Equals("Contact an adviser",StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.SelectRadioButton(ContactAdviser);
             }
-            else if (option == "Report a technical issue")
+            else if (option.Equals("Report a technical issue",StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.SelectRadioButton(TechnicalIssue);
             }
-            else if (option == "Give feedback")
+            else if (option.Equals("Give feedback",StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.SelectRadioButton(Feedback);
             }

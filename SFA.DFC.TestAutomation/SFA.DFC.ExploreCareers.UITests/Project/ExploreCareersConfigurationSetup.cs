@@ -28,6 +28,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project
             _context.SetMongoDbConfig(mongoDbconfig);
 
             _objectContext.Replace("browser", config.Browser);
+            
         }
     }
 }

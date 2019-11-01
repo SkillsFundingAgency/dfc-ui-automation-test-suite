@@ -21,10 +21,8 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By Message = By.Id("Message");
         private By Feedback = By.Id("Feedback");
         private By ContinueButton = By.Id("send-feedback-details");
-        
-
-
-
+        private By CategoryErrorMessage = By.LinkText("Choose a category");
+        private By IssueErrorMessage = By.Id("Message-error");
         private List<IWebElement> OptionsList => _pageHelper.FindElements(By.ClassName("govuk-radios__input"));
         #endregion
         public FirstContactFormPage(ScenarioContext context): base(context)
@@ -44,9 +42,9 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
             {
                 _pageHelper.VerifyText(QueryPageTitle, "What is your feedback about?");
             }
+            
         }
-
-       public FirstContactFormPage SelectQueryOption(string strOption)
+      public FirstContactFormPage SelectQueryOption(string strOption)
         {
             {
                 if (!string.IsNullOrWhiteSpace(strOption))
@@ -64,7 +62,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
                 return this;
             }
         }
-        public void EnterQuery(string strQuery)
+        public FirstContactFormPage EnterQuery(string strQuery)
         {
             if (_objectContext.Get("SelectOption") == "Contact an adviser")
             {
@@ -74,15 +72,23 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
             {
                 _formHelper.EnterText(Feedback, strQuery);
             }
-
+            return this;
         }
         public EnterDetailsPage ClickContinueFirstForm()
         {
             _formHelper.ClickElement(ContinueButton);
             return new EnterDetailsPage(_context);
         }
-        
+        public void VerifyErrorMessages()
+        {
+            _pageHelper.VerifyText(CategoryErrorMessage, "Choose a category");
+            _pageHelper.VerifyText(IssueErrorMessage, "Enter a message describing the issue");
+        }
 
-
+        public FirstContactFormPage ClickContinueonError()
+        {
+            _formHelper.ClickElement(ContinueButton);
+            return this;
+        }
     }
 }

@@ -24,27 +24,30 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
             enterDetailsPage = new EnterDetailsPage(_context);
         }
         #region Whens
-        [When(@"I complete the form with details '(.*)','(.*)','(.*)','(.*)','(.*)','(.*)'")]
-        public void WhenICompleteTheFormWithDetails(string fname, string lname, string email, string confemail, string dob, string postcode)
+        [When(@"I complete the form with details '(.*)','(.*)','(.*)','(.*)','(.*)'")]
+        public void WhenICompleteTheFormWithDetails(string fname, string email, string confemail, string dob, string postcode)
         {
-            enterDetailsPage.CompleteForm(fname, lname, email, confemail, dob, postcode);
-        }
-        [When(@"I select the terms and conditions")]
-        public void WhenISelectTheTermsAndConditions()
-        {
+            enterDetailsPage.CompleteForm(fname, email, confemail, dob, postcode);
             enterDetailsPage.SelectTermsandConditions();
         }
+        [When(@"I click send with nothing selected on the second form")]
+       public void WhenIClickSendWithNothingSelectedOnTheSecondForm()
+       {
+            enterDetailsPage.ClickSendWithError();
+        }
+      
         [When(@"I click send")]
         public void WhenIClickSend()
         {
             confirmationPage = enterDetailsPage.ClickSend();
         }
-       
-        [When(@"I complete the feedback form with details '(.*)','(.*)','(.*)','(.*)'")]
-        public void WhenICompleteTheFeedbackFormWithDetails(string fname, string lname, string email, string confemail)
+        [When(@"I complete the feedback form with details '(.*)','(.*)','(.*)'")]
+        public void WhenICompleteTheFeedbackFormWithDetails(string fname, string email, string confemail)
         {
-            enterDetailsPage.CompleteFeedbackForm(fname, lname, email, confemail);
+            enterDetailsPage.CompleteFeedbackForm(fname, email, confemail);
+            enterDetailsPage.SelectTermsandConditions();
         }
+
         [When(@"I select '(.*)' for additional contact")]
         public void WhenISelectForAdditionalContact(string consent)
         {
@@ -56,6 +59,17 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions
         public void ThenIAmDirectedToTheConfirmationPage()
         {
             confirmationPage.VerifyConfirmPage();
+        }
+        [Then(@"an error message is displayed on the second form")]
+        public void ThenAnErrorMessageIsDisplayedOnTheSecondForm()
+        {
+            enterDetailsPage.VerifyErrorMessages();
+        }
+        [Then(@"a date of birth error is displayed")]
+        public void ThenADateOfBirthErrorIsDisplayed()
+        {
+            enterDetailsPage.ClickSendWithError();
+            enterDetailsPage.VerifyBirthDateErrorMessage();
         }
         #endregion 
     }

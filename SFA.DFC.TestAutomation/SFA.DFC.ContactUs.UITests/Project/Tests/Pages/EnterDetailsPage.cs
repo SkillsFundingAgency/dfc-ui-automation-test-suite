@@ -16,7 +16,10 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private readonly PageInteractionHelper _pageHelper;
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
-        
+        private readonly ObjectContext _objectContext;
+        private readonly IWebDriver _webDriver;
+
+
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
@@ -30,27 +33,44 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By Year = By.Id("DateOfBirthYear");
         private By PostCode = By.Id("Postcode");
         private By ContactYes = By.Id("radio-inline-1");
+        private By FirstNameError = By.Id("Firstname-error");
+        private By LastNameError = By.Id("Lastname-error");
+        private By EMailError = By.Id("EmailAddress-error");
+        private By PostCodeError = By.Id("Postcode-error");
+        private By Terms_CondError = By.Id("AcceptTermsAndConditions-error");
+        private By BirthDateError = By.CssSelector(".field-validation-error");
         private By ContactNo = By.Id("radio-inline-2");
-        private By Terms_Cond = By.Id("AcceptTermsAndConditions");
+        private IWebElement TermsCond => _webDriver.FindElement(By.CssSelector("#AcceptTermsAndConditions"));
+        //private IWebElement TermsCond => _webDriver.FindElement(By.Id("AcceptTermsAndConditions-error"));
+
+
         private By SendButton = By.CssSelector(".govuk-button");
         #endregion
         public EnterDetailsPage(ScenarioContext context): base(context)
         {
             _context = context;
+            _webDriver = context.GetWebDriver();
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
-           
+            _objectContext = context.Get<ObjectContext>();
         }
-        public void VerifyDetailsPage()
+        public EnterDetailsPage VerifyDetailsPage()
         {
             _pageHelper.VerifyPage(DetailsPageTitle, "Enter your details");
+            return this;
         }
 
-        public void CompleteForm(string fname, string lname,string email,string confemail,string dob,string postcode)
+        public EnterDetailsPage ClickSendWithError()
         {
+            _formHelper.ClickElement(SendButton);
+            return this;
+        }
+
+        public void CompleteForm(string fname,string email,string confemail,string dob,string postcode)
+        {          
             
             _formHelper.EnterText(FirstName, fname);
-            _formHelper.EnterText(LastName, lname);
+            _formHelper.EnterText(LastName,GetEnvBuild());
             _formHelper.EnterText(EmailAddress, email);
             _formHelper.EnterText(ConfirmEmail, confemail);
             DateTime birthday = DateTime.ParseExact(dob, "dd/M/yyyy", CultureInfo.InvariantCulture);
@@ -58,30 +78,38 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
             _formHelper.EnterText(Month, birthday.Month.ToString());
             _formHelper.EnterText(Year, birthday.Year.ToString());
             _formHelper.EnterText(PostCode, postcode);
+        }       
+
+        public string GetEnvBuild()
+        {
+            return _objectContext.Get("EnvironmentName") + "-" + _objectContext.Get("build");
         }
 
-        public void CompleteFeedbackForm(string fname, string lname, string email, string confemail)
+        public void CompleteFeedbackForm(string fname, string email, string confemail)
         {
             _formHelper.EnterText(FirstName, fname);
-            _formHelper.EnterText(LastName, lname);
+            _formHelper.EnterText(LastName,GetEnvBuild());
             _formHelper.EnterText(EmailAddress, email);
             _formHelper.EnterText(ConfirmEmail, confemail);
         }
-
         public void SelectTermsandConditions()
         {
-            _context.GetWebDriver().FindElement(Terms_Cond).Click();
+            //Using this code to select the check box as the select check box function doesn't seem to identify the check box.
+            if (TermsCond.Selected==false)
+             {
+                 TermsCond.Click();
+             }
+           
+            
         }
-
         public ConfirmationPage ClickSend()
         {
             _formHelper.ClickElement(SendButton);
             return new ConfirmationPage(_context);
         }
-
         public void SelectAddContact(string consent)
         {
-            if (consent == "Yes")
+            if (consent.Equals("Yes",StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.SelectRadioButton(ContactYes);
             }
@@ -89,6 +117,18 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
             {
                 _formHelper.SelectRadioButton(ContactNo);
             }
+        }
+        public void VerifyErrorMessages()
+        {
+            _pageHelper.VerifyText(FirstNameError, "Enter your first name");
+            _pageHelper.VerifyText(LastNameError, "Enter your last name");
+            _pageHelper.VerifyText(EMailError, "Enter your email address");
+            _pageHelper.VerifyText(PostCodeError, "Enter your postcode");
+            _pageHelper.VerifyText(Terms_CondError, "You must accept our Terms and Conditions");
+        }
+        public void VerifyBirthDateErrorMessage()
+        {
+            _pageHelper.VerifyText(BirthDateError, "You must be over 13 to use this service");
         }
     }
 }
