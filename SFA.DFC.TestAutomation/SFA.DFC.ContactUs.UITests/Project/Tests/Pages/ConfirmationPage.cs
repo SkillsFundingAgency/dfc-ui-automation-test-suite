@@ -15,7 +15,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By ConfirmPageTitle = By.CssSelector(".govuk-heading-xl");
+        private By ConfirmPageTitle = By.ClassName("govuk-heading-xl");
 
         #endregion
         public ConfirmationPage(ScenarioContext context) : base(context)

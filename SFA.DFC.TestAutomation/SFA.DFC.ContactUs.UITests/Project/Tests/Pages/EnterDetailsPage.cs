@@ -23,7 +23,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By DetailsPageTitle = By.CssSelector(".govuk-heading-xl");
+        private By DetailsPageTitle = By.ClassName("govuk-heading-xl");
         private By FirstName = By.Id("Firstname");
         private By LastName = By.Id("Lastname");
         private By EmailAddress = By.Id("EmailAddress");
@@ -38,13 +38,10 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By EMailError = By.Id("EmailAddress-error");
         private By PostCodeError = By.Id("Postcode-error");
         private By Terms_CondError = By.Id("AcceptTermsAndConditions-error");
-        private By BirthDateError = By.CssSelector(".field-validation-error");
+        private By BirthDateError = By.ClassName("field-validation-error");
         private By ContactNo = By.Id("radio-inline-2");
-        private IWebElement TermsCond => _webDriver.FindElement(By.CssSelector("#AcceptTermsAndConditions"));
-        //private IWebElement TermsCond => _webDriver.FindElement(By.Id("AcceptTermsAndConditions-error"));
-
-
-        private By SendButton = By.CssSelector(".govuk-button");
+        private IWebElement TermsCond => _webDriver.FindElement(By.ClassName("govuk-checkboxes__input"));
+        private By SendButton = By.ClassName("govuk-button");
         #endregion
         public EnterDetailsPage(ScenarioContext context): base(context)
         {

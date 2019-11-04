@@ -17,7 +17,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By QueryPageTitle = By.CssSelector(".govuk-fieldset__heading");
+        private By QueryPageTitle = By.ClassName("govuk-fieldset__heading");
         private By Message = By.Id("Message");
         private By Feedback = By.Id("Feedback");
         private By ContinueButton = By.Id("send-feedback-details");

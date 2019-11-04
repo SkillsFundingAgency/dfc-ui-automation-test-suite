@@ -22,6 +22,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By TechnicalIssue = By.Id("ContactOptionType_Technical");
         private By Feedback = By.Id("ContactOptionType_Feedback");
         private By ContinueButton = By.Id("show-basic-details");
+        
         #endregion 
         public SelectAnOptionPage(ScenarioContext context): base(context)
         {
@@ -32,7 +33,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
 
         public SelectAnOptionPage SelectContactOption(string option)
         {
-           // if (option == "Contact an adviser")
+          
             if(option.Equals("Contact an adviser",StringComparison.OrdinalIgnoreCase))
             {
                 _formHelper.SelectRadioButton(ContactAdviser);
