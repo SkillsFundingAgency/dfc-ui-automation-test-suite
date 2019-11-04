@@ -31,7 +31,7 @@ namespace SFA.DFC.ContactUs.UITests.Project
             _context.SetMongoDbConfig(mongoDbconfig);
 
             _objectContext.Replace("browser", config.Browser);
-            _objectContext.Replace("build", config.Build);
+            _objectContext.Replace("build", config.BuildNumber);
             _objectContext.Replace("EnvironmentName", config.EnvironmentName);
             
             

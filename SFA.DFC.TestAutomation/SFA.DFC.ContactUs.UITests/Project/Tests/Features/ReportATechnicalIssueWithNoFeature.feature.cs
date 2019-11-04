@@ -18,20 +18,20 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Report a Technical Issue")]
-    public partial class ReportATechnicalIssueFeature
+    [NUnit.Framework.DescriptionAttribute("Report a Technical Issue with No in Additonal Contact")]
+    public partial class ReportATechnicalIssueWithNoInAdditonalContactFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ReportATechnicalIssueFeature.feature"
+#line 1 "ReportATechnicalIssueWithNoFeature.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Report a Technical Issue", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Report a Technical Issue with No in Additonal Contact", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,12 +70,12 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Report a Technical Issue")]
+        [NUnit.Framework.DescriptionAttribute("Report a Technical Issue wth No for additonal contact")]
         [NUnit.Framework.CategoryAttribute("Contactus")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void ReportATechnicalIssue()
+        public virtual void ReportATechnicalIssueWthNoForAdditonalContact()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Report a Technical Issue", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Report a Technical Issue wth No for additonal contact", null, new string[] {
                         "Contactus",
                         "Smoke"});
 #line 4
@@ -92,7 +92,7 @@ this.ScenarioInitialize(scenarioInfo);
      testRunner.And("I complete the feedback form with details \'Automated Test\',\'automatedtestesfa@mai" +
                     "linator.com\',\'automatedtestesfa@mailinator.com\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
-  testRunner.And("I select \'Yes\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I select \'No\' for additional contact", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
   testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
