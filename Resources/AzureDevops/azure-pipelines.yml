@@ -21,18 +21,18 @@ jobs:
 
   steps:
 
-  # Build SFA.DFC.ExploreCareers.UITests
+  # Build all SFA.DFC.TestAutomation projects
   - task: DotNetCoreCLI@2
-    displayName: 'Build - dotnet build SFA.DFC.ExploreCareers.UITests'
+    displayName: 'Build - dotnet build all UITests'
     inputs:
       command: 'build'
       projects: 'SFA.DFC.TestAutomation\**\*.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\"'  
+      arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.TestAutomation\"'  
 
   # Package build output into a zip artifact
   - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: SFA.DFC.ExploreCareers.UITests'
+    displayName: 'Publish Artifact: SFA.DFC.TestAutomation'
     inputs:
-      pathtoPublish: $(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\
-      artifactName: SFA.DFC.ExploreCareers.UITests
+      pathtoPublish: $(build.artifactstagingdirectory)\SFA.DFC.TestAutomation\
+      artifactName: SFA.DFC.TestAutomation
       publishLocation: container
