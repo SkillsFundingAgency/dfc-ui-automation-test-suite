@@ -25,7 +25,8 @@ jobs:
     displayName: 'Build - dotnet build SFA.DFC.ExploreCareers.UITests'
     inputs:
       command: 'build'
-      projects: 'SFA.DFC.TestAutomation\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
+      # projects: 'SFA.DFC.TestAutomation\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
+      projects: 'SFA.DFC.TestAutomation\**\*.UITests.csproj'
       arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\"'  
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: SFA.DFC.ExploreCareers.UITests'
