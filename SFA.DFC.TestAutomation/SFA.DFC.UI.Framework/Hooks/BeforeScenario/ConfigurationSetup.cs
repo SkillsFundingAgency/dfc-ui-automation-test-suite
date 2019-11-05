@@ -36,7 +36,7 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
             {
                 TimeOutConfig = _configSection.GetConfigSection<TimeOutConfig>(),
                 BrowserStackSetting = _configSection.GetConfigSection<BrowserStackSetting>(),
-                TakeEveryPageScreenShot = Configurator.IsVstsExecution
+                TakeEveryPageScreenShot = Configurator.IsVstsExecution                
             };
 
             _context.Set(configuration);
@@ -48,6 +48,8 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
             var testExecutionConfig = _configSection.GetConfigSection<TestExecutionConfig>();
 
             _objectContext.SetBrowser(testExecutionConfig.Browser);
+            
+            
         }
     }
 }

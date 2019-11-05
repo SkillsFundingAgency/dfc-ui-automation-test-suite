@@ -28,6 +28,7 @@ namespace SFA.DFC.FindACourse.UITests.Project
             var mongoDbconfig = _configSection.GetConfigSection<MongoDbConfig>();
             _context.SetMongoDbConfig(mongoDbconfig);
             _objectContext.Replace("browser", config.Browser);
+            
         }
     }
 }
