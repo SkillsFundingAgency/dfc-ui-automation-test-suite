@@ -3,6 +3,7 @@ variables:
     SolutionBaseName: 'SFA.DFC.TestAutomation'
     BuildPlatform: 'any cpu'
     BuildConfiguration: 'release'
+    PublishDriverArguments: '-p:PublishChromeDriver=true -p:PublishGeckoDriver=true'
 
 resources:
   repositories:
@@ -27,7 +28,7 @@ jobs:
     inputs:
       command: 'publish'
       projects: '$(SolutionBaseName)\SFA.DFC.ContactUs.UITests\SFA.DFC.ContactUs.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" -p:PublishChromeDriver=true'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
       publishWebProjects: False
       zipAfterPublish: False
 
@@ -37,7 +38,7 @@ jobs:
     inputs:
       command: 'publish'
       projects: '$(SolutionBaseName)\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" -p:PublishChromeDriver=true'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
       publishWebProjects: False
       zipAfterPublish: False
 
@@ -47,7 +48,7 @@ jobs:
     inputs:
       command: 'publish'
       projects: '$(SolutionBaseName)\SFA.DFC.FindACourse.UITests\SFA.DFC.FindACourse.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" -p:PublishChromeDriver=true'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
       publishWebProjects: False
       zipAfterPublish: False
 
@@ -57,7 +58,7 @@ jobs:
     inputs:
       command: 'publish'
       projects: '$(SolutionBaseName)\SFA.DFC.SkillsAssessment.UITests\SFA.DFC.SkillsAssessment.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" -p:PublishChromeDriver=true'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
       publishWebProjects: False
       zipAfterPublish: False
 
