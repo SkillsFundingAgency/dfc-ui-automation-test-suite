@@ -3,6 +3,7 @@ variables:
     SolutionBaseName: 'SFA.DFC.TestAutomation'
     BuildPlatform: 'any cpu'
     BuildConfiguration: 'release'
+    PublishDriverArguments: '-p:PublishChromeDriver=true -p:PublishGeckoDriver=true'
 
 resources:
   repositories:
@@ -14,22 +15,57 @@ jobs:
 - job: BuildDotNetCore
   displayName: Build-DotNetCore
   pool:
-    name: Continuous Integration 02 - SSD - 160ACU
+    name: NCS - CI and CD
     demands:
     - msbuild
     - visualstudio
 
   steps:
-  # Build SFA.DFC.ExploreCareers.UITests
+
+  # Publish ContactUs
   - task: DotNetCoreCLI@2
-    displayName: 'Build - dotnet build SFA.DFC.ExploreCareers.UITests'
+    displayName: 'Publish ContactUs UI tests'
     inputs:
-      command: 'build'
-      projects: 'SFA.DFC.TestAutomation\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\"'  
+      command: 'publish'
+      projects: '$(SolutionBaseName)\SFA.DFC.ContactUs.UITests\SFA.DFC.ContactUs.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
+      publishWebProjects: False
+      zipAfterPublish: False
+
+  # Publish Explore Careers
+  - task: DotNetCoreCLI@2
+    displayName: 'PublishExplore Careers UI tests'
+    inputs:
+      command: 'publish'
+      projects: '$(SolutionBaseName)\SFA.DFC.ExploreCareers.UITests\SFA.DFC.ExploreCareers.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
+      publishWebProjects: False
+      zipAfterPublish: False
+
+  # Publish Find a Course
+  - task: DotNetCoreCLI@2
+    displayName: 'Publish Find a Course UI tests'
+    inputs:
+      command: 'publish'
+      projects: '$(SolutionBaseName)\SFA.DFC.FindACourse.UITests\SFA.DFC.FindACourse.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
+      publishWebProjects: False
+      zipAfterPublish: False
+
+  # Publish Skills Assessment
+  - task: DotNetCoreCLI@2
+    displayName: 'Publish Skills Assessment UI tests'
+    inputs:
+      command: 'publish'
+      projects: '$(SolutionBaseName)\SFA.DFC.SkillsAssessment.UITests\SFA.DFC.SkillsAssessment.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
+      publishWebProjects: False
+      zipAfterPublish: False
+
+  # Package build output into a zip artifact
   - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: SFA.DFC.ExploreCareers.UITests'
+    displayName: 'Publish Artifact: $(SolutionBaseName)'
     inputs:
-      pathtoPublish: $(build.artifactstagingdirectory)\SFA.DFC.ExploreCareers.UITests\
-      artifactName: SFA.DFC.ExploreCareers.UITests
+      pathtoPublish: $(build.artifactstagingdirectory)\$(SolutionBaseName)\
+      artifactName: $(SolutionBaseName)
       publishLocation: container

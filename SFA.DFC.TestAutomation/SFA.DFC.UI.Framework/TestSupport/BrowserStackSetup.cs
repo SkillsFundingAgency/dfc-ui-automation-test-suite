@@ -9,11 +9,9 @@ namespace SFA.DFC.UI.Framework.TestSupport
 {
     public class BrowserStackSetup
     {
-        private static readonly string _buildDateTime;
 
         static BrowserStackSetup()
         {
-            _buildDateTime = DateTime.Now.ToString("ddMMMyyyy_HH:mm:ss").ToUpper();
         }
 
         public static IWebDriver Init(BrowserStackSetting options, EnvironmentConfig executionConfig)
@@ -31,7 +29,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
             AddAdditionalCapability(chromeOption, "resolution", options.Resolution);
             AddAdditionalCapability(chromeOption, "browserstack.user", options.User);
             AddAdditionalCapability(chromeOption, "browserstack.key", options.Key);
-            AddAdditionalCapability(chromeOption, "build", $"{options.Build}_{executionConfig.EnvironmentName.ToUpper()}_{_buildDateTime}");
+            AddAdditionalCapability(chromeOption, "build", $"dfc.acceptance.{executionConfig.EnvironmentName.ToUpper()}.{options.Build}");
             AddAdditionalCapability(chromeOption, "project", options.Project);
             AddAdditionalCapability(chromeOption, "browserstack.debug", "true");
             AddAdditionalCapability(chromeOption, "name", options.Name);

@@ -2,16 +2,16 @@
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
 
-namespace SFA.DFC.ExploreCareers.UITests.Project
+namespace SFA.DFC.SkillsAssessment.UITests.Project
 {
     [Binding]
-    public class ExploreCareersConfigurationSetup
+    public class SkillsAssessmentConfigurationSetup
     {
         private readonly ScenarioContext _context;
         private readonly ObjectContext _objectContext;
         private readonly IConfigSection _configSection;
 
-        public ExploreCareersConfigurationSetup(ScenarioContext context)
+        public SkillsAssessmentConfigurationSetup(ScenarioContext context)
         {
             _context = context;
             _configSection = context.Get<IConfigSection>();
@@ -21,14 +21,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project
         [BeforeScenario(Order = 2)]
         public void SetUpProjectSpecificConfiguration()
         {
-            var config = _configSection.GetConfigSection<ExploreCareersConfig>();
-            _context.SetExploreCareersConfig(config);
+            var config = _configSection.GetConfigSection<SkillsAssessmentConfig>();
+            //_context.SetExploreCareersConfig(config);
+            _context.SetSkillsAssessmentConfig(config);
 
             var mongoDbconfig = _configSection.GetConfigSection<MongoDbConfig>();
             _context.SetMongoDbConfig(mongoDbconfig);
 
             _objectContext.Replace("browser", config.Browser);
-            
         }
     }
 }
