@@ -84,7 +84,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
- testRunner.Given("I navigate to the \'cricketer\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to the \'assistant-immigration-officer\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.When("I click no to job profile feedback", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9

@@ -4,7 +4,7 @@
 @JobProfile
 @Smoke
 Scenario: Related careers are displayed on job profiles
-	Given I navigate to the 'dental-therapist' profile
+	Given I navigate to the 'gp' profile
 	Then the related careers section should be displayed
 		And there should be no more than 5 careers
 	When I click on career title '1'
