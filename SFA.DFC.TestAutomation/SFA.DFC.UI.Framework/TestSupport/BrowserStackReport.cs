@@ -32,7 +32,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         {
             return new RestClient(options.AutomateSessions)
             {
-                Authenticator = new HttpBasicAuthenticator(options.User, options.Key)
+                Authenticator = new HttpBasicAuthenticator(options.BrowserStackUser, options.BrowserStackKey)
             };
         }
 

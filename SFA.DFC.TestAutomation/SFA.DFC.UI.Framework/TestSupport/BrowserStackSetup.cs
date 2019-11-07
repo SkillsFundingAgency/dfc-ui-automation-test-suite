@@ -27,9 +27,9 @@ namespace SFA.DFC.UI.Framework.TestSupport
             AddAdditionalCapability(chromeOption, "os", options.Os);
             AddAdditionalCapability(chromeOption, "os_version", options.Osversion);
             AddAdditionalCapability(chromeOption, "resolution", options.Resolution);
-            AddAdditionalCapability(chromeOption, "browserstack.user", options.User);
-            AddAdditionalCapability(chromeOption, "browserstack.key", options.Key);
-            AddAdditionalCapability(chromeOption, "build", $"dfc.acceptance.{executionConfig.EnvironmentName.ToUpper()}.{options.Build}");
+            AddAdditionalCapability(chromeOption, "browserstack.user", options.BrowserStackUser);
+            AddAdditionalCapability(chromeOption, "browserstack.key", options.BrowserStackKey);
+            AddAdditionalCapability(chromeOption, "build", $"dfc.acceptance.{executionConfig.EnvironmentName.ToUpper()}.{options.BuildNumber}");
             AddAdditionalCapability(chromeOption, "project", options.Project);
             AddAdditionalCapability(chromeOption, "browserstack.debug", "true");
             AddAdditionalCapability(chromeOption, "name", options.Name);
@@ -42,7 +42,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
 
         private static void CheckBrowserStackLogin(BrowserStackSetting options)
         {
-            if (options.User == null || options.Key == null)
+            if (options.BrowserStackUser == null || options.BrowserStackKey == null)
                 throw new Exception("Please enter browserstack credentials");
         }
 

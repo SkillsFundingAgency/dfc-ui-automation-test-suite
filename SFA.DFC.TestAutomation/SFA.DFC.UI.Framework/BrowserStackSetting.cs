@@ -6,9 +6,9 @@ namespace SFA.DFC.UI.Framework
 {
     public class BrowserStackSetting
     {
-        public string User { get; set; }
+        public string BrowserStackUser { get; set; }
 
-        public string Key { get; set; }
+        public string BrowserStackKey { get; set; }
 
         public string Browser { get; set; }
 
@@ -16,7 +16,7 @@ namespace SFA.DFC.UI.Framework
 
         public string AutomateSessions => "https://www.browserstack.com/automate/sessions/";
 
-        public string Build { get; set; }
+        public string BuildNumber { get; set; }
 
         public string Project { get; set; }
 
