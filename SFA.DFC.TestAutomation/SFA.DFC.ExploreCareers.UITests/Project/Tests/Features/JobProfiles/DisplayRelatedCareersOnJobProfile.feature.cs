@@ -84,7 +84,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 7
- testRunner.Given("I navigate to the \'dental-therapist\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to the \'gp\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.Then("the related careers section should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9

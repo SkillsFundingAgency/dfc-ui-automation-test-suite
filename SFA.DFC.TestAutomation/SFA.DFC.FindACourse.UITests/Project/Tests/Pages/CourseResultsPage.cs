@@ -20,7 +20,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         #region Page Elements
         protected override string PageTitle => "";
         private By SearchPageHeader = By.CssSelector(".govuk-heading-xl");
-        private By CourseSearchList = By.CssSelector(".govuk-heading-m");
+        private By CourseSearchList = By.CssSelector(".govuk-heading-m .govuk-link");
         private By FilterButton = By.CssSelector("button.js-enabled");
         private By ErrorMsg = By.CssSelector(".govuk-body-s .govuk-body");
         private By Provider = By.Id("Provider");
@@ -99,15 +99,15 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         }        
         public CourseDetailsPage ClickSelectedCourse(int courseNo)
         {
-            List<IWebElement> listOfCourses = _pageHelper.FindElements(CourseSearchList);
+            var listOfCourses = _pageHelper.FindElements(CourseSearchList);
             _objectContext.Set("CourseHeader", _pageHelper.GetText(listOfCourses[courseNo - 1]));
             _formHelper.ClickElement(listOfCourses[courseNo-1]);
             return new CourseDetailsPage(_context);
         }
         public void VerifyResults()
         {
-            string selectedCourseText = _objectContext.Get("CourseName");                   
-            _pageHelper.VerifyText(CourseSearchList, selectedCourseText);
+            _pageHelper.GetCountOfElementsGroup(CourseSearchList)
+                .Should().BeGreaterThan(0);
         }
 
         public CourseResultsPage ClickApplyFilter()
