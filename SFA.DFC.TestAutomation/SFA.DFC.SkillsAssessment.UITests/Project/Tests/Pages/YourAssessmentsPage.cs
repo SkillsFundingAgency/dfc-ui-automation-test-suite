@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
@@ -65,12 +67,25 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         }
         public void VerifyIFFileDownloaded(string docType)
         {
-            var docExt = docType =="word" ? "docx" : docType;
-            var FileName = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\Skills Health Check." + docExt;
-            if (!File.Exists(FileName))
-            { 
-                throw new Exception("File Not Found");
-            }                      
+            var docToLower = docType.ToLowerInvariant();
+            var docExt = docToLower == "word" ? "docx" : docToLower;
+
+            object response = ((IJavaScriptExecutor)_webDriver).ExecuteAsyncScript(
+               "var url = arguments[0];" +
+               "var callback = arguments[arguments.length - 1];" +
+               $"var params = 'DownLoadType={docToLower}';" +
+               "var xhr = new XMLHttpRequest();" +
+               "xhr.open('POST', url , true);" +
+               "xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');" +
+               "xhr.onreadystatechange = function() {" +
+               "  if (xhr.readyState == 4) {" +
+               "    callback(xhr.getAllResponseHeaders());" +
+               "  }" +
+               "};" +
+               "xhr.send(params);", "/skills-health-check/your-assessments/DownloadDocument/");
+
+            response.ToString().Should().Contain($"content-type: application/{docExt}");
+
         }
 
     }
