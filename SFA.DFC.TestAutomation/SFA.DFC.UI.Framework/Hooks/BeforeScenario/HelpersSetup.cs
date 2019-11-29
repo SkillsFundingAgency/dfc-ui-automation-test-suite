@@ -30,6 +30,7 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
             var retryHelper = new RetryHelper(webDriver);
             _context.Set(new SqlDatabaseConnectionHelper());
             _context.Set(new PageInteractionHelper(webDriver, webDriverwaitHelper, retryHelper));
+            _context.Set(new AxeHelper(webDriver));
             var formCompletionHelper = new FormCompletionHelper(webDriver, webDriverwaitHelper, retryHelper);
             _context.Set(formCompletionHelper);
             _context.Set(new TableRowHelper(webDriver, formCompletionHelper));
