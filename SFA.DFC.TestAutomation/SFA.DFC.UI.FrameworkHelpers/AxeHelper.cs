@@ -7,13 +7,15 @@ namespace SFA.DFC.UI.FrameworkHelpers
     public class AxeHelper
     {
         private readonly IWebDriver _webDriver;
+        private int _i;
 
         public AxeHelper(IWebDriver webDriver)
         {
             _webDriver = webDriver;
+            _i = 0;
         }
 
-        public void LogResult(IWebDriver webDriver, string axeFile)
+        public void AxeAnalyzer(IWebDriver webDriver, string axeFile)
         {
 
             using (StreamWriter sw = new StreamWriter(axeFile, append: true))
@@ -23,10 +25,14 @@ namespace SFA.DFC.UI.FrameworkHelpers
 
                 if (results.Passes.Length > 0)
                 {
-                    sw.WriteLine(_webDriver.Title);
-                    sw.WriteLine("======================================================");
-                    sw.WriteLine(_webDriver.Url.ToLower());
+                    sw.WriteLine("Service: " +_webDriver.Title);
+                    while (_i < (_webDriver.Title.Length+9))
+                    {
+                        sw.Write("=");
+                        _i++;
+                    }
                     sw.WriteLine("\n");
+                    sw.WriteLine("URL: " +_webDriver.Url.ToLower());
 
                     if (results.Violations.Length > 0)
                     {

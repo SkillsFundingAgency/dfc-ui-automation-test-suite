@@ -40,7 +40,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         public FACHomePage NavigateToFACHomepage()
         {
             _webDriver.Url = _config.BaseUrl + "/find-a-course";
-            _axeHelper.LogResult(_webDriver, _objectContext.GetFile());
+            _axeHelper.AxeAnalyzer(_webDriver, _objectContext.GetFile());
             return this;
         }
         public FACHomePage EnterLocation(string strLocation)
