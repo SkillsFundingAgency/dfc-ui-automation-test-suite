@@ -1,6 +1,6 @@
-﻿namespace SFA.DFC.ExploreCareers.UITests.Project
+﻿namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project
 {
-    public class ExploreCareersConfig
+    public class MatchYourSkillsToCareerConfig
     {
         public string Browser { get; set; }
         public string BaseUrl { get; set; }

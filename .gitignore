@@ -234,8 +234,6 @@ _Pvt_Extensions
 .paket/paket.exe
 
 #Appsettings
-/SFA.DFC.TestAutomation/SFA.DFC.FindACourse.UITests/appsettings.Project.json
-/SFA.DFC.TestAutomation/SFA.DFC.UI.Framework/appsettings.json
 /SFA.DFC.TestAutomation/SFA.DFC.UI.FrameworkHelpers/DummyHelper.cs
-**/appsettings*.json
-**/appsettings.json
+**/appsettings.local*.json
+#**/appsettings.json

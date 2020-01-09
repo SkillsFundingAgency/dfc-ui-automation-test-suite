@@ -11,7 +11,6 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
     public class FACHomePage : BasePage
     {
         #region Helpers
-        private readonly AxeHelper _axeHelper;
         private readonly PageInteractionHelper _pageHelper;
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
@@ -30,7 +29,6 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         public FACHomePage(ScenarioContext context) : base(context)
         {
             _context = context;
-            _axeHelper = context.Get<AxeHelper>();
             _pageHelper = context.Get<PageInteractionHelper>();
             _formHelper = context.Get<FormCompletionHelper>();
             _objectContext = context.Get<ObjectContext>();
@@ -40,7 +38,6 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         public FACHomePage NavigateToFACHomepage()
         {
             _webDriver.Url = _config.BaseUrl + "/find-a-course";
-            _axeHelper.AxeAnalyzer(_webDriver, _objectContext.GetFile());
             return this;
         }
         public FACHomePage EnterLocation(string strLocation)

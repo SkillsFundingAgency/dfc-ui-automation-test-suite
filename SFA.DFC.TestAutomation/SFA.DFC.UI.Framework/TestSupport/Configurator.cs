@@ -37,6 +37,8 @@ namespace SFA.DFC.UI.Framework.TestSupport
             return ConfigurationBuilder()
             .AddJsonFile("appsettings.json", true)
             .AddJsonFile("appsettings.Project.json", true)
+            .AddJsonFile("appsettings.local.Project.json", true)
+            .AddJsonFile("appsettings.local.json", true)
             .AddEnvironmentVariables()
             //.AddUserSecrets("BrowserStackSecrets")
             //.AddUserSecrets($"{ProjectName}_{EnvironmentName}_Secrets")
