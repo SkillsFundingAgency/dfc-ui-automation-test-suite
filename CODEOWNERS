@@ -1,3 +1,4 @@
 #Requires preview from DevOps when making changes to any files in the Resources folder or it's subfolders
 /Resources/    @SkillsFundingAgency/dfc-devops
-/SFA.DFC.TestAutomation/    @SkillsFundingAgency/dfc-liveservicetesters
+/SFA.DFC.TestAutomation/SFA.DFC.UI.Framework/    @SkillsFundingAgency/dfc-liveservicetesters
+/SFA.DFC.TestAutomation/SFA.DFC.UI.FrameworkHelpers/    @SkillsFundingAgency/dfc-liveservicetesters
