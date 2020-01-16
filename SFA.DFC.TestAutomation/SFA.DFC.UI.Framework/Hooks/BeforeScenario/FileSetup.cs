@@ -14,7 +14,7 @@ namespace SFA.DFC.UI.Framework.Hooks.BeforeScenario
             _objectContext = context.Get<ObjectContext>();
         }
 
-        [BeforeScenario(Order = 5)]
+        //[BeforeScenario(Order = 5)]
         public void SetUpAccessibilityFile()
         {
             string axedirectory = AppDomain.CurrentDomain.BaseDirectory

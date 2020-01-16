@@ -44,7 +44,7 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         }
         public void VerifyPageTitle()
         {
-            _pageHelper.VerifyText(SHCPageTitle, "Skills Health Check");
+            _pageHelper.WaitForElementToContainText(SHCPageTitle, "Skills Health Check");
         }
         public void DownloadReport()
         {

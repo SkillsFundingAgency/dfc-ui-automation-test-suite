@@ -34,14 +34,15 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         }
         public void VerifyAssessmentTitle()
         {
-
-            _pageHelper.VerifyText(AssessmentPageTitle, _objectContext.Get("AssessTitle"));
+            _pageHelper.WaitForElementToContainText(AssessmentPageTitle, _objectContext.Get("AssessTitle"));
         }
+
         public YourAssessmentsPage AnswerAllQuestions()
         {
             var NumofQues = _pageHelper.GetText(CountofQues);
             for (int i = 1; i <= int.Parse(NumofQues.Substring(NumofQues.IndexOf("of") + 2)); i++)
             {
+                _pageHelper.WaitForElementToContainText(CountofQues, "Question");
                 _formHelper.ClickElement(SelectList[1]);
                 _formHelper.ClickElement(ContinueButton);
             }
