@@ -85,6 +85,14 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickContinueToOccupations();
         }
 
+        [When(@"I select the DYSAC option and click continue")]
+        public void WhenISelectTheDYSACOptionAndClickContinue()
+        {
+            routePage
+                .ClickAboutYourself()
+                .ClickContinueToDYSAC();
+        }
+
         #endregion
 
 

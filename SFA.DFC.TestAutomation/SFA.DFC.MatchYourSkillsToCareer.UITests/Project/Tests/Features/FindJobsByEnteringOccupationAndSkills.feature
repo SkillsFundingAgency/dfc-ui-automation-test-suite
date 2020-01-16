@@ -2,7 +2,8 @@
 	As a citizen 
 	I would like to see Jobs suitable for me
 	By entering a desired occupation
-	And seleting skills associated with that occupations
+	And seleting skills associated with that occupation
+	And searching for adding additional skills
 
 @MatchSkills
 @Smoke

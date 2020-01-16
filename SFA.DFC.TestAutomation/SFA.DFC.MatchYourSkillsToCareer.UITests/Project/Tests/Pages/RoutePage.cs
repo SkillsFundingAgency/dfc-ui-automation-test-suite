@@ -43,5 +43,11 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
             return new EnterJobsPage(_context);
         }
 
+        public DYSACTraitsQuestionsPage ClickContinueToDYSAC()
+        {
+            _formHelper.ClickElement(ButtonContinue);
+            return new DYSACTraitsQuestionsPage(_context);
+        }
+
     }
 }
