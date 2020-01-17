@@ -21,7 +21,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By RelatedCareersList => By.CssSelector(".list-big li");
         private By CourseSection => By.CssSelector(".dfc-code-jp-trainingCourse .opportunity-item");
         private By ListOfCourses => By.CssSelector(".dfc-code-jp-trainingCourse .opportunity-item .heading-small a");
-        private By CoursesNearYouLink => By.CssSelector(".dfc-code-jp-TrainingCoursesText a");
+        private By CoursesNearYouLink => By.PartialLinkText("courses near you");
         private By ApprenticeshipSection => By.CssSelector("#appGeneric .opportunity-item");
         private By ListOfApprenticeships => By.CssSelector("#appGeneric .opportunity-item .heading-small a");
         private By ApprenticeshipNotDisplayedText => By.ClassName("dfc-code-jp-novacancyText");

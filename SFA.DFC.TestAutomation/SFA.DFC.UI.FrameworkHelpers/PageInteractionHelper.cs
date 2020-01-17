@@ -200,5 +200,21 @@ namespace SFA.DFC.UI.FrameworkHelpers
         {
             return new SelectElement(_webDriver.FindElement(by)).Options.Where(t => string.IsNullOrEmpty(t.Text)).Select(x => x.Text).ToList();
         }
+
+        public void WaitForElementToContainText(By locator, string text)
+        {
+            var wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(15));
+            IWebElement element= null;
+
+            if (IsElementPresent(locator))
+            {
+                element = _webDriver.FindElement(locator);
+            }
+            else
+            {
+                throw new NotFoundException("Element does not exist");
+            }
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElement(element, text));
+        }
     }
 }

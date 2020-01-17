@@ -24,7 +24,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private By FilterButton = By.CssSelector("button.js-enabled");
         private By ErrorMsg = By.CssSelector(".govuk-body-s .govuk-body");
         private By Provider = By.Id("Provider");
-        private By Location=By.Id("Location");
+        private By Location=By.Id("Postcode");
         private List<IWebElement> FiltersList => _pageHelper.FindElements(By.ClassName("govuk-radios__input"));
 
 
