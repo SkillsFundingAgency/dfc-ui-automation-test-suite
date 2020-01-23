@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System.Collections.Generic;
@@ -24,6 +25,10 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By SearchField => By.ClassName("search-input");
         private By SubmitSearch => By.ClassName("submit");
         private By AutoSuggestList => By.ClassName("ui-menu-item");
+
+        private By PageHeader => By.Id("site-header");
+        private By NcsPageHeader => By.ClassName("govuk-heading-xl");
+
 
         #endregion
 
@@ -80,7 +85,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         }
         public void VerifyHomePage()
         {
-            _pageHelper.VerifyPage(PageHeader, "Explore careers");
+            _pageHelper.VerifyPage(PageHeader, "Explore careers").Should().BeTrue();
+        }
+
+        public void VerifyNCSHomePage()
+        {
+            _pageHelper.VerifyPage(NcsPageHeader, "National Careers Service").Should().BeTrue();
         }
     }
 }

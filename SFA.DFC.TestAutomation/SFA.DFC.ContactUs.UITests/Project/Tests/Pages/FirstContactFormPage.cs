@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
@@ -36,11 +37,11 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         {
             if (_objectContext.Get("SelectOption") == "Contact an adviser")
             {
-                _pageHelper.VerifyText(QueryPageTitle, "What is your query about?");
+                _pageHelper.VerifyText(QueryPageTitle, "What is your query about?").Should().BeTrue();
             }
             else if (_objectContext.Get("SelectOption") == "Give feedback")
             {
-                _pageHelper.VerifyText(QueryPageTitle, "What is your feedback about?");
+                _pageHelper.VerifyText(QueryPageTitle, "What is your feedback about?").Should().BeTrue();
             }
             
         }
@@ -82,8 +83,8 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         }
         public void VerifyErrorMessages()
         {
-            _pageHelper.VerifyText(CategoryErrorMessage, "Choose a category");
-            _pageHelper.VerifyText(IssueErrorMessage, "Enter a message describing the issue");
+            _pageHelper.VerifyText(CategoryErrorMessage, "Choose a category").Should().BeTrue();
+            _pageHelper.VerifyText(IssueErrorMessage, "Enter a message describing the issue").Should().BeTrue();
         }
 
         public FirstContactFormPage ClickContinueonError()

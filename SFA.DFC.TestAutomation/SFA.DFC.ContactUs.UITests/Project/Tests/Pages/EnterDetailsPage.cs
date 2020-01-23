@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
@@ -117,15 +118,15 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         }
         public void VerifyErrorMessages()
         {
-            _pageHelper.VerifyText(FirstNameError, "Enter your first name");
-            _pageHelper.VerifyText(LastNameError, "Enter your last name");
-            _pageHelper.VerifyText(EMailError, "Enter your email address");
-            _pageHelper.VerifyText(PostCodeError, "Enter your postcode");
-            _pageHelper.VerifyText(Terms_CondError, "You must accept our Terms and Conditions");
+            _pageHelper.VerifyText(FirstNameError, "Enter your first name").Should().BeTrue();
+            _pageHelper.VerifyText(LastNameError, "Enter your last name").Should().BeTrue();
+            _pageHelper.VerifyText(EMailError, "Enter your email address").Should().BeTrue();
+            _pageHelper.VerifyText(PostCodeError, "Enter your postcode").Should().BeTrue();
+            _pageHelper.VerifyText(Terms_CondError, "You must accept our Terms and Conditions").Should().BeTrue();
         }
         public void VerifyBirthDateErrorMessage()
         {
-            _pageHelper.VerifyText(BirthDateError, "You must be over 13 to use this service");
+            _pageHelper.VerifyText(BirthDateError, "You must be over 13 to use this service").Should().BeTrue();
         }
     }
 }
