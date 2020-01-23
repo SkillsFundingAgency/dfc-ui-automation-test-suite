@@ -210,7 +210,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         public void ThenIAmRedirectedToThePage()
         {
             jobProfilePage
-                .VerifyAlertPage();
+                .Verify404Page();
         }
 
         [Then(@"I am redirected to the national careers service homepage")]
