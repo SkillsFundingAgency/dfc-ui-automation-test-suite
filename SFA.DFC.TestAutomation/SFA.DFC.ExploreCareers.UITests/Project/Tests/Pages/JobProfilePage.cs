@@ -186,7 +186,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return new SearchResultsPage(_context);
         }
 
-        public void VerifyAlertPage()
+        public void Verify404Page()
         {
             _pageHelper.IsElementDisplayed(Alert404PageTitle).Should().BeTrue();
             _pageHelper.GetText(Alert404PageTitle).Should().Contain("Page not found");
