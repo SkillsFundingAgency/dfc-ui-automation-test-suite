@@ -59,12 +59,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         #endregion
 
         #region Thens
-        [Then(@"I am redirected to the explore careers homepage")]
-        public void ThenIAmRedirectedToTheExploreCareersHomepage()
-        {
-            homepage
-                .VerifyHomePage();
-        }
+
         #endregion
     }
 }

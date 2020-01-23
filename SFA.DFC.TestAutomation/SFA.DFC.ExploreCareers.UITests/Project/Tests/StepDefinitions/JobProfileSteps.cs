@@ -28,6 +28,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             _webDriver = context.GetWebDriver();
             _config = context.GetExploreCareersConfig<ExploreCareersConfig>();
             jobProfilePage = new JobProfilePage(_context);
+            homepage = new Homepage(_context);
 
         }
         #region Givens
@@ -216,6 +217,15 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         [Then(@"I am redirected to the national careers service homepage")]
         public void ThenIAmRedirectedToTheNationalCareersServiceHomepage()
         {
+            homepage
+                .VerifyNCSHomePage();
+        }
+
+        [Then(@"I am redirected to the explore careers homepage")]
+        public void ThenIAmRedirectedToTheExploreCareersHomepage()
+        {
+            homepage
+                .VerifyHomePage();
         }
 
         #endregion
