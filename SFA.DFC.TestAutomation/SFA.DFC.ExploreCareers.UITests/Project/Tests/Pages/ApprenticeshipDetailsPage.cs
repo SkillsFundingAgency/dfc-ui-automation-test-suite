@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
@@ -28,7 +29,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public void VerifyCorrectApprenticeshipPage()
         {
              string AppSelected = _objectContext.Get("ApprenticeshipSelected");
-            _pageHelper.VerifyText(AppVacancyId, AppSelected);
+            _pageHelper.VerifyText(AppVacancyId, AppSelected).Should().BeTrue();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private ApprenticeshipDetailsPage apprenticeshipDetailsPage;
         private JobProfileFeedbackThankYouPage jobProfileFeedbackThankYouPage;
         private SearchResultsPage searchResultsPage;
-
+        private Homepage homepage;
         #endregion
 
         public JobProfileSteps(ScenarioContext context)
@@ -28,6 +28,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             _webDriver = context.GetWebDriver();
             _config = context.GetExploreCareersConfig<ExploreCareersConfig>();
             jobProfilePage = new JobProfilePage(_context);
+
         }
         #region Givens
 
@@ -204,6 +205,19 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             jobProfileFeedbackThankYouPage
                 .VerifyThankYouMessage();
         }
+
+        [Then(@"I am redirected to the 404 page")]
+        public void ThenIAmRedirectedToThePage()
+        {
+            jobProfilePage
+                .VerifyAlertPage();
+        }
+
+        [Then(@"I am redirected to the national careers service homepage")]
+        public void ThenIAmRedirectedToTheNationalCareersServiceHomepage()
+        {
+        }
+
         #endregion
     }
 }

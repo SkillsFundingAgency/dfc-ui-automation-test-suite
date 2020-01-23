@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
@@ -25,7 +26,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyFindACourseHomepage()
         {
-            _pageHelper.VerifyText(Header, "Find a course");
+            _pageHelper.VerifyText(Header, "Find a course").Should().BeTrue();
         }
 
     }

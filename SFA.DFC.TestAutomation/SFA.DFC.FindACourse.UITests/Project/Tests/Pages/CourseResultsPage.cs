@@ -39,12 +39,12 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         }
         public void VerifyPageHeader()
         {
-            _pageHelper.VerifyText(SearchPageHeader, "Search");
+            _pageHelper.VerifyText(SearchPageHeader, "Search").Should().BeTrue();
         }
         public void VerifyErrorMessage()
         {
             var errmsg = "We didn't find any results for '" + _objectContext.Get("CourseName") + "' with the active filters you've applied. Try searching again.";
-            _pageHelper.VerifyText(ErrorMsg, errmsg);
+            _pageHelper.VerifyText(ErrorMsg, errmsg).Should().BeTrue();
             
         }
         public void SelectFilter(string filter)

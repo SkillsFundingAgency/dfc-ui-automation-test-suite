@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
@@ -32,14 +33,18 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By JPAdditionalFeedbackSurvey => By.Id("job-profile-feedback-survey");
         private By JPSearchField => By.ClassName("search-input");
         private By SubmitJPSearch => By.ClassName("submit");
+        private By HomeBreadcrumbLink => By.ClassName("govuk-breadcrumbs__link");
+        private By Alert404PageTitle => By.ClassName("heading-xlarge");
+        protected override By PageHeader => By.CssSelector(".job-profile-hero h1");
+
         #region JobProfile Segments
-        private By JobProfileHeroContainer => By.Id("MainContentTop_T41A29498007_Col00");
-        private By JobProfileAnchorLinks => By.ClassName("job-profile-anchorlinks");
+        private By JobProfileHeroContainer => By.ClassName("job-profile-hero");
+        private By JobProfileAnchorLinks => By.ClassName("jump-links");
         private By JobProfileHowToBecome => By.Id("HowToBecome");
-        private By JobProfileSkills => By.Id("Skills");
+        private By JobProfileSkills => By.Id("WhatItTakes");
         private By JobProfileWhatYouWillDo => By.Id("WhatYouWillDo");
         private By JobProfileCareerPath => By.Id("CareerPathAndProgression");
-        private By JobProfileCurrentOpportunities => By.Id("current-opportunities");
+        private By JobProfileCurrentOpportunities => By.Id("CurrentOpportunities");
         private By JobProfileFeedbackSurvey => By.ClassName("job-profile-feedback");
 
 
@@ -64,15 +69,15 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
             if (!string.IsNullOrEmpty(JobCategoryProfileSelected))
             {
-                _pageHelper.VerifyText(PageHeader, JobCategoryProfileSelected);
+                _pageHelper.VerifyText(PageHeader, JobCategoryProfileSelected).Should().BeTrue();
             }
             else if (!string.IsNullOrEmpty(RelatedCareerSelected))
             {
-                _pageHelper.VerifyText(PageHeader, RelatedCareerSelected);
+                _pageHelper.VerifyText(PageHeader, RelatedCareerSelected).Should().BeTrue();
             }
             else
             {
-                _pageHelper.VerifyText(PageHeader, SearchJobProfileSelected);
+                _pageHelper.VerifyText(PageHeader, SearchJobProfileSelected).Should().BeTrue();
             }
         }
 
@@ -108,7 +113,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyRelatedCareersSectionDisplayed()
         {
-            _pageHelper.IsElementDisplayed(RelatedCareersSection);
+            _pageHelper.IsElementDisplayed(RelatedCareersSection).Should().BeTrue();
         }
 
         public void VerifyNumberOfRelatedCareersDisplayed(int maxNoOfRelatedProfiles)
@@ -118,12 +123,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyCoursesAreDisplayed()
         {
-            _pageHelper.IsElementDisplayed(CourseSection);
+            _pageHelper.IsElementDisplayed(CourseSection).Should().BeTrue();
         }
 
         public void VerifyApprenticeAreDisplayed()
         {
-            _pageHelper.IsElementDisplayed(ApprenticeshipSection);
+            _pageHelper.IsElementDisplayed(ApprenticeshipSection).Should().BeTrue();
         }
 
         public void AddElementTextToContext(string contextKey, By listOfElements, int elementIndex)
@@ -133,20 +138,20 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyAllProfileSegments()
         {
-            _pageHelper.IsElementDisplayed(JobProfileHeroContainer);
-            _pageHelper.IsElementDisplayed(JobProfileAnchorLinks);
-            _pageHelper.IsElementDisplayed(JobProfileHowToBecome);
-            _pageHelper.IsElementDisplayed(JobProfileWhatYouWillDo);
-            _pageHelper.IsElementDisplayed(JobProfileSkills);
-            _pageHelper.IsElementDisplayed(JobProfileCareerPath);
-            _pageHelper.IsElementDisplayed(JobProfileCurrentOpportunities);
-            _pageHelper.IsElementDisplayed(JobProfileFeedbackSurvey);
+            _pageHelper.IsElementDisplayed(JobProfileHeroContainer).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileAnchorLinks).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileHowToBecome).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileWhatYouWillDo).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileSkills).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileCareerPath).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileCurrentOpportunities).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(JobProfileFeedbackSurvey).Should().BeTrue();
         }
 
         public void VerifyNoApprenticeshipsDisplayed()
         {
-            _pageHelper.IsElementDisplayed(ApprenticeshipNotDisplayedText);
-            _pageHelper.VerifyText(ApprenticeshipNotDisplayedText, "We can't find any apprenticeship vacancies in England");
+            _pageHelper.IsElementDisplayed(ApprenticeshipNotDisplayedText).Should().BeTrue();
+            _pageHelper.VerifyText(ApprenticeshipNotDisplayedText, "We can't find any apprenticeship vacancies in England").Should().BeTrue();
         }
 
         public void ClickYesOnFeedbackBanner()
@@ -161,12 +166,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyJPFeedbackThankYouMessage()
         {
-            _pageHelper.IsElementDisplayed(JPFeedbackThankYouText);
+            _pageHelper.IsElementDisplayed(JPFeedbackThankYouText).Should().BeTrue();
         }
 
         public void VerifyAdditionalSurveyMessage()
         {
-            _pageHelper.IsElementDisplayed(JPFeedbackAdditionalSurveyText);
+            _pageHelper.IsElementDisplayed(JPFeedbackAdditionalSurveyText).Should().BeTrue();
         }
         public void ClickTakeAdditionalSurveyLink()
         {
@@ -181,13 +186,19 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             return new SearchResultsPage(_context);
         }
 
+        public void VerifyAlertPage()
+        {
+            _pageHelper.IsElementDisplayed(Alert404PageTitle).Should().BeTrue();
+            _pageHelper.GetText(Alert404PageTitle).Should().Contain("Page not found");
+        }
+
         #region SurveyMonkeyScreens     
         private By QuestionTitle => By.ClassName("ss-question-title");
         private By SubmitJPFeedbackSurvey => By.Id("cmdGo");
         private By TextInput => By.ClassName("ss-input-textarea");
         public void VerifySurveyMonkeyScreen()
         {
-            _pageHelper.IsElementDisplayed(QuestionTitle);
+            _pageHelper.IsElementDisplayed(QuestionTitle).Should().BeTrue();
         }
 
         public JobProfileFeedbackThankYouPage EnterFeedback(string feedback)
@@ -195,6 +206,12 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             _formHelper.EnterText(TextInput, feedback);
             _formHelper.ClickElement(SubmitJPFeedbackSurvey);
             return new JobProfileFeedbackThankYouPage(_context);
+        }
+
+        public Homepage ClickHomeBreadcrumb()
+        {
+            _formHelper.ClickElement(HomeBreadcrumbLink);
+            return new Homepage(_context);
         }
         #endregion
     }

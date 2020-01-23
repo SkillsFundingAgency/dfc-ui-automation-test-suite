@@ -19,13 +19,16 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         private By CourseHeader = By.CssSelector(".govuk-heading-l");
-        private By QualDetails = By.LinkText("Qualification details");
-        private By CourseDesc = By.LinkText("Course description");
+        private By QualDetails = By.LinkText("Course details");
+        private By CourseDesc = By.LinkText("Who this course is for");
         private By EntryReqs = By.LinkText("Entry requirements");
-        private By EquipReqd = By.LinkText("Equipment required");
-        private By AssessMethod = By.LinkText("Assessment method");
+        private By WhatYoullLearn = By.LinkText("What you'll learn");
+        private By HowYoullLearn = By.LinkText("How you'll learn");
+        private By EquipReqd = By.LinkText("What you'll need to bring");
+        private By AssessMethod = By.LinkText("How you'll be assessed");
+        private By NextSteps = By.LinkText("Next steps");
         private By Venue = By.LinkText("Venue");
-        private By OtherDatesandVenues = By.LinkText("Other dates and venues");
+        private By OtherDatesandVenues = By.LinkText("Other venues and dates");
         #endregion
         public CourseDetailsPage(ScenarioContext context) : base(context)
         {
@@ -36,27 +39,33 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         }
         public void  VerifyLinks()
         {
-            _pageHelper.VerifyText(QualDetails, "Qualification details");
-            _pageHelper.VerifyText(CourseDesc , "Course description");
-            _pageHelper.VerifyText(EntryReqs , "Entry requirements");
-            _pageHelper.VerifyText(EquipReqd , "Equipment required");
-            _pageHelper.VerifyText(AssessMethod , "Assessment method");
-            _pageHelper.VerifyText(Venue , "Venue");
-            _pageHelper.VerifyText(OtherDatesandVenues , "Other dates and venues");            
+            _pageHelper.VerifyText(QualDetails, "Course details").Should().BeTrue();
+            _pageHelper.VerifyText(CourseDesc , "Who this course is for").Should().BeTrue();
+            _pageHelper.VerifyText(EntryReqs , "Entry requirements").Should().BeTrue();
+            _pageHelper.VerifyText(WhatYoullLearn, "What you'll learn").Should().BeTrue();
+            _pageHelper.VerifyText(HowYoullLearn, "How you'll learn").Should().BeTrue();
+            _pageHelper.VerifyText(EquipReqd , "What you'll need to bring").Should().BeTrue();
+            _pageHelper.VerifyText(AssessMethod , "How you'll be assessed").Should().BeTrue();
+            _pageHelper.VerifyText(NextSteps, "Next steps").Should().BeTrue();
+            _pageHelper.VerifyText(Venue , "Venue").Should().BeTrue();
+            _pageHelper.VerifyText(OtherDatesandVenues , "Other venues and dates").Should().BeTrue();            
         }
         public void VerifyIfLinksCanBeClicked()
         {
             _formHelper.ClickElement(QualDetails);
             _formHelper.ClickElement(CourseDesc);
             _formHelper.ClickElement(EntryReqs);
+            _formHelper.ClickElement(WhatYoullLearn);
+            _formHelper.ClickElement(HowYoullLearn);
             _formHelper.ClickElement(EquipReqd);
             _formHelper.ClickElement(AssessMethod);
+            _formHelper.ClickElement(NextSteps);
             _formHelper.ClickElement(Venue);
             _formHelper.ClickElement(OtherDatesandVenues);
         }
         public void VerifyCourseHeader()
         {
-            _pageHelper.VerifyText(CourseHeader, _objectContext.Get("CourseHeader"));
+            _pageHelper.VerifyText(CourseHeader, _objectContext.Get("CourseHeader")).Should().BeTrue();
         }
         
     }    

@@ -25,6 +25,9 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By SubmitSearch => By.ClassName("submit");
         private By AutoSuggestList => By.ClassName("ui-menu-item");
 
+        private By PageHeader => By.Id("site-header");
+
+
         #endregion
 
         public Homepage(ScenarioContext context) : base(context)

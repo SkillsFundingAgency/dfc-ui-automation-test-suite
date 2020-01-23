@@ -4,6 +4,7 @@ using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
 using System.Collections.Generic;
 using System;
+using FluentAssertions;
 
 namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
 {
@@ -56,7 +57,7 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         }
         public void VerifyErrorMessage()
         {
-            _pageHelper.VerifyText(ErrorMessage, "Choose an answer");
+            _pageHelper.VerifyText(ErrorMessage, "Choose an answer").Should().BeTrue();
         }
     }
 }

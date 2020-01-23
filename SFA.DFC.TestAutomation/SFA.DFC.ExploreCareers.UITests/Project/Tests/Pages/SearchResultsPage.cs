@@ -77,7 +77,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifySearchResultsPage()
         {
-            _pageHelper.IsElementDisplayed(SearchResultsPageTitle);
+            _pageHelper.IsElementDisplayed(SearchResultsPageTitle).Should().BeTrue();
         }
 
         public void VerifySearchTermIsDisplayedOnResultsPage()
@@ -93,19 +93,19 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyNoSearchResultsMessage()
         {
-            _pageHelper.IsElementDisplayed(ResultCount);
+            _pageHelper.IsElementDisplayed(ResultCount).Should().BeTrue();
             _pageHelper.GetText(ResultCount).Should().Contain("0 results found");
         }
 
         public void VerifyDidYouMeanIsDisplayed()
         {
-            _pageHelper.IsElementDisplayed(DidYouMeanText);
-            _pageHelper.VerifyText(DidYouMeanText, "Did you mean");
+            _pageHelper.IsElementDisplayed(DidYouMeanText).Should().BeTrue();
+            _pageHelper.VerifyText(DidYouMeanText, "Did you mean").Should().BeTrue();
         }
 
         public void VerifyJobCategoryDisplayedOnSearch()
         {
-            _pageHelper.IsElementDisplayed(SearchResultCategory);
+            _pageHelper.IsElementDisplayed(SearchResultCategory).Should().BeTrue();
         }
     }
 }

@@ -12,6 +12,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
         private JobCategoriesPage jobCategoryPage;
         private SearchResultsPage searchResultsPage;
         private Homepage homepage;
+        private JobProfilePage jobProfilePage;
         #endregion
 
         public ECCommonSteps(ScenarioContext context)
@@ -20,6 +21,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
             homepage = new Homepage(_context);
             jobCategoryPage = new JobCategoriesPage(_context);
             searchResultsPage = new SearchResultsPage(_context);
+            jobProfilePage = new JobProfilePage(_context);
         }
 
         #region Givens
@@ -44,6 +46,10 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
                     break;
                 case "search":
                     searchResultsPage
+                        .ClickHomeBreadcrumb();
+                    break;
+                case "jobprofile":
+                    jobProfilePage
                         .ClickHomeBreadcrumb();
                     break;
                 default:
