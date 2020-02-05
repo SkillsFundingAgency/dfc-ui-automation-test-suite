@@ -23,7 +23,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private By CourseNameSearchTerm = By.Id("SearchTerm");
         private By FACHeader = By.CssSelector(".govuk-heading-xl");  
         private By ProviderName = By.Id("Provider");
-        private By Location = By.Id("Postcode");
+        private By Location = By.Id("Location");
         private By FindACourseButton = By.CssSelector(".govuk-button");
         #endregion
         public FACHomePage(ScenarioContext context) : base(context)
