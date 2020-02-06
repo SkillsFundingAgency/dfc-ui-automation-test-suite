@@ -14,9 +14,9 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By RadioYes = By.Id("Yes");
-        private readonly By RadioNo = By.Id("No");
-        private readonly By ContinueButton = By.Id("continue");
+        private readonly By RadioYes = By.Id("workedGovUkRadioButtonYes");
+        private readonly By RadioNo = By.Id("workedGovUkRadioButtonNo");
+        private readonly By ContinueButton = By.Id("workedGovUkButtonContinue");
         #endregion
 
         public WorkedPage(ScenarioContext context): base(context)
@@ -27,19 +27,19 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public WorkedPage ClickRadioYes()
         {
-            _formHelper.ClickElement(RadioYes);
+            _formHelper.SelectRadioButton(RadioYes);
             return this;
         }
 
         public WorkedPage ClickRadioNo()
         {
-            _formHelper.ClickElement(RadioNo);
+            _formHelper.SelectRadioButton(RadioNo);
             return this;
         }
 
         public RoutePage ClickContinueButton()
         {
-            _formHelper.SelectRadioButton(ContinueButton);
+            _formHelper.ClickElement(ContinueButton);
             return new RoutePage(_context);
         }
     }

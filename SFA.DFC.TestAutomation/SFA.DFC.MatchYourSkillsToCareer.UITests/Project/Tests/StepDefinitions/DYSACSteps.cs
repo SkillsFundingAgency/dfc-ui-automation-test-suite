@@ -53,7 +53,6 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickAttributeQuestions();
         }
 
-
         [When(@"I complete the DYSAC additional questions")]
         public void WhenICompleteTheDYSACAdditionalQuestions()
         {
@@ -69,7 +68,6 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickFinalNextButton();
         }
 
-
         [When(@"I click the link to Match skills")]
         public void WhenIClickTheLinkToMatchSkills()
         {
@@ -77,9 +75,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickMatchSkills();
         }
 
-
         #endregion
-
 
         #region Then
 
@@ -100,10 +96,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
         {
             dYSACAttributesQuestionsPage = new DYSACAttributesQuestionsPage(_context);
         }
-
-
         #endregion
-
 
     }
 }

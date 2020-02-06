@@ -7,14 +7,14 @@
 
 @MatchSkills
 @Smoke
-Scenario: Use Match Skills To Find Jobs by Entering Occupation And Skills
-	Given I have navigated to the Match Skills page
+Scenario Outline: Use Match Skills To Find Jobs by Entering Occupation And Skills
+	Given I have navigated to the Match Skills page and click Start now
 	When I select Yes and click continue on employment choice
 	Then I am taken to the Skills Entry Choice page
 	When I select the Match Skills option and click continue
 	Then I am taken to the Enter your occupation page
-	When I enter 'Occupation' on the Enter your occupation page
-		And I click search button on the Enter your occupation page
+	When I enter <search term> on the Enter your occupation page
+		And I select <occupation> from the drop down list
 	Then I am taken to the Select skills page
 	When I select the first skill on Select skills page
 		And I click the Add to basket on Select skills page
@@ -33,3 +33,7 @@ Scenario: Use Match Skills To Find Jobs by Entering Occupation And Skills
 	Then I am on the Results page
 	When I click on the first job
 	Then I am taken to the new Job profile page
+
+	Examples:
+	| search term | occupation          |
+	| Headteacher | Headteacher         |

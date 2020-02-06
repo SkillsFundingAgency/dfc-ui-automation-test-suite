@@ -14,9 +14,9 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By RadioSearchBySkills = By.Id("skills");
-        private readonly By RadioAboutYourself = By.Id("youself");
-        private readonly By ButtonContinue = By.Id("continue");
+        private readonly By RadioSearchBySkills = By.Id("routeGovUkRadioButtonJobs");
+        private readonly By RadioAboutYourself = By.Id("routeGovUkRadioButtonSkillsAndJobs");
+        private readonly By ButtonContinue = By.Id("routeGovUkButtonContinue");
         #endregion
 
         public RoutePage(ScenarioContext context): base(context)
@@ -27,13 +27,13 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public RoutePage ClickSearchBySkills()
         {
-            _formHelper.ClickElement(RadioSearchBySkills);
+            _formHelper.SelectRadioButton(RadioSearchBySkills);
             return this;
         }
         
         public RoutePage ClickAboutYourself()
         {
-            _formHelper.ClickElement(RadioAboutYourself);
+            _formHelper.SelectRadioButton(RadioAboutYourself);
             return this;
         }
 

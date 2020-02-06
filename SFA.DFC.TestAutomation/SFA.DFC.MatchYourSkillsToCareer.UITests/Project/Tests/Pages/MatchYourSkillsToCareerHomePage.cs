@@ -17,7 +17,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By ClickStartButton = By.CssSelector(".button");  
+        private By ClickStartButton = By.Id("homeGovukStartButtonLinkStart");
         #endregion
 
         public MatchYourSkillsToCareerHomePage(ScenarioContext context): base(context)

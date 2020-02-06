@@ -8,7 +8,7 @@
 @MatchSkills
 @Smoke
 Scenario: Use Match Skills To Find Jobs by Personality Traits Working Style And Occupations
-	Given I have navigated to the Match Skills page
+	Given I have navigated to the Match Skills page and click Start now
 	When I select Yes and click continue on employment choice
 	Then I am taken to the Skills Entry Choice page
 	When I select the DYSAC option and click continue

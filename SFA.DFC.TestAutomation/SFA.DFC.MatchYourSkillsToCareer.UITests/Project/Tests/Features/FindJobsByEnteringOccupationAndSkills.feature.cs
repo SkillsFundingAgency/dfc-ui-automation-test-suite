@@ -75,16 +75,22 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Use Match Skills To Find Jobs by Entering Occupation And Skills")]
         [NUnit.Framework.CategoryAttribute("MatchSkills")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void UseMatchSkillsToFindJobsByEnteringOccupationAndSkills()
+        [NUnit.Framework.TestCaseAttribute("Headteacher", "Headteacher", null)]
+        public virtual void UseMatchSkillsToFindJobsByEnteringOccupationAndSkills(string searchTerm, string occupation, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Use Match Skills To Find Jobs by Entering Occupation And Skills", null, new string[] {
-                        "MatchSkills",
-                        "Smoke"});
+            string[] @__tags = new string[] {
+                    "MatchSkills",
+                    "Smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Use Match Skills To Find Jobs by Entering Occupation And Skills", null, @__tags);
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 11
- testRunner.Given("I have navigated to the Match Skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have navigated to the Match Skills page and click Start now", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
  testRunner.When("I select Yes and click continue on employment choice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
@@ -94,9 +100,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.Then("I am taken to the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
- testRunner.When("I enter \'Occupation\' on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("I enter {0} on the Enter your occupation page", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
-  testRunner.And("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And(string.Format("I select {0} from the drop down list", occupation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19

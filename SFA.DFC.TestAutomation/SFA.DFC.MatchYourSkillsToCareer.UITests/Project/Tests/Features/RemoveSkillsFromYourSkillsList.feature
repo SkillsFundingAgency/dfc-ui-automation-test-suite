@@ -6,7 +6,7 @@
 @MatchSkills
 @Smoke
 Scenario: Remove Skills From Your Skills list
-	Given I have navigated to the Match Skills page
+	Given I have navigated to the Match Skills page and click Start now
 	When I select Yes and click continue on employment choice
 	Then I am taken to the Skills Entry Choice page
 	When I select the Match Skills option and click continue

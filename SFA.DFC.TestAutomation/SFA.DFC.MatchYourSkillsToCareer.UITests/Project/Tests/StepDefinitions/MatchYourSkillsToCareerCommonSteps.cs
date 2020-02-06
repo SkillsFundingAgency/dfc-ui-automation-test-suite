@@ -35,7 +35,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickGoToMYSTC();
         }
 
-        [Given(@"I have navigated to the Match Skills page")]
+        [Given(@"I have navigated to the Match Skills page and click Start now")]
         public void GivenIHaveNavigatedToTheMatchSkillsPage()
         {
             matchYourSkillsToCareerHomepage
