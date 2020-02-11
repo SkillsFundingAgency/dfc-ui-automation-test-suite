@@ -78,10 +78,10 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Access the Match Your Skills To Career service", null, new string[] {
                         "MatchSkills",
                         "Smoke"});
-#line 4
+#line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
+#line 6
  testRunner.Given("I have navigated to the Skills Health check page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             this.ScenarioCleanup();

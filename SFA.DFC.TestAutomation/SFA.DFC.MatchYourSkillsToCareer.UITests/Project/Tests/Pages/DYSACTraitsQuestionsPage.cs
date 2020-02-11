@@ -37,5 +37,11 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
             return this;
         }
 
+        public DYSACAssessmentCompletePage ClickFinalNextButton()
+        {
+            _formHelper.ClickElement(NextButton);
+            return new DYSACAssessmentCompletePage(_context);
+        }
+
     }
 }

@@ -14,9 +14,9 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By RadioSearchBySkills = By.Id("skills");
-        private readonly By RadioSearchByOccupations = By.Id("occupations");
-        private readonly By ButtonContinue = By.Id("continue");
+        private readonly By RadioSearchByOccupations = By.Id("moreSkillsGovUkRadioButtonJob");
+        private readonly By RadioSearchBySkills = By.Id("moreSkillsGovUkRadioButtonSkill");
+        private readonly By ButtonContinue = By.Id("moreSkillsGovUkButtonContinue");
         #endregion
 
         public MoreSkillsPage(ScenarioContext context): base(context)
@@ -28,13 +28,13 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public MoreSkillsPage ClickSearchBySkills()
         {
-            _formHelper.ClickElement(RadioSearchBySkills);
+            _formHelper.SelectRadioButton(RadioSearchBySkills);
             return this;
         }
         
         public MoreSkillsPage ClickSearchByOccupations()
         {
-            _formHelper.ClickElement(RadioSearchByOccupations);
+            _formHelper.SelectRadioButton(RadioSearchByOccupations);
             return this;
         }
 
