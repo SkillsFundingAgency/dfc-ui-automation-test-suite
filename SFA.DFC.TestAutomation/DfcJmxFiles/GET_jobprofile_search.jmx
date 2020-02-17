@@ -99,7 +99,7 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Ocp-Apim-Subscription-Key</stringProp>
-                <stringProp name="Header.value">159061481b4a4342855cfc4f17b426a4</stringProp>
+                <stringProp name="Header.value"></stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Version</stringProp>
