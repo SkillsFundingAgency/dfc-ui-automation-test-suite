@@ -1,0 +1,189 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Project\Tests\Features\FindJobsByEnteringMultipleSkills.feature.cs" />
+    <Compile Remove="Project\Tests\Features\FindJobsByEnteringOccupation.feature.cs" />
+    <Compile Remove="Project\Tests\Features\FindJobsByEnteringSkills.feature.cs" />
+    <Compile Remove="Project\Tests\Features\FindJobsByEnteringSkillsAndOccupations.feature.cs" />
+    <Compile Remove="Project\Tests\MatchYourSkillsToCareerConfigurationSetup.cs" />
+    <Compile Remove="Project\Tests\Pages\MYSTCHomePage.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringMultipleSkills.feature" />
+    <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringOccupation.feature" />
+    <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringSkills.feature" />
+    <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringSkillsAndOccupations.feature" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringAnOccupationOnly - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringMultipleSkills - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringOccupation - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringOccupationAndSkills - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringPersonalTraits - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndWorkingStyle - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\FindJobsByEnteringSkills - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\RemoveSkillsFromYourSkillsList - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Project\Tests\Features\SearchErrorDisplayedWhenNoSkillsEntered - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\NUnitConfigurator.cs" Link="NUnitConfigurator.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\specflow.json" Link="specflow.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.9.0" />
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.26.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="79.0.3945.3600" />
+    <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.local.Project.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.Environment.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.Project.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SFA.DFC.UI.Framework\SFA.DFC.UI.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Project\Tests\Features\AccessMatchYourSkillsToCareer.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AccessMatchYourSkillsToCareer.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndOccupation.feature.cs">
+      <DependentUpon>FindJobsByEnteringPersonalTraitsAndOccupation.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature.cs">
+      <DependentUpon>FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndWorkingStyle.feature.cs">
+      <DependentUpon>FindJobsByEnteringPersonalTraitsAndWorkingStyle.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraits.feature.cs">
+      <DependentUpon>FindJobsByEnteringPersonalTraits.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringAnOccupationOnly.feature.cs">
+      <DependentUpon>FindJobsByEnteringAnOccupationOnly.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringMutipleOccupations.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FindJobsByEnteringMutipleOccupations.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\FindJobsByEnteringOccupationAndSkills.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FindJobsByEnteringOccupationAndSkills.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\SearchErrorDisplayedWhenNoOccupationEntered.feature.cs">
+      <DependentUpon>SearchErrorDisplayedWhenNoOccupationEntered.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\SearchErrorDisplayedWhenNoSkillsEntered.feature.cs">
+      <DependentUpon>SearchErrorDisplayedWhenNoSkillsEntered.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\RemoveSkillsFromYourSkillsList.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RemoveSkillsFromYourSkillsList.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\AccessMatchYourSkillsToCareer.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AccessMatchYourSkillsToCareer.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndOccupation.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndWorkingStyle.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringPersonalTraits.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringAnOccupationOnly.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringOccupationAndSkills.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringOccupationAndSkills.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringMutipleOccupations.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>FindJobsByEnteringMutipleOccupations.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\SearchErrorDisplayedWhenNoOccupationEntered.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>RemoveSkillsFromYourSkillsList.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\SearchErrorDisplayedWhenNoSkillsEntered.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>RemoveSkillsFromYourSkillsList.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\RemoveSkillsFromYourSkillsList.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RemoveSkillsFromYourSkillsList.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+
+</Project>

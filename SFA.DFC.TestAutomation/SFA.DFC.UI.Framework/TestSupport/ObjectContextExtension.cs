@@ -9,6 +9,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         #region Constants
         private const string BrowserKey = "browser";
         private const string DirectoryKey = "directory";
+        private const string FileKey = "file";
         private const string AfterScenarioExceptions = "afterscenarioexceptions";
         private const string BrowserNameKey = "browsername";
         private const string BrowserVersionKey = "browserVersion";
@@ -31,6 +32,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
             objectContext.Set(DirectoryKey, value);
         }
 
+        public static void SetFile(this ObjectContext objectContext, string value)
+        {
+            objectContext.Set(FileKey, value);
+        }
+
         public static void SetBrowserName(this ObjectContext objectContext, object value)
         {
             objectContext.Set(BrowserNameKey, value);
@@ -44,6 +50,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
         public static string GetDirectory(this ObjectContext objectContext)
         {
             return objectContext.Get(DirectoryKey);
+        }
+
+        public static string GetFile(this ObjectContext objectContext)
+        {
+            return objectContext.Get(FileKey);
         }
 
         internal static string GetUrl(this ObjectContext objectContext)

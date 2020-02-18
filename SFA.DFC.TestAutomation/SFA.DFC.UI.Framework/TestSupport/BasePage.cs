@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         private readonly string _browser;
         #endregion
 
-        protected virtual By PageHeader => By.CssSelector(".govuk-heading-xl, .heading-xlarge, .govuk-heading-l");
+        protected virtual By PageHeader => By.ClassName("govuk-heading-xl");
 
         protected abstract string PageTitle { get; }
 
@@ -33,7 +34,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
             _browser = objectContext.GetBrowser();
         }
 
-        protected bool VerifyPage()
+        public bool VerifyPage()
         {
             if (_frameworkConfig.TakeEveryPageScreenShot && !_browser.IsCloudExecution())
             {

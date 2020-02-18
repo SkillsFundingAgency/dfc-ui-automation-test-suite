@@ -11,9 +11,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
     {
         #region Constants
         private const string ExploreCareersConfigKey = "explorecareersconfig";
+        private const string HomepageConfigKey = "homepageconfig";
         private const string FindACourseConfigKey = "findacourseconfig";
         private const string SkillsAssessmentConfigKey = "skillsassessmentconfig";
         private const string ContactUsConfigKey = "contactusconfig";
+        private const string MatchYourSkillsToCareerConfigKey = "matchyourskillstocareerconfig";
         private const string MongoDbConfigKey = "mongodbconfig";
         private const string WebDriverKey = "webdriver";
         #endregion
@@ -36,13 +38,25 @@ namespace SFA.DFC.UI.Framework.TestSupport
         {
             Set(context, value, FindACourseConfigKey);
         }
+        public static void SetHomepageConfig<T>(this ScenarioContext context, T value)
+        {
+            Set(context, value, HomepageConfigKey);
+        }
+        public static void SetMatchYourSkillsToCareer<T>(this ScenarioContext context, T value)
+        {
+            Set(context, value, MatchYourSkillsToCareerConfigKey);
+        }
+
 
         public static T GetExploreCareersConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, ExploreCareersConfigKey);
         }
+        public static T GetHomepageConfig<T>(this ScenarioContext context)
+        {
+            return Get<T>(context, HomepageConfigKey);
+        }
 
-        
         public static T GetFindACourseConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, FindACourseConfigKey);
@@ -55,6 +69,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
         public static T GetContactUsConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, ContactUsConfigKey);
+        }
+
+        public static T GetMatchYourSkillsToCareerConfig<T>(this ScenarioContext context)
+        {
+            return Get<T>(context, MatchYourSkillsToCareerConfigKey);
         }
 
         public static void SetMongoDbConfig(this ScenarioContext context, MongoDbConfig value)

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
@@ -24,7 +25,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         }
         public void VerifyConfirmPage()
         {
-            _pageHelper.VerifyText(ConfirmPageTitle, "Thank you for contacting us");
+            _pageHelper.VerifyText(ConfirmPageTitle, "Thank you for contacting us").Should().BeTrue();
         }
     }
 }
