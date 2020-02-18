@@ -47,7 +47,7 @@ jobs:
     displayName: 'Publish Homeage UI tests'
     inputs:
       command: 'publish'
-      projects: '$(SolutionBaseName)\SFA.DFC.ExploreCareers.UITests\SFA.DFC.Homepage.UITests.csproj'
+      projects: '$(SolutionBaseName)\SFA.DFC.Homepage.UITests\SFA.DFC.Homepage.UITests.csproj'
       arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
       publishWebProjects: False
       zipAfterPublish: False
