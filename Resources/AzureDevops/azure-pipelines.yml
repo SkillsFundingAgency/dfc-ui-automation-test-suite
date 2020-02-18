@@ -42,6 +42,16 @@ jobs:
       publishWebProjects: False
       zipAfterPublish: False
 
+  # Publish Homepage
+  - task: DotNetCoreCLI@2
+    displayName: 'Publish Homeage UI tests'
+    inputs:
+      command: 'publish'
+      projects: '$(SolutionBaseName)\SFA.DFC.Homepage.UITests\SFA.DFC.Homepage.UITests.csproj'
+      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
+      publishWebProjects: False
+      zipAfterPublish: False
+
   # Publish Find a Course
   - task: DotNetCoreCLI@2
     displayName: 'Publish Find a Course UI tests'
