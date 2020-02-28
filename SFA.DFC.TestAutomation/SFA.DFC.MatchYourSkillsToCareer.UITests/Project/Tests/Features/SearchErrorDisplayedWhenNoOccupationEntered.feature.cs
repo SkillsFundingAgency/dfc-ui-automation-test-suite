@@ -93,10 +93,8 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.Then("I am taken to the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
- testRunner.When("I enter \'Occupation\' on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 15
-  testRunner.And("I click search button on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
  testRunner.Then("an Error message is displayed on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -74,8 +74,8 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Use Match Skills To Find Jobs by Entering Multiple Occupations")]
         [NUnit.Framework.CategoryAttribute("MatchSkills")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.TestCaseAttribute("Headteacher", "Headteacher", "Secretary", "Secretary", null)]
-        public virtual void UseMatchSkillsToFindJobsByEnteringMultipleOccupations(string searchTerm, string occupation, string searchTerm2, string occupation2, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Headteacher", "Headteacher", null)]
+        public virtual void UseMatchSkillsToFindJobsByEnteringMultipleOccupations(string searchTerm, string occupation, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "MatchSkills",
@@ -100,20 +100,18 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I am taken to the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 15
  testRunner.When(string.Format("I enter {0} on the Enter your occupation page", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
-  testRunner.And(string.Format("I select {0} from the drop down list", occupation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
   testRunner.And("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 19
- testRunner.When("I select the first skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I select a skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
   testRunner.And("I click the Add to basket on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.Then("I am taken to the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 22
- testRunner.When("I click on search for skills on the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click on Add More Skills on Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
  testRunner.Then("I am taken to the More Skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 24
@@ -121,15 +119,13 @@ this.ScenarioInitialize(scenarioInfo);
 #line 25
  testRunner.Then("I am taken to the Enter your job page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 26
- testRunner.When(string.Format("I enter {0} on the Enter your job page", searchTerm2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
-  testRunner.And(string.Format("I select {0} from the dropdown list", occupation2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I enter {0} on the Enter your job page", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
-  testRunner.And("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I click search button on the Enter your job page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 30
- testRunner.When("I select the first skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I select a skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
   testRunner.And("I click the Add to basket on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32

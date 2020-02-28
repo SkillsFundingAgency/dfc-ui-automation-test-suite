@@ -101,43 +101,43 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I am taken to the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
  testRunner.When(string.Format("I enter {0} on the Enter your occupation page", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
-  testRunner.And(string.Format("I select {0} from the drop down list", occupation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.When("I select the first skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
-  testRunner.And("I click the Add to basket on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I select a skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.Then("I am taken to the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I click the Add to basket on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.When("I click on search for skills on the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
- testRunner.Then("I am taken to the More Skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
- testRunner.When("I select skills entry option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 25
- testRunner.Then("I am taken to the Enter your skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 26
- testRunner.When("I enter \'Skill\' on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
-  testRunner.And("I click search button on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
- testRunner.Then("I am taken to the Related skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
- testRunner.When("I select the first skill on Related skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
-  testRunner.And("I click the Add to basket on Related skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
  testRunner.Then("I am taken to the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
+ testRunner.When("I click on Add More Skills on Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.Then("I am taken to the More Skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.When("I select skills entry option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.Then("I am taken to the Enter your skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+ testRunner.When("I enter java on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+  testRunner.And("I click search button on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.Then("I am taken to the Related skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 30
+ testRunner.When("I select a skill on Related skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
+  testRunner.And("I click the Add to basket on Related skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
-  testRunner.When("I select continue to your career matches", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I am taken to the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 33
- testRunner.Then("I am on the Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.When("I select continue to your career matches", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
- testRunner.When("I click on the first job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I am on the Results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 35
+ testRunner.When("I click on the first job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
  testRunner.Then("I am taken to the new Job profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

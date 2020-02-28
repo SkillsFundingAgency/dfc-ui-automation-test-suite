@@ -11,6 +11,5 @@ Scenario: Search Error Displayed When No Occupation Entered
 	Then I am taken to the Skills Entry Choice page
 	When I select the Match Skills option and click continue
 	Then I am taken to the Enter your occupation page
-	When I enter 'Occupation' on the Enter your occupation page
-		And I click search button on Enter skills page
+	When I click search button on the Enter your occupation page
 	Then an Error message is displayed on the Enter your occupation page

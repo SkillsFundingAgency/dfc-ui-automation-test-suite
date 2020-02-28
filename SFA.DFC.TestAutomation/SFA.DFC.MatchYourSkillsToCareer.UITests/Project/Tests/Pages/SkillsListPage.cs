@@ -10,15 +10,13 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #region Helpers
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
-
         #endregion
+
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By ButtonSearch= By.Id("searchskills");
-        private readonly By ButtonOccupation = By.Id("occupations");
-        private readonly By ButtonFindJob = By.Id("findjob");
-        private readonly By ButtonFindCareer = By.Id("findcareer");
-        private readonly By LinkRemoveSkill = By.Id("removeskill");
+        private readonly By ButtonFindCareer = By.Id("basketGovukButtonLinkContinue");
+        private readonly By LinkRemoveSkill = By.LinkText("remove");
+        private readonly By LinkAddMoreSkills = By.LinkText("Add more skills to this list");
         #endregion
 
         public SkillsListPage(ScenarioContext context): base(context)
@@ -27,27 +25,15 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
             _formHelper = context.Get<FormCompletionHelper>();
         }
 
-        public SkillsListPage SearchSkill()
-        {
-            _formHelper.ClickElement(ButtonSearch);
-            return this;
-        }
-        
-        public EnterJobsPage EnterOccupation()
-        {
-            _formHelper.SelectRadioButton(ButtonOccupation);
-            return new EnterJobsPage(_context);
-        }
-
-        public SkillsListPage FindJob()
-        {
-            _formHelper.SelectRadioButton(ButtonFindJob);
-            return this;
-        }
-
         public SkillsListPage RemoveSkills()
         {
-            _formHelper.SelectRadioButton(LinkRemoveSkill);
+            _formHelper.ClickElement(LinkRemoveSkill);
+            return this;
+        }
+
+        public SkillsListPage AddMoreSkills()
+        {
+            _formHelper.ClickElement(LinkAddMoreSkills);
             return this;
         }
 

@@ -14,19 +14,20 @@ Scenario Outline: Use Match Skills To Find Jobs by Entering Occupation And Skill
 	When I select the Match Skills option and click continue
 	Then I am taken to the Enter your occupation page
 	When I enter <search term> on the Enter your occupation page
-		And I select <occupation> from the drop down list
+		#And I select <occupation> from the drop down list
+		And I click search button on the Enter your occupation page
 	Then I am taken to the Select skills page
-	When I select the first skill on Select skills page
+	When I select a skill on Select skills page
 		And I click the Add to basket on Select skills page
 	Then I am taken to the Your skills list page
-	When I click on search for skills on the Your skills list page
+	When I click on Add More Skills on Your skills list page
 	Then I am taken to the More Skills page
 	When I select skills entry option
 	Then I am taken to the Enter your skills page
-	When I enter 'Skill' on Enter skills page
+	When I enter java on Enter skills page
 		And I click search button on Enter skills page
 	Then I am taken to the Related skills page
-	When I select the first skill on Related skills page
+	When I select a skill on Related skills page
 		And I click the Add to basket on Related skills page
 	Then I am taken to the Your skills list page
 		When I select continue to your career matches

@@ -18,11 +18,11 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By TextEntryJob = By.Id("occupations-autocomplete");
+        private readonly By TextEntryJob = By.Id("occupationSearchGovukAutoCompleteOccupationAutoComplete");
         private readonly By DropdownResults = By.ClassName("autocomplete__option");
         private readonly By ButtonSearch = By.Id("occupationSearchGovukSecondaryButtonSearch");
-        private readonly By ErrorSummary = By.Id("errorsummary");
-        private readonly By ErrorMsg = By.Id("errormsg");
+        private readonly By ErrorSummary = By.LinkText("Enter a job title");
+        private readonly By ErrorMsg = By.Id("occupationSearchGovukAutoCompleteErrorSearchError");
         #endregion
 
         public EnterJobsPage(ScenarioContext context): base(context)
@@ -60,6 +60,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public EnterJobsPage VerifyError()
         {
+            _pageHelper.IsElementPresent(ErrorSummary).Should().BeTrue();
             _pageHelper.IsElementDisplayed(ErrorSummary).Should().BeTrue();
             _pageHelper.IsElementDisplayed(ErrorMsg).Should().BeTrue();
             return this;

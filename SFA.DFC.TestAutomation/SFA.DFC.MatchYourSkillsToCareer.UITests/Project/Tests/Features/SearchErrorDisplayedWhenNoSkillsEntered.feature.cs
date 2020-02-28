@@ -74,11 +74,17 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Search Error Displayed When No Skills Entered")]
         [NUnit.Framework.CategoryAttribute("MatchSkills")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void SearchErrorDisplayedWhenNoSkillsEntered()
+        [NUnit.Framework.TestCaseAttribute("Headteacher", "Headteacher", null)]
+        public virtual void SearchErrorDisplayedWhenNoSkillsEntered(string searchTerm, string occupation, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Error Displayed When No Skills Entered", null, new string[] {
-                        "MatchSkills",
-                        "Smoke"});
+            string[] @__tags = new string[] {
+                    "MatchSkills",
+                    "Smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search Error Displayed When No Skills Entered", null, @__tags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -93,26 +99,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.Then("I am taken to the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
- testRunner.When("I enter \'Occupation\' on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
-  testRunner.And("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When(string.Format("I enter {0} on the Enter your occupation page", searchTerm), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I click search button on the Enter your occupation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.When("I select the first skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I am taken to the Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
-  testRunner.And("I click the Add to basket on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I select a skill on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
- testRunner.Then("I am taken to the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I click the Add to basket on Select skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.When("I click on search for skills on the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I am taken to the Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 21
- testRunner.Then("I am taken to the Enter your skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click on Add More Skills on Your skills list page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
- testRunner.When("I enter \'\' on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("I am taken to the More Skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 23
-  testRunner.And("I click search button on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I select skills entry option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
+ testRunner.Then("I am taken to the Enter your skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+ testRunner.When("I click search button on Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
  testRunner.Then("an Error message is displayed on the Enter skills page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
