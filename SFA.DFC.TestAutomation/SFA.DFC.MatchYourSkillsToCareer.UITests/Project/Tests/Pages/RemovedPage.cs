@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 {
-    public class RelatedSkillsPage : BasePage 
+    public class RemovedPage : BasePage 
     {
         #region Helpers
         private readonly IWebDriver _webDriver;
@@ -16,11 +16,10 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By FirstSkill= By.Id("firstSkill");
-        private readonly By ButtonAdd = By.Id("relatedSkillsGovukButtonAdd");
+        private readonly By AddSkillsLink = By.LinkText("add skills to your list.");
         #endregion
 
-        public RelatedSkillsPage(ScenarioContext context): base(context)
+        public RemovedPage(ScenarioContext context): base(context)
         {
             _context = context;
             _formHelper = context.Get<FormCompletionHelper>();
@@ -28,22 +27,11 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
             _webDriver = context.GetWebDriver();
         }
 
-        public RelatedSkillsPage SelectASkill()
+
+        public SkillsListPage ClickAddSkillsLink()
         {
-            var checkboxes = _webDriver.FindElements(By.XPath("//*[@id='selectSkills']/div"));
-            foreach (var checkbox in checkboxes)
-            {
-                checkbox.Click();
-            }
-            return this;
-        }
-                
-        public SkillsListPage ClickAdd()
-        {
-            _formHelper.ClickElement(ButtonAdd);
+            _formHelper.ClickElement(AddSkillsLink);
             return new SkillsListPage(_context);
         }
-
-
     }
 }

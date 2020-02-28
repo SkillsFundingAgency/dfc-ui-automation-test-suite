@@ -2,6 +2,7 @@
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
+using FluentAssertions;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 {
@@ -14,10 +15,10 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By TextEntrySkills = By.Id("skills");
-        private readonly By ButtonSearch = By.Id("search");
-        private readonly By ErrorMsg = By.Id("Errormessage");
-        private readonly By ErrorSummary = By.Id("Errorsummary");
+        private readonly By TextEntrySkills = By.Id("enterSkillsInputInput");
+        private readonly By ButtonSearch = By.Id("enterSkillsGovukSecondaryButtonSearch");
+        private readonly By ErrorMsg = By.Id("enterSkillsGovukTextInputErrorSearchError");
+        private readonly By ErrorSummary = By.LinkText("Enter a skill");
         #endregion
 
         public EnterSkillsPage(ScenarioContext context): base(context)
@@ -42,8 +43,8 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public EnterSkillsPage VerifyError()
         {
-            _pageHelper.IsElementDisplayed(ErrorSummary);
-            _pageHelper.IsElementDisplayed(ErrorMsg);
+            _pageHelper.IsElementDisplayed(ErrorSummary).Should().BeTrue();
+            _pageHelper.IsElementDisplayed(ErrorMsg).Should().BeTrue();
             return this;
         }
 

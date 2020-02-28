@@ -65,6 +65,15 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickSearch();
         }
 
+
+        [When(@"I click search button on the Enter your job page")]
+        public void WhenIClickSearchButtonOnTheEnterYourJobPage()
+        {
+            moreJobsPage
+                .ClickSearch();
+        }
+
+
         [When(@"I select skills entry option")]
         public void WhenISelectSkillsEntryOption()
         {

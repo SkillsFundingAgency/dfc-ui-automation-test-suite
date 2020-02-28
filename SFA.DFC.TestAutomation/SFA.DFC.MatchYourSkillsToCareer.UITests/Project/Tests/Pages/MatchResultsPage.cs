@@ -14,7 +14,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By FirstResult = By.Id("firstjob");
+        private readonly By FirstResult = By.XPath("//*[@id='app-results-list--long']/div[1]/div/div[1]/h3/a");
         private readonly By CategoryFilter = By.Id("filtercategory");
         private readonly By StrengthFilter = By.Id("filterstrength");
         private readonly By ApplyButton = By.Id("apply");

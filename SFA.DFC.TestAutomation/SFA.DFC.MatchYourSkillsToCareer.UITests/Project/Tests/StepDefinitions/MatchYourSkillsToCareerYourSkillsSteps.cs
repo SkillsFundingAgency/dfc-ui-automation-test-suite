@@ -21,11 +21,12 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
         }
 
         #region When
-        [When(@"I click on search for skills on the Your skills list page")]
+
+        [When(@"I click on Add More Skills on Your skills list page")]
         public void WhenIClickOnSearchForSkillsOnTheYourSkillsListPage()
         {
             skillsListPage
-                .SearchSkill();
+                .AddMoreSkills();
         }
 
 
@@ -36,13 +37,6 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .RemoveSkills();
         }
 
-        [When(@"I click on search for occupations on the Your skills list page")]
-        public void WhenIClickOnSearchForOccupationsOnTheYourSkillsListPage()
-        {
-            skillsListPage
-                .EnterOccupation();
-        }
-
         [When(@"I select continue to your career matches")]
         public void WhenISelectContinueToYourCareerMatches()
         {
@@ -50,9 +44,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ContinueToCareerMatches();
         }
 
-
         #endregion
-
 
         #region Then
 

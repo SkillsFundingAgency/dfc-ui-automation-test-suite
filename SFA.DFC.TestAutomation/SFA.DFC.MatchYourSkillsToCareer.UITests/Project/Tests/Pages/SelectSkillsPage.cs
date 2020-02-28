@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 {
-    public class SelectSkillsPage : BasePage 
+    public class SelectSkillsPage : BasePage
     {
         #region Helpers
         private readonly IWebDriver _webDriver;
@@ -17,12 +17,11 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By Checkboxlist = By.CssSelector("#main-content > div > div > div > div > div > form > div > div > fieldset > div"); 
-        private readonly By FirstSkill= By.CssSelector("#selectSkillsGovukCheckbox-74688c5d-2af1-4f7a-9d1c-00e808eaa1e6"); 
+        private readonly By FirstSkill = By.Id("selectSkills-GovukCheckbox-http://data.europa.eu/esco/skill/74688c5d-2af1-4f7a-9d1c-00e808eaa1e6");
         private readonly By ButtonAdd = By.Id("selectSkillsGovukButtonAddtoskillslist");
         #endregion
 
-        public SelectSkillsPage(ScenarioContext context): base(context)
+        public SelectSkillsPage(ScenarioContext context) : base(context)
         {
             _context = context;
             _formHelper = context.Get<FormCompletionHelper>();
@@ -30,11 +29,21 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
             _webDriver = context.GetWebDriver();
         }
 
+        public SelectSkillsPage SelectASkill()
+        {
+            var checkboxes = _webDriver.FindElements(By.XPath("//*[@id='selectskills']/div"));   
+            foreach (var checkbox in checkboxes)
+            {
+                checkbox.Click();
+            }
+            return this;
+        }
+
         public SelectSkillsPage SelectFirstSkill()
         {
             IWebElement checkbox = _webDriver.FindElement(FirstSkill);
             if (!checkbox.Selected)
-            checkbox.Click();
+                checkbox.Click();
             return this;
         }
 
