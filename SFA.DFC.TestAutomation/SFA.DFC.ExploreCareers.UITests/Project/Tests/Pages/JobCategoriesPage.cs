@@ -60,7 +60,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public void VerifyCorrectJobCategoryPage()
         {
             SelectedCategory = _objectContext.Get("selectedCategory");
-            _pageHelper.VerifyText(PageHeader, SelectedCategory);
+            _pageHelper.VerifyText(PageHeader, SelectedCategory).Should().BeTrue();
         }
 
         public void VerifySelectedCategoryNotDisplayed()
@@ -81,8 +81,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyCorrectBreadcrumbDisplayed()
         {
-            _pageHelper.VerifyText(Breadcrumb, "Home: Explore careers");
-            _pageHelper.VerifyText(Breadcrumb, SelectedCategory);
+            _pageHelper.VerifyText(Breadcrumb, "Home: Explore careers").Should().BeTrue();
+            _pageHelper.VerifyText(Breadcrumb, SelectedCategory).Should().BeTrue();
         }
 
     }

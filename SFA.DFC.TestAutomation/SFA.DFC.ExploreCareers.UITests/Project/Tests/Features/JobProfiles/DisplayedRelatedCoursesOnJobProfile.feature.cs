@@ -70,13 +70,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Job Profile displayed related courses for citizens")]
+        [NUnit.Framework.DescriptionAttribute("Job Profile displays related courses for citizens")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("JobProfile")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void JobProfileDisplayedRelatedCoursesForCitizens()
+        public virtual void JobProfileDisplaysRelatedCoursesForCitizens()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Job Profile displayed related courses for citizens", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Job Profile displays related courses for citizens", null, new string[] {
                         "ExploreCareers",
                         "JobProfile",
                         "Smoke"});

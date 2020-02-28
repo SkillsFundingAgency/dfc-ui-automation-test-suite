@@ -3,7 +3,7 @@
 @ExploreCareers
 @JobProfile
 @Smoke
-Scenario: Job Profile displayed related courses for citizens
+Scenario: Job Profile displays related courses for citizens
 	Given I navigate to the 'Electrician' profile
 	Then all the profile segments are displayed
 		And related courses are displayed

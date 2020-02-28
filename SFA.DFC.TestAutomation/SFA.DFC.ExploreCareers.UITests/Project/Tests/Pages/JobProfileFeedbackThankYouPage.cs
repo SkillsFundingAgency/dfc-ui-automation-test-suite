@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using TechTalk.SpecFlow;
@@ -24,7 +25,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyThankYouMessage()
         {
-            _pageHelper.VerifyText(ThankYouMessage, "Thanks");
+            _pageHelper.VerifyText(ThankYouMessage, "Thanks").Should().BeTrue();
         }
 
     }

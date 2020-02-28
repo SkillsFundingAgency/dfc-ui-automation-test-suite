@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using FluentAssertions;
+using OpenQA.Selenium;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
@@ -33,7 +34,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         }
         public void VerifyTechnicalPage()
         {         
-            _pageHelper.VerifyText(TechnicalPageTitle, "Report a technical issue");
+            _pageHelper.VerifyText(TechnicalPageTitle, "Report a technical issue").Should().BeTrue();
         }
         public ReportaTechnicalIssuePage  EnterTechnicalQuery(string query)
         {
