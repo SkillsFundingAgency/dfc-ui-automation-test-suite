@@ -70,13 +70,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Related aprenticeships are displayed on job profiles")]
+        [NUnit.Framework.DescriptionAttribute("Related apprenticeships are displayed on job profiles")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("JobProfile")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void RelatedAprenticeshipsAreDisplayedOnJobProfiles()
+        public virtual void RelatedApprenticeshipsAreDisplayedOnJobProfiles()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Related aprenticeships are displayed on job profiles", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Related apprenticeships are displayed on job profiles", null, new string[] {
                         "ExploreCareers",
                         "JobProfile",
                         "Smoke"});
@@ -88,7 +88,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Then("the related apprenticeship section is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
- testRunner.When("I select apprenticeship title \'2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I select apprenticeship title \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
  testRunner.Then("I am redirected to the correct apprenticeships page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

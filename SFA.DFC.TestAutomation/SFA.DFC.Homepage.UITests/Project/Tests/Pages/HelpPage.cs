@@ -12,7 +12,7 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
         private ScenarioContext _context;
 
         protected override By PageHeader => By.ClassName("heading-xlarge");
-        protected override string PageTitle => "Help using Explore careers";
+        protected override string PageTitle => "Help using the National Careers Service";
 
         public HelpPage(ScenarioContext context) : base(context)
         {

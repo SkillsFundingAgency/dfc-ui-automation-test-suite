@@ -31,7 +31,7 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
 
         public ServiceStatusPage VerifyAllServicesAreRunning()
         {
-            ServicesList.Count.Should().Be(5);
+            ServicesList.Count.Should().Be(6, "One of the services is Failing");  
             return this;
         }
     }
