@@ -40,11 +40,26 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 .ClickRemove();
         }
 
+        [When(@"I click the cancel button on remove skills page")]
+        public void WhenIClickTheCancelButtonOnRemoveSkillsPage()
+        {
+            removeSkillsPage
+                .ClickCancel();
+        }
+
+
         [When(@"I click confirm remove skills")]
         public void WhenIClickConfirmRemoveSkills()
         {
             confirmRemoveSkillsPage
                 .ClickRemove();
+        }
+
+        [When(@"I click cancel on confirm remove skills page")]
+        public void WhenIClickCancelOnConfirmRemoveSkillsPage()
+        {
+            confirmRemoveSkillsPage
+                .ClickCancel();
         }
 
         [When(@"I click on the add more skills link")]

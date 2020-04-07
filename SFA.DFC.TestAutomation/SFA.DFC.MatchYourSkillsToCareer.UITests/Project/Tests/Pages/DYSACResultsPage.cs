@@ -14,7 +14,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By AttributeQuestionsButton = By.Id("attributes");
+        private readonly By AttributeQuestionsButton = By.XPath(".//*[@id='app-results-list']/li[1]/div/div/a");
         private readonly By MatchSkillsButton = By.Id("matchskills");
 
         #endregion
