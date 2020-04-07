@@ -18,6 +18,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         protected override string PageTitle => "";
         private readonly By FirstSkill = By.XPath("//*[contains(@id,'removeSkills-GovukCheckbox-http')]");
         private readonly By RemoveButton = By.Id("removeSkillsGovukButtonRemoveSelectSkills");
+        private readonly By CancelButton = By.Id("removeSkillsGovukButtonLinkCancel");
         #endregion
 
         public RemoveSkillsPage(ScenarioContext context): base(context)
@@ -39,7 +40,13 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public SkillsListPage ClickRemove()
         {
-            _formHelper.SelectRadioButton(RemoveButton);
+            _formHelper.ClickElement(RemoveButton);
+            return new SkillsListPage(_context);
+        }
+
+        public SkillsListPage ClickCancel()
+        {
+            _formHelper.ClickElement(CancelButton);
             return new SkillsListPage(_context);
         }
     }

@@ -37,10 +37,8 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 dYSACTraitsQuestionsPage
                     .SelectStronglyAgree()
                     .ClickNextButton();
-            } while (i < 39);
-
-            dYSACTraitsQuestionsPage
-                .ClickFinalNextButton();
+                    i++;
+            } while (i < 40);
 
             dYSACAssessmentCompletePage
                 .ClickResultsButton();
@@ -62,10 +60,8 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
                 dYSACAttributesQuestionsPage
                     .ClickYes()
                     .ClickNextButton();
+                i++;
             } while (i < 3);
-
-            dYSACAttributesQuestionsPage
-                .ClickFinalNextButton();
         }
 
         [When(@"I click the link to Match skills")]

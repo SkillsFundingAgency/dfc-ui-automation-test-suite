@@ -17,6 +17,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #region Page Elements
         protected override string PageTitle => "";
         private readonly By RemoveButton = By.Id("confirmRemoveGovukButtonRemoveSelectedSkills");
+        private readonly By CancelButton = By.Id("confirmRemoveGovukButtonLinkCancel");
         #endregion
 
         public ConfirmRemoveSkillsPage(ScenarioContext context): base(context)
@@ -30,8 +31,14 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         public RemovedPage ClickRemove()
         {
-            _formHelper.SelectRadioButton(RemoveButton);
+            _formHelper.ClickElement(RemoveButton);
             return new RemovedPage(_context);
+        }
+
+        public SkillsListPage ClickCancel()
+        {
+            _formHelper.ClickElement(CancelButton);
+            return new SkillsListPage(_context);
         }
     }
 }

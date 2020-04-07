@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Remove="Project\Tests\Features\FindJobsByEnteringMultipleSkills.feature.cs" />
     <Compile Remove="Project\Tests\Features\FindJobsByEnteringOccupation.feature.cs" />
+    <Compile Remove="Project\Tests\Features\FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature.cs" />
     <Compile Remove="Project\Tests\Features\FindJobsByEnteringSkills.feature.cs" />
     <Compile Remove="Project\Tests\Features\FindJobsByEnteringSkillsAndOccupations.feature.cs" />
     <Compile Remove="Project\Tests\MatchYourSkillsToCareerConfigurationSetup.cs" />
@@ -18,6 +19,7 @@
   <ItemGroup>
     <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringMultipleSkills.feature" />
     <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringOccupation.feature" />
+    <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature" />
     <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringSkills.feature" />
     <SpecFlowFeatureFiles Remove="Project\Tests\Features\FindJobsByEnteringSkillsAndOccupations.feature" />
   </ItemGroup>
@@ -85,9 +87,6 @@
     <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndOccupation.feature.cs">
       <DependentUpon>FindJobsByEnteringPersonalTraitsAndOccupation.feature</DependentUpon>
     </Compile>
-    <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature.cs">
-      <DependentUpon>FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature</DependentUpon>
-    </Compile>
     <Compile Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndWorkingStyle.feature.cs">
       <DependentUpon>FindJobsByEnteringPersonalTraitsAndWorkingStyle.feature</DependentUpon>
     </Compile>
@@ -109,6 +108,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FindJobsByEnteringOccupationAndSkills.feature</DependentUpon>
     </Compile>
+    <Compile Update="Project\Tests\Features\CancelOnRemoveSkillsPage.feature.cs">
+      <DependentUpon>CancelOnRemoveSkillsPage.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Project\Tests\Features\CancelOnConfirmRemoveSkillsPage.feature.cs">
+      <DependentUpon>CancelOnConfirmRemoveSkillsPage.feature</DependentUpon>
+    </Compile>
     <Compile Update="Project\Tests\Features\SearchErrorDisplayedWhenNoOccupationEntered.feature.cs">
       <DependentUpon>SearchErrorDisplayedWhenNoOccupationEntered.feature</DependentUpon>
     </Compile>
@@ -128,12 +133,6 @@
       <LastGenOutput>AccessMatchYourSkillsToCareer.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsAndOccupation.feature">
-      <Visible>$(UsingMicrosoftNETSdk)</Visible>
-      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
-      <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-    </SpecFlowFeatureFiles>
-    <SpecFlowFeatureFiles Update="Project\Tests\Features\FindJobsByEnteringPersonalTraitsWorkingStyleAndOccupation.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
       <LastGenOutput>FindJobsByEnteringAnOccupationOnly.feature.cs</LastGenOutput>
@@ -167,6 +166,18 @@
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
       <LastGenOutput>FindJobsByEnteringMutipleOccupations.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\CancelOnRemoveSkillsPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>RemoveSkillsFromYourSkillsList.feature.cs</LastGenOutput>
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Project\Tests\Features\CancelOnConfirmRemoveSkillsPage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+      <LastGenOutput>RemoveSkillsFromYourSkillsList.feature.cs</LastGenOutput>
       <Generator>SpecFlowSingleFileGenerator</Generator>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Project\Tests\Features\SearchErrorDisplayedWhenNoOccupationEntered.feature">

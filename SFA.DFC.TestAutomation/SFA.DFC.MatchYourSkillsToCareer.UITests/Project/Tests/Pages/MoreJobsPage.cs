@@ -18,9 +18,9 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By TextEntryJob = By.Id("moreJobsGovukAutoCompleteMoreJobsAutoComplete");
+        private readonly By TextEntryJob = By.Id("occupationSearchGovukAutoCompleteOccupationAutoComplete");
         private readonly By DropdownResults = By.ClassName("autocomplete__option");
-        private readonly By ButtonSearch = By.Id("moreJobsGovukSecondaryButtonSearch");
+        private readonly By ButtonSearch = By.Id("occupationSearchGovukSecondaryButtonSearch");
         private readonly By ErrorSummary = By.XPath("//*[@id='main-content']/div/div/div[1]");
         private readonly By ErrorMsg = By.Id("moreJobsGovukAutoCompleteErrorSearchError");
         #endregion
