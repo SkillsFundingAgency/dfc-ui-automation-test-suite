@@ -14,7 +14,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By NextButton = By.XPath(".//*[@id='main-content']/div/div/div[2]/form/div/div[1]/div[2]/button");
+        private readonly By NextButton = By.ClassName("btn-next-question");
         private readonly By YesRadio = By.Id("selected_answer-1");
 
         #endregion

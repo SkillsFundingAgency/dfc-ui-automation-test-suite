@@ -15,7 +15,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #region Page Elements
         protected override string PageTitle => "";
         private readonly By RadioSearchBySkills = By.Id("routeGovUkRadioButtonJobs");
-        private readonly By RadioAboutYourself = By.Id("routeGovUkRadioButtonSkillsAndJobs");
+        private readonly By RadioAboutYourself = By.Id("routeGovUkRadioButtonJobsAndSkills");
         private readonly By ButtonContinue = By.Id("routeGovUkButtonContinue");
         #endregion
 
