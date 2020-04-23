@@ -10,12 +10,13 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #region Helpers
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
+        private readonly PageInteractionHelper _pageHelper;
 
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By AttributeQuestionsButton = By.XPath(".//*[@id='app-results-list']/li[1]/div/div/a");
-        private readonly By MatchSkillsButton = By.Id("matchskills");
+        private readonly By AttributeQuestionsButton = By.CssSelector(".govuk-grid-column-two-thirds .app-button");
+        private readonly By MatchSkillsButton = By.CssSelector(".TBC");
 
         #endregion
 
@@ -23,12 +24,14 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         {
             _context = context;
             _formHelper = context.Get<FormCompletionHelper>();
+            _pageHelper = context.Get<PageInteractionHelper>();
         }
 
 
         public DYSACAttributesQuestionsPage ClickAttributeQuestions()
         {
-            _formHelper.ClickElement(AttributeQuestionsButton);
+            var listOfProfiles = _pageHelper.FindElements(AttributeQuestionsButton);
+            _formHelper.ClickElement(listOfProfiles[1]);
             return new DYSACAttributesQuestionsPage(_context);
         }
 
