@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.UI.FrameworkHelpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.UI.Framework.TestSupport
@@ -13,6 +10,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         private const string ExploreCareersConfigKey = "explorecareersconfig";
         private const string HomepageConfigKey = "homepageconfig";
         private const string FindACourseConfigKey = "findacourseconfig";
+        private const string CompositeAppsConfigKey = "compositeappsconfig";
         private const string SkillsAssessmentConfigKey = "skillsassessmentconfig";
         private const string ContactUsConfigKey = "contactusconfig";
         private const string MatchYourSkillsToCareerConfigKey = "matchyourskillstocareerconfig";
@@ -34,24 +32,32 @@ namespace SFA.DFC.UI.Framework.TestSupport
         {
             Set(context, value, ContactUsConfigKey);
         }
+
         public static void SetFindACourseConfig<T>(this ScenarioContext context, T value)
         {
             Set(context, value, FindACourseConfigKey);
         }
+
+        public static void SetCompositeAppsConfig<T>(this ScenarioContext context, T value)
+        {
+            Set(context, value, CompositeAppsConfigKey);
+        }
+
         public static void SetHomepageConfig<T>(this ScenarioContext context, T value)
         {
             Set(context, value, HomepageConfigKey);
         }
+
         public static void SetMatchYourSkillsToCareer<T>(this ScenarioContext context, T value)
         {
             Set(context, value, MatchYourSkillsToCareerConfigKey);
         }
 
-
         public static T GetExploreCareersConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, ExploreCareersConfigKey);
         }
+
         public static T GetHomepageConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, HomepageConfigKey);
@@ -61,6 +67,12 @@ namespace SFA.DFC.UI.Framework.TestSupport
         {
             return Get<T>(context, FindACourseConfigKey);
         }
+
+        public static T GetCompositeAppsConfig<T>(this ScenarioContext context)
+        {
+            return Get<T>(context, CompositeAppsConfigKey);
+        }
+
         public static T GetSkillsAssessmentConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, SkillsAssessmentConfigKey);
