@@ -21,7 +21,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         protected override string PageTitle => "";
         private By TechnicalPageTitle = By.ClassName("govuk-heading-xl");
         private By Message = By.Id("Message");
-        private By ContinueButton = By.ClassName("govuk-button");
+        private By ContinueButton = By.CssSelector("#userform .govuk-button");
 
 
         #endregion

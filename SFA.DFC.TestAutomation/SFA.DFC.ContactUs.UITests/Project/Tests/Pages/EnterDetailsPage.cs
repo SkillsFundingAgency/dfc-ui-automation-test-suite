@@ -42,7 +42,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By BirthDateError = By.ClassName("field-validation-error");
         private By ContactNo = By.Id("radio-inline-2");
         private IWebElement TermsCond => _webDriver.FindElement(By.ClassName("govuk-checkboxes__input"));
-        private By SendButton = By.ClassName("govuk-button");
+        private By SendButton = By.CssSelector("#userform .govuk-button");
         #endregion
         public EnterDetailsPage(ScenarioContext context): base(context)
         {
