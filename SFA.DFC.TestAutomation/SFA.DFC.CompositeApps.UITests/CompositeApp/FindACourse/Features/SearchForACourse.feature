@@ -6,7 +6,12 @@
 Background: 
 	Given I am on the find a course page
 
-@mytag
-Scenario: Search for a course without using the filter options
+@FaC @Search @NoResults
+Scenario: A no results message is displayed when there are no results
 	Given I search for 'abcdefghijkl'
 	Then I am presented with a no results message
+
+@FaC @Search @Results
+Scenario: Search results are displayed when the keyword search returns a match
+Given I search for 'a'
+Then I am presented with search results

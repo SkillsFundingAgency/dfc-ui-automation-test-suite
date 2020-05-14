@@ -17,6 +17,7 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages
         private By KeywordSearchBox = By.Id("search-input");
         private By KeywordSearchButton = By.ClassName("input-submit-wrapper"); //Pending id
         private By NoResultsMessage = By.ClassName("govuk-body-s"); //Pending id
+        private By SingleResult = By.ClassName("govuk-!-margin-top-6"); //Pending id
 
         public CourseSearchPage(ScenarioContext context) : base(context)
         {
@@ -41,6 +42,11 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages
         public bool IsNoResultsMessageDisplayed()
         {
             return _pageHelper.IsElementDisplayed(NoResultsMessage);
+        }
+
+        public bool AreOneOrMoreResultsDisplayed()
+        {
+            return _pageHelper.GetCountOfElementsGroup(SingleResult) > 0;
         }
     }
 }

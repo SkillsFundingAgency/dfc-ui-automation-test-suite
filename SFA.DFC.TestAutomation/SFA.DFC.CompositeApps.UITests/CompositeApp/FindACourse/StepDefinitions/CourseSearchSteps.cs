@@ -42,5 +42,11 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.StepDefinitions
         {
             Assert.IsTrue(courseSearchPage.IsNoResultsMessageDisplayed());
         }
+
+        [Then(@"I am presented with search results")]
+        public void ThenIAmPresentedWithSearchResults()
+        {
+            Assert.IsTrue(courseSearchPage.AreOneOrMoreResultsDisplayed());
+        }
     }
 }
