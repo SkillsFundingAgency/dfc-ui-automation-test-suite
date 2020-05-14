@@ -8,4 +8,5 @@ Background:
 
 @mytag
 Scenario: Search for a course without using the filter options
-	Given I search for 'blah'
+	Given I search for 'abcdefghijkl'
+	Then I am presented with a no results message
