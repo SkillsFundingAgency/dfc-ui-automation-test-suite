@@ -13,5 +13,5 @@ Scenario: A no results message is displayed when there are no results
 
 @FaC @Search @Results
 Scenario: Search results are displayed when the keyword search returns a match
-Given I search for 'a'
-Then I am presented with search results
+	Given I search for 'a'
+	Then I am presented with search results

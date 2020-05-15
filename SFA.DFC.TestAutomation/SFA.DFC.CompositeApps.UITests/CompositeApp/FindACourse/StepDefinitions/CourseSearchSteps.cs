@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages;
 using SFA.DFC.CompositeApps.UITests.Config;
 using SFA.DFC.UI.Framework.TestSupport;
+using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.StepDefinitions
@@ -14,6 +15,7 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.StepDefinitions
         private CourseSearchPage courseSearchPage;
         private readonly IWebDriver _webDriver;
         private readonly CompositeAppsConfig _config;
+        private readonly ObjectContext _objectContext;
 
         public CourseSearchSteps(ScenarioContext context)
         {
@@ -21,6 +23,7 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.StepDefinitions
             courseSearchPage = new CourseSearchPage(context);
             _config = context.GetCompositeAppsConfig<CompositeAppsConfig>();
             _webDriver = context.GetWebDriver();
+            _objectContext = context.Get<ObjectContext>();
         }
 
         [Given(@"I search for '(.*)'")]
@@ -48,5 +51,16 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.StepDefinitions
         {
             Assert.IsTrue(courseSearchPage.AreOneOrMoreResultsDisplayed());
         }
+
+        [Then(@"the showing courses label displays the correct number of results")]
+        public void ThenTheShowingCoursesLabelDisplaysTheCorrectNumberOfResults()
+        {
+            var previouslyRecordedTotal = _objectContext.Get<int>("TotalResults").ToString();
+            var label = courseSearchPage.GetTotalResultsLabel();
+            var regex = new Regex(" |[A-z,]");
+            var displayedTotal = regex.Replace(label, string.Empty);
+            Assert.AreEqual(previouslyRecordedTotal, displayedTotal);
+        }
+
     }
 }

@@ -10,6 +10,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         private const string ExploreCareersConfigKey = "explorecareersconfig";
         private const string HomepageConfigKey = "homepageconfig";
         private const string FindACourseConfigKey = "findacourseconfig";
+        private const string FindACourseApiConfigKey = "findacourseapiconfig";
         private const string CompositeAppsConfigKey = "compositeappsconfig";
         private const string SkillsAssessmentConfigKey = "skillsassessmentconfig";
         private const string ContactUsConfigKey = "contactusconfig";
@@ -43,6 +44,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
             Set(context, value, CompositeAppsConfigKey);
         }
 
+        public static void SetFindACourseApiConfig<T>(this ScenarioContext context, T value)
+        {
+            Set(context, value, FindACourseApiConfigKey);
+        }
+
         public static void SetHomepageConfig<T>(this ScenarioContext context, T value)
         {
             Set(context, value, HomepageConfigKey);
@@ -71,6 +77,11 @@ namespace SFA.DFC.UI.Framework.TestSupport
         public static T GetCompositeAppsConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, CompositeAppsConfigKey);
+        }
+
+        public static T GetFindACourseApiConfig<T>(this ScenarioContext context)
+        {
+            return Get<T>(context, FindACourseApiConfigKey);
         }
 
         public static T GetSkillsAssessmentConfig<T>(this ScenarioContext context)

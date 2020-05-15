@@ -18,21 +18,21 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SearchForACourse")]
-    public partial class SearchForACourseFeature
+    [NUnit.Framework.DescriptionAttribute("ViewSearchResultData")]
+    public partial class ViewSearchResultDataFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SearchForACourse.feature"
+#line 1 "ViewSearchResultData.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SearchForACourse", "\tIn order to find a course\r\n\tAs a website user\r\n\tI want to search for a specific " +
-                    "type of course", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ViewSearchResultData", "\tIn order to find a course\r\n\tAs a website user\r\n\tI want to see the accurate infor" +
+                    "mation being displayed", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,54 +74,30 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
         {
 #line 6
 #line 7
- testRunner.Given("I am on the find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I make a request to the course search API with the keyword parameter \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.And("I am on the find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A no results message is displayed when there are no results")]
-        [NUnit.Framework.CategoryAttribute("FaC")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("NoResults")]
-        public virtual void ANoResultsMessageIsDisplayedWhenThereAreNoResults()
+        [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correctly")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        public virtual void TheTotalCountOfResultsIsDisplayedCorrectly()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A no results message is displayed when there are no results", null, new string[] {
-                        "FaC",
-                        "Search",
-                        "NoResults"});
-#line 10
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 6
-this.FeatureBackground();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correctly", null, new string[] {
+                        "mytag"});
 #line 11
- testRunner.Given("I search for \'abcdefghijkl\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
- testRunner.Then("I am presented with a no results message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search results are displayed when the keyword search returns a match")]
-        [NUnit.Framework.CategoryAttribute("FaC")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("Results")]
-        public virtual void SearchResultsAreDisplayedWhenTheKeywordSearchReturnsAMatch()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search results are displayed when the keyword search returns a match", null, new string[] {
-                        "FaC",
-                        "Search",
-                        "Results"});
-#line 15
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
 this.FeatureBackground();
-#line 16
+#line 12
  testRunner.Given("I search for \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 17
+#line 13
  testRunner.Then("I am presented with search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 14
+ testRunner.And("the showing courses label displays the correct number of results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

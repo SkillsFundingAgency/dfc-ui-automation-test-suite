@@ -25,6 +25,8 @@ namespace SFA.DFC.CompositeApps.UITests.Config
             _context.SetCompositeAppsConfig(config);
             var mongoDbconfig = _configSection.GetConfigSection<MongoDbConfig>();
             _context.SetMongoDbConfig(mongoDbconfig);
+            var restApiConfig = _configSection.GetConfigSection<FindACourseApiConfig>();
+            _context.SetFindACourseApiConfig(restApiConfig);
             _objectContext.Replace("browser", config.Browser);
         }
     }
