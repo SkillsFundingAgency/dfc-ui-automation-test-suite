@@ -29,7 +29,7 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.API
             
             restRequestFactory.SetHeaders(new Dictionary<string, string>() { 
                 { "Content-Type", "application/json-patch+json" }, 
-                { "Ocp-Apim-Subscription-Key", "cb7cc988b0a646bea385c641221f67b4" } 
+                { "Ocp-Apim-Subscription-Key", _context.GetFindACourseApiConfig<FindACourseApiConfig>().OcpApimSubscriptionKey } 
             });
             
             var requestBody = new CourseSearchBody() 

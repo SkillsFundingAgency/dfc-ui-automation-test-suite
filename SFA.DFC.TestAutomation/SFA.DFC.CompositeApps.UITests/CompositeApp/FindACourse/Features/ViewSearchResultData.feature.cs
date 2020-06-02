@@ -82,11 +82,17 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correctly")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("Fac")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Data")]
+        [NUnit.Framework.CategoryAttribute("API")]
         public virtual void TheTotalCountOfResultsIsDisplayedCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correctly", null, new string[] {
-                        "mytag"});
+                        "Fac",
+                        "Search",
+                        "Data",
+                        "API"});
 #line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -97,6 +103,34 @@ this.FeatureBackground();
 #line 13
  testRunner.Then("I am presented with search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
+ testRunner.And("the showing courses label displays the correct number of results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correjwdnidnwdiwnctly")]
+        [NUnit.Framework.CategoryAttribute("Fac")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Data")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        public virtual void TheTotalCountOfResultsIsDisplayedCorrejwdnidnwdiwnctly()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correjwdnidnwdiwnctly", null, new string[] {
+                        "Fac",
+                        "Search",
+                        "Data",
+                        "API"});
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 6
+this.FeatureBackground();
+#line 18
+ testRunner.Given("I search for \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.Then("I am presented with search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
  testRunner.And("the showing courses label displays the correct number of results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
