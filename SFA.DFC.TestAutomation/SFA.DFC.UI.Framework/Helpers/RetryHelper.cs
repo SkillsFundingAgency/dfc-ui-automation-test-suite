@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 
-namespace SFA.DFC.UI.FrameworkHelpers
+namespace SFA.DFC.UI.Framework.Helpers
 {
     public class RetryHelper
     {

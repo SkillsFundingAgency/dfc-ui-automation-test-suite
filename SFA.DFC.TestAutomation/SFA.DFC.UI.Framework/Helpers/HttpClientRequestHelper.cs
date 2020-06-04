@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SFA.DFC.UI.FrameworkHelpers
+namespace SFA.DFC.UI.Framework.Helpers
 {
     public class HttpClientRequestHelper
     {

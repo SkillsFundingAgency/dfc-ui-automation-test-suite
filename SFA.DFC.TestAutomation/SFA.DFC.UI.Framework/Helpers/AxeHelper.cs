@@ -2,7 +2,7 @@
 using System.IO;
 using Selenium.Axe;
 
-namespace SFA.DFC.UI.FrameworkHelpers
+namespace SFA.DFC.UI.Framework.Helpers
 {
     public class AxeHelper
     {

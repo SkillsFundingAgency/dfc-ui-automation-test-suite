@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace SFA.DFC.UI.FrameworkHelpers
+namespace SFA.DFC.UI.Framework.Helpers
 {
     public class RegexHelper
     {
