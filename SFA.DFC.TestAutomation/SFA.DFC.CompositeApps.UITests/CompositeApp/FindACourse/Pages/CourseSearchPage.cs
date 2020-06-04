@@ -1,7 +1,9 @@
 ﻿using OpenQA.Selenium;
+using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Models;
 using SFA.DFC.UI.Framework.TestSupport;
 using SFA.DFC.UI.FrameworkHelpers;
 using System;
+using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages
@@ -54,6 +56,28 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages
         public string GetTotalResultsLabel()
         {
             return _pageHelper.GetText(TotalResultsCountLabel);
+        }
+
+        public List<Results> GetResults()
+        {
+            var results = new List<Results>();
+            var allResultContainers = _pageHelper.FindElements(SingleResult);
+
+            foreach(var resultContainer in allResultContainers)
+            {
+                var uiResult = new Results();
+                uiResult.courseName = resultContainer.FindElement(By.CssSelector("h2.govuk-heading-m")).Text;
+                var startDateStr = resultContainer.FindElement(By.CssSelector("div.govuk-grid-column-one-half > ul.govuk-list > li")).Text.Replace("Start date:", string.Empty).Trim();
+                DateTime startDate;
+                
+                if(DateTime.TryParse(startDateStr, out startDate)) {
+                    uiResult.startDate = startDate;
+                }
+
+                results.Add(uiResult);
+            }
+
+            return results;
         }
     }
 }

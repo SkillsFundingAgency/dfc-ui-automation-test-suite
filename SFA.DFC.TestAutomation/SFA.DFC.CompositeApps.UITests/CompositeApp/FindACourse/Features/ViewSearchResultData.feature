@@ -14,7 +14,7 @@ Scenario: The total count of results is displayed correctly
 	And the showing courses label displays the correct number of results
 
 @Fac @Search @Data @API
-Scenario: The total count of results is displayed correjwdnidnwdiwnctly
-	Given I search for 'a'
+Scenario: The course start date is displayed correctly
+	Given I search for a course with a start date
 	Then I am presented with search results
-	And the showing courses label displays the correct number of results
+	And the course start date is displayed correctly

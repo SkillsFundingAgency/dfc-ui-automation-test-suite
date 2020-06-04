@@ -22,7 +22,7 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.API
             _objectContext = context.Get<ObjectContext>();            
         }
 
-        public async Task<IRestResponse<CourseSearchResponse>> ExecuteRequest()
+        public async Task<IRestResponse<CourseSearchResponse>> SearchWithKeyword(string keyword)
         {
             var restClientFactory = new RestClientFactory(_context.GetFindACourseApiConfig<FindACourseApiConfig>().BaseUrl);
             var restRequestFactory = new RestRequestFactory(_resource, Method.POST);
@@ -34,7 +34,7 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.API
             
             var requestBody = new CourseSearchBody() 
             {
-                subjectKeyword = "a",
+                subjectKeyword = keyword,
                 limit = 20
             };
             

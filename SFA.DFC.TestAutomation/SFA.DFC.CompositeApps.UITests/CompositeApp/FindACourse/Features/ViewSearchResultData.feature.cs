@@ -109,14 +109,14 @@ this.FeatureBackground();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correjwdnidnwdiwnctly")]
+        [NUnit.Framework.DescriptionAttribute("The course start date is displayed correctly")]
         [NUnit.Framework.CategoryAttribute("Fac")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("Data")]
         [NUnit.Framework.CategoryAttribute("API")]
-        public virtual void TheTotalCountOfResultsIsDisplayedCorrejwdnidnwdiwnctly()
+        public virtual void TheCourseStartDateIsDisplayedCorrectly()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correjwdnidnwdiwnctly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The course start date is displayed correctly", null, new string[] {
                         "Fac",
                         "Search",
                         "Data",
@@ -127,11 +127,11 @@ this.ScenarioInitialize(scenarioInfo);
 #line 6
 this.FeatureBackground();
 #line 18
- testRunner.Given("I search for \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I search for a course with a start date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 19
  testRunner.Then("I am presented with search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
- testRunner.And("the showing courses label displays the correct number of results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the course start date is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
