@@ -1,8 +1,8 @@
-﻿using RestSharp;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using DFC.TestAutomation.UI.Utilities.RestApiFactory;
+using RestSharp;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Models;
 using SFA.DFC.CompositeApps.UITests.Config;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.Framework.Utilities.RestApiFactory;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;

@@ -82,11 +82,17 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correctly")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        [NUnit.Framework.CategoryAttribute("Fac")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("Data")]
+        [NUnit.Framework.CategoryAttribute("API")]
         public virtual void TheTotalCountOfResultsIsDisplayedCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correctly", null, new string[] {
-                        "mytag"});
+                        "Fac",
+                        "Search",
+                        "Data",
+                        "API"});
 #line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

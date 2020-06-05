@@ -1,5 +1,5 @@
-﻿using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using DFC.TestAutomation.UI.Helpers;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages
