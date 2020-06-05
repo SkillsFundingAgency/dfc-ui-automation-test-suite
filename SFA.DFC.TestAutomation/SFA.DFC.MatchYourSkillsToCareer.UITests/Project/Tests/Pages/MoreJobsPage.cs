@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
-using OpenQA.Selenium;
+﻿using DFC.TestAutomation.UI.Helpers;
 using DFC.TestAutomation.UI.TestSupport;
-using DFC.TestAutomation.UI.Helpers;
+using FluentAssertions;
+using OpenQA.Selenium;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
 

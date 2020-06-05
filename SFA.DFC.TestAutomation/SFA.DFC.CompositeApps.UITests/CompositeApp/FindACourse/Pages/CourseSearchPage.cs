@@ -1,7 +1,6 @@
-﻿using OpenQA.Selenium;
-using DFC.TestAutomation.UI.TestSupport;
+﻿using DFC.TestAutomation.UI.TestSupport;
 using DFC.TestAutomation.UI.Helpers;
-using System;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages

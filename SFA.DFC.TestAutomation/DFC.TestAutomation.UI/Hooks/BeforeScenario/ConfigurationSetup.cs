@@ -1,6 +1,6 @@
 ﻿using DFC.TestAutomation.UI.Config;
-using DFC.TestAutomation.UI.TestSupport;
 using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
 using Microsoft.Extensions.Configuration;
 using TechTalk.SpecFlow;
 

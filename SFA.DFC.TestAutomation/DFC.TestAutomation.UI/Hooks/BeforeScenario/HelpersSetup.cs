@@ -1,6 +1,6 @@
 ﻿using DFC.TestAutomation.UI.Config;
-using DFC.TestAutomation.UI.TestSupport;
 using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace DFC.TestAutomation.UI.Hooks.BeforeScenario

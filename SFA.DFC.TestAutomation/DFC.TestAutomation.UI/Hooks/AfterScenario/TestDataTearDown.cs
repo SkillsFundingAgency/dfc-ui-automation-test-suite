@@ -1,12 +1,10 @@
-﻿using CsvHelper;
-using CsvHelper.Configuration.Attributes;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using CsvHelper;
 using NUnit.Framework;
-using DFC.TestAutomation.UI.TestSupport;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace DFC.TestAutomation.UI.Hooks.AfterScenario

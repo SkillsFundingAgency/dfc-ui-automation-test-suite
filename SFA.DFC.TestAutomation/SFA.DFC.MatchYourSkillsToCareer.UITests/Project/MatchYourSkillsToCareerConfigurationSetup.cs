@@ -1,5 +1,5 @@
-﻿using DFC.TestAutomation.UI.TestSupport;
-using DFC.TestAutomation.UI.Helpers;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project

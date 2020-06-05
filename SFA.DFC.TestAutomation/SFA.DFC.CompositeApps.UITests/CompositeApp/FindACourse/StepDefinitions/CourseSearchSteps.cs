@@ -1,8 +1,8 @@
-﻿using NUnit.Framework;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages;
 using SFA.DFC.CompositeApps.UITests.Config;
-using DFC.TestAutomation.UI.TestSupport;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 

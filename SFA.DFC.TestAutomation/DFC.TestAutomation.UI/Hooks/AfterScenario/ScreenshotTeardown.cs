@@ -1,5 +1,5 @@
-﻿using OpenQA.Selenium.Remote;
-using DFC.TestAutomation.UI.TestSupport;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,10 +1,4 @@
-﻿using OpenQA.Selenium;
-using DFC.TestAutomation.UI.TestSupport;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using SFA.DFC.ContactUs.UITests.Project.Tests.Pages;
 
 namespace SFA.DFC.ContactUs.UITests.Project.Tests.StepDefinitions

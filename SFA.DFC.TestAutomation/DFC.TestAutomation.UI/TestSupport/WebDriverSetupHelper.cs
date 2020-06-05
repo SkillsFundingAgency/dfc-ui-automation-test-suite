@@ -1,7 +1,4 @@
 ﻿using DFC.TestAutomation.UI.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DFC.TestAutomation.UI.TestSupport
 {

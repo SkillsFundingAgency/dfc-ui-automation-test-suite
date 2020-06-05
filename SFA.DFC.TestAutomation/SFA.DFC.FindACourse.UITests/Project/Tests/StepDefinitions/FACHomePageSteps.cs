@@ -1,8 +1,5 @@
-﻿using OpenQA.Selenium;
-using DFC.TestAutomation.UI.TestSupport;
-using System;
+﻿using SFA.DFC.FindACourse.UITests.Project.Tests.Pages;
 using TechTalk.SpecFlow;
-using SFA.DFC.FindACourse.UITests.Project.Tests.Pages;
 
 namespace SFA.DFC.FindACourse.UITests.Project.Tests.StepDefinitions
 {

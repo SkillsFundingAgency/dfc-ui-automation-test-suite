@@ -1,7 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.API;
 using SFA.DFC.CompositeApps.UITests.Config;
-using DFC.TestAutomation.UI.TestSupport;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 

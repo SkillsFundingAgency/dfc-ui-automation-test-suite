@@ -1,5 +1,5 @@
-﻿using RestSharp;
-using DFC.TestAutomation.UI.Utilities.RestApiFactory;
+﻿using DFC.TestAutomation.UI.Utilities.RestApiFactory;
+using RestSharp;
 using System.Threading.Tasks;
 
 namespace DFC.TestAutomation.UI.TestSupport
