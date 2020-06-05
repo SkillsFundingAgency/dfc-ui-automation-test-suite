@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DFC.UI.Framework\SFA.DFC.UI.Framework.csproj" />
+    <ProjectReference Include="..\DFC.TestAutomation.UI\DFC.TestAutomation.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SFA.DFC.Homepage.UITests.Project.Tests.Pages;
-using SFA.DFC.UI.Framework.TestSupport;
+using DFC.TestAutomation.UI.TestSupport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
