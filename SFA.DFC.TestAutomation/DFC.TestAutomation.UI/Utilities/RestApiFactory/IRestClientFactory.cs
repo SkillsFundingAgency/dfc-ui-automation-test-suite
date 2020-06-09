@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace SFA.DFC.UI.Framework.Utilities.RestApiFactory
+namespace DFC.TestAutomation.UI.RestApiFactory
 {
     public interface IRestClientFactory
     {

@@ -1,8 +1,8 @@
-﻿using RestSharp;
-using SFA.DFC.UI.Framework.Utilities.RestApiFactory;
+﻿using DFC.TestAutomation.UI.RestApiFactory;
+using RestSharp;
 using System.Threading.Tasks;
 
-namespace SFA.DFC.UI.Framework.TestSupport
+namespace DFC.TestAutomation.UI.TestSupport
 {
     public class RestApiHelper
     {
