@@ -1,7 +1,7 @@
 ﻿using RestSharp;
 using System.Collections.Generic;
 
-namespace DFC.TestAutomation.UI.RestApiFactory
+namespace DFC.TestAutomation.UI.Utilities.RestApiFactory
 {
     public class RestRequestFactory : IRestRequestFactory
     {

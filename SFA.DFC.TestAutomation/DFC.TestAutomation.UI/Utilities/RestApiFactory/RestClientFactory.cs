@@ -1,7 +1,7 @@
 ﻿using RestSharp;
 using System;
 
-namespace DFC.TestAutomation.UI.RestApiFactory
+namespace DFC.TestAutomation.UI.Utilities.RestApiFactory
 {
     public class RestClientFactory : IRestClientFactory
     {

@@ -1,5 +1,5 @@
-﻿using DFC.TestAutomation.UI.RestApiFactory;
-using DFC.TestAutomation.UI.TestSupport;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using DFC.TestAutomation.UI.Utilities.RestApiFactory;
 using RestSharp;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Models;
 using SFA.DFC.CompositeApps.UITests.Config;

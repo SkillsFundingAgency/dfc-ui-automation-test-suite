@@ -1,4 +1,4 @@
-﻿using DFC.TestAutomation.UI.RestApiFactory;
+﻿using DFC.TestAutomation.UI.Utilities.RestApiFactory;
 using RestSharp;
 using System.Threading.Tasks;
 
