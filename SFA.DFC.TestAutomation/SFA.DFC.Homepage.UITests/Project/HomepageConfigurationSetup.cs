@@ -1,9 +1,5 @@
-﻿using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.Homepage.UITests.Project

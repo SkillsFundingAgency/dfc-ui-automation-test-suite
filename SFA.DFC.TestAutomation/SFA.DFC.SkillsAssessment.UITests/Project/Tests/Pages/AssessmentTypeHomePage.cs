@@ -1,9 +1,8 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using System.Collections.Generic;
-using System;
 using FluentAssertions;
 
 namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages

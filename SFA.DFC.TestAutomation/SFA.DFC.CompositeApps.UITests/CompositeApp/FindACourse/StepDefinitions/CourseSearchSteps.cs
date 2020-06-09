@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using DFC.TestAutomation.UI.TestSupport;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Models;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages;

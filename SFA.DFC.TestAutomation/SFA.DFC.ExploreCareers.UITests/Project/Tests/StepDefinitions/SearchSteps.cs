@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
-using SFA.DFC.UI.Framework.TestSupport;
+﻿using SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.StepDefinitions
