@@ -1,8 +1,10 @@
 ﻿using DFC.TestAutomation.UI.TestSupport;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Models;
 using SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Pages;
 using SFA.DFC.CompositeApps.UITests.Config;
+using System.Linq;
 using System.Text.RegularExpressions;
 using TechTalk.SpecFlow;
 
@@ -62,5 +64,18 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.StepDefinitions
             Assert.AreEqual(previouslyRecordedTotal, displayedTotal);
         }
 
+        [Given(@"I search for a course with a start date")]
+        public void GivenISearchForACourseWithAStartDate()
+        {
+            GivenISearchFor($"\"{_objectContext.Get<Results>("SearchResultWithStartDate").courseName}\"");
+        }
+
+        [Then(@"the course start date is displayed correctly")]
+        public void ThenTheCourseStartDateIsDisplayedCorrectly()
+        {
+            var result = courseSearchPage.GetResults().Where(r => r.courseName.Equals(_objectContext.Get<Results>("SearchResultWithStartDate").courseName)).FirstOrDefault();
+            Assert.IsNotNull(result, $"Unable to find the course with name: {_objectContext.Get<Results>("SearchResultWithStartDate").courseName}");
+            Assert.AreEqual(_objectContext.Get<Results>("SearchResultWithStartDate").startDate, result.startDate);
+        }
     }
 }

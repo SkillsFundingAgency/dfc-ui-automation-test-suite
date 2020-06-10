@@ -77,14 +77,14 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Models
         public string venueStudyModeDescription { get; set; }
         public string deliveryMode { get; set; }
         public string deliveryModeDescription { get; set; }
-        public IList<object> startDate { get; set; }
+        public DateTime? startDate { get; set; }
         public IList<object> venueTown { get; set; }
         public int cost { get; set; }
         public string costDescription { get; set; }
         public string courseText { get; set; }
         public string ukprn { get; set; }
         public string courseDescription { get; set; }
-        public DateTime courseName { get; set; }
+        public string courseName { get; set; }
         public bool flexibleStartDate { get; set; }
         public string durationUnit { get; set; }
         public IList<object> durationValue { get; set; }

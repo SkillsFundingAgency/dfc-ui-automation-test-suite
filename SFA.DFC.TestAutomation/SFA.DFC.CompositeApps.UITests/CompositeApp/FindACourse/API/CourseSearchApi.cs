@@ -22,19 +22,19 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.API
             _objectContext = context.Get<ObjectContext>();            
         }
 
-        public async Task<IRestResponse<CourseSearchResponse>> ExecuteRequest()
+        public async Task<IRestResponse<CourseSearchResponse>> SearchWithKeyword(string keyword)
         {
             var restClientFactory = new RestClientFactory(_context.GetFindACourseApiConfig<FindACourseApiConfig>().BaseUrl);
             var restRequestFactory = new RestRequestFactory(_resource, Method.POST);
             
             restRequestFactory.SetHeaders(new Dictionary<string, string>() { 
                 { "Content-Type", "application/json-patch+json" }, 
-                { "Ocp-Apim-Subscription-Key", "cb7cc988b0a646bea385c641221f67b4" } 
+                { "Ocp-Apim-Subscription-Key", _context.GetFindACourseApiConfig<FindACourseApiConfig>().OcpApimSubscriptionKey } 
             });
             
             var requestBody = new CourseSearchBody() 
             {
-                subjectKeyword = "a",
+                subjectKeyword = keyword,
                 limit = 20
             };
             
