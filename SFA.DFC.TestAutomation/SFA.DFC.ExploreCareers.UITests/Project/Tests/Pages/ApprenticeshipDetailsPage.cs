@@ -17,6 +17,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         protected override string PageTitle => "";
         private By AppVacancyId => By.Id("vacancy-title");
 
+        private By NoApprenticeshipText => By.ClassName("heading-xlarge");
+
         #endregion
 
         public ApprenticeshipDetailsPage(ScenarioContext context) : base(context)
@@ -28,8 +30,19 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyCorrectApprenticeshipPage()
         {
-             string AppSelected = _objectContext.Get("ApprenticeshipSelected");
-            _pageHelper.VerifyText(AppVacancyId, AppSelected).Should().BeTrue();
+            string AppSelected = _objectContext.Get("ApprenticeshipSelected");
+            bool Result = false;
+            if (_pageHelper.IsElementDisplayed(AppVacancyId))
+            {
+               Result = _pageHelper.VerifyText(AppVacancyId, AppSelected);
+            }
+            else if (_pageHelper.IsElementDisplayed(NoApprenticeshipText))
+            {
+               Result = _pageHelper.VerifyText(NoApprenticeshipText, "Apprenticeship no longer available");
+            }
+
+            Result.Should().BeTrue();
+            
         }
     }
 }
