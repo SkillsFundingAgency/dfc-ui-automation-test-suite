@@ -38,12 +38,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
             }
             else if (_pageHelper.IsElementDisplayed(NoApprenticeshipText))
             {
-                Result = _pageHelper.VerifyText(NoApprenticeshipText, "Apprenticeship no longer available");
-
-            }
-            else
-            {
-                Result = false;
+               Result = _pageHelper.VerifyText(NoApprenticeshipText, "Apprenticeship no longer available");
             }
 
             Result.Should().BeTrue();
