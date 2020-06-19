@@ -19,7 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentAssertions" Version="5.9.0" />
+    <PackageReference Include="DFC.TestAutomation.UI" Version="1.0.15" />
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="nunit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
@@ -38,10 +39,6 @@
     <None Update="appsettings.Project.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DFC.TestAutomation.UI\DFC.TestAutomation.UI.csproj" />
   </ItemGroup>
 
 </Project>

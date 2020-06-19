@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.Homepage.UITests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.CompositeApps.UITests", "SFA.DFC.CompositeApps.UITests\SFA.DFC.CompositeApps.UITests.csproj", "{40E819E2-6DB1-4274-9199-7505FDC4C6BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.TestAutomation.UI", "DFC.TestAutomation.UI\DFC.TestAutomation.UI.csproj", "{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +57,6 @@ Global
 		{40E819E2-6DB1-4274-9199-7505FDC4C6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40E819E2-6DB1-4274-9199-7505FDC4C6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40E819E2-6DB1-4274-9199-7505FDC4C6BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
