@@ -1,6 +1,6 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
@@ -15,7 +15,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #region Page Elements
         protected override string PageTitle => "";
         private readonly By RadioSearchBySkills = By.Id("routeGovUkRadioButtonJobs");
-        private readonly By RadioAboutYourself = By.Id("routeGovUkRadioButtonSkillsAndJobs");
+        private readonly By RadioAboutYourself = By.Id("routeGovUkRadioButtonJobsAndSkills");
         private readonly By ButtonContinue = By.Id("routeGovUkButtonContinue");
         #endregion
 

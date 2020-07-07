@@ -13,10 +13,10 @@ Scenario Outline: Use Match Skills To Find Jobs by Entering Occupation Only
 	When I select the Match Skills option and click continue
 	Then I am taken to the Enter your occupation page
 	When I enter <search term> on the Enter your occupation page
-		And I select <occupation> from the drop down list
+		#And I select <occupation> from the drop down list
 		And I click search button on the Enter your occupation page
 	Then I am taken to the Select skills page
-	When I select the first skill on Select skills page
+	When I select a skill on Select skills page
 		And I click the Add to basket on Select skills page
 	Then I am taken to the Your skills list page
 	When I select continue to your career matches
@@ -25,8 +25,8 @@ Scenario Outline: Use Match Skills To Find Jobs by Entering Occupation Only
 	Then I am taken to the new Job profile page
 
 	Examples:
-	| search term | occupation          |
-	| Headteacher | Headteacher         |
+	 | search term | occupation          |
+	 | Headteacher | Headteacher         |
 	#| Secretary   | Secretary           |
 	#| Chemist     | Chemist             |
 	#| manager     | Air traffic manager |

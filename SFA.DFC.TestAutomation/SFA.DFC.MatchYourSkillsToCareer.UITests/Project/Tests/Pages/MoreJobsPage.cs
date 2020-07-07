@@ -1,7 +1,7 @@
-﻿using FluentAssertions;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using FluentAssertions;
 using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
@@ -18,11 +18,11 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
 
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By TextEntryJob = By.Id("occupations-autocomplete");
+        private readonly By TextEntryJob = By.Id("occupationSearchGovukAutoCompleteOccupationAutoComplete");
         private readonly By DropdownResults = By.ClassName("autocomplete__option");
-        private readonly By ButtonSearch = By.Id("EnterJobButtonSearch");
-        private readonly By ErrorSummary = By.Id("errorsummary");
-        private readonly By ErrorMsg = By.Id("errormsg");
+        private readonly By ButtonSearch = By.Id("occupationSearchGovukSecondaryButtonSearch");
+        private readonly By ErrorSummary = By.XPath("//*[@id='main-content']/div/div/div[1]");
+        private readonly By ErrorMsg = By.Id("moreJobsGovukAutoCompleteErrorSearchError");
         #endregion
 
         public MoreJobsPage(ScenarioContext context): base(context)
@@ -33,20 +33,20 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         }
 
 
-        public MoreJobsPage EnterJob(string job)
+        public MoreJobsPage EnterJob(string job2)
         {
-            _objectContext.Set("searchedTerm", job);
-            _formHelper.EnterText(TextEntryJob, job);
+            _objectContext.Set("searchTerm", job2);
+            _formHelper.EnterText(TextEntryJob, job2);
             System.Threading.Thread.Sleep(2000);
             _pageHelper.IsElementPresent(DropdownResults).Should().BeTrue();
             return this;
         }
 
-        public MoreJobsPage SelectJob(string job)
+        public MoreJobsPage SelectJob(string job2)
         {
             List<IWebElement> list = _pageHelper.FindElements(DropdownResults);
             for (var i = 0; i < list.Count; i++)
-                if (_pageHelper.GetText(list[i]).ToString() == job)
+                if (_pageHelper.GetText(list[i]).ToString() == job2)
                 {
                     _formHelper.ClickElement(list[i]);
                 }

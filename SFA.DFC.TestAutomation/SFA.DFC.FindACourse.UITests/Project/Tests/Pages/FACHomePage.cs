@@ -1,9 +1,6 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
@@ -24,7 +21,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         private By FACHeader = By.CssSelector(".govuk-heading-xl");  
         private By ProviderName = By.Id("Provider");
         private By Location = By.Id("Location");
-        private By FindACourseButton = By.CssSelector(".govuk-button");
+        private By FindACourseButton = By.CssSelector(".sf_colsIn .govuk-button");
         #endregion
         public FACHomePage(ScenarioContext context) : base(context)
         {
@@ -37,7 +34,7 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         }
         public FACHomePage NavigateToFACHomepage()
         {
-            _webDriver.Url = _config.BaseUrl + "/find-a-course";
+            _webDriver.Url = _config.BaseUrl + "/find-a-course/search";
             return this;
         }
         public FACHomePage EnterLocation(string strLocation)

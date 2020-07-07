@@ -1,6 +1,6 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
@@ -14,7 +14,7 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By FirstResult = By.Id("firstjob");
+        private readonly By FirstResult = By.XPath("//*[@id='app-results-list--long']/div[1]/div/div[1]/h3/a");
         private readonly By CategoryFilter = By.Id("filtercategory");
         private readonly By StrengthFilter = By.Id("filterstrength");
         private readonly By ApplyButton = By.Id("apply");

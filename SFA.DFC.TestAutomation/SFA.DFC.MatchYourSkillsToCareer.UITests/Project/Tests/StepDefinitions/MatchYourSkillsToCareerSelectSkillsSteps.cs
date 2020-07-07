@@ -24,18 +24,18 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.StepDefinitions
 
         #region When
 
-        [When(@"I select the first skill on Select skills page")]
-        public void WhenISelectTheFirstSkillOnSelectSkillsPage()
+        [When(@"I select a skill on Select skills page")]
+        public void WhenISelectASkillOnSelectSkillsPage()
         {
             selectSkillsPage
-                .SelectFirstSkill();
+                .SelectASkill();
         }
 
-        [When(@"I select the first skill on Related skills page")]
-        public void WhenISelectTheFirstSkillOnRelatedSkillsPage()
+        [When(@"I select a skill on Related skills page")]
+        public void WhenISelectASkillOnRelatedSkillsPage()
         {
             relatedSkillsPage
-                .SelectFirstSkill();
+                .SelectASkill();
         }
 
         [When(@"I click the Add to basket on Select skills page")]

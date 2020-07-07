@@ -1,10 +1,8 @@
-﻿using FluentAssertions;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using FluentAssertions;
 using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
@@ -31,7 +29,7 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
 
         public ServiceStatusPage VerifyAllServicesAreRunning()
         {
-            ServicesList.Count.Should().Be(5);
+            ServicesList.Count.Should().Be(6);
             return this;
         }
     }

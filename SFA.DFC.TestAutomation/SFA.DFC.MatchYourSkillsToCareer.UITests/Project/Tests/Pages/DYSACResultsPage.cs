@@ -1,6 +1,6 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
@@ -10,12 +10,13 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #region Helpers
         private readonly FormCompletionHelper _formHelper;
         private readonly ScenarioContext _context;
+        private readonly PageInteractionHelper _pageHelper;
 
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By AttributeQuestionsButton = By.Id("attributes");
-        private readonly By MatchSkillsButton = By.Id("matchskills");
+        private readonly By AttributeQuestionsButton = By.CssSelector(".govuk-grid-column-two-thirds .app-button");
+        private readonly By MatchSkillsButton = By.CssSelector(".TBC");
 
         #endregion
 
@@ -23,12 +24,14 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         {
             _context = context;
             _formHelper = context.Get<FormCompletionHelper>();
+            _pageHelper = context.Get<PageInteractionHelper>();
         }
 
 
         public DYSACAttributesQuestionsPage ClickAttributeQuestions()
         {
-            _formHelper.ClickElement(AttributeQuestionsButton);
+            var listOfProfiles = _pageHelper.FindElements(AttributeQuestionsButton);
+            _formHelper.ClickElement(listOfProfiles[1]);
             return new DYSACAttributesQuestionsPage(_context);
         }
 

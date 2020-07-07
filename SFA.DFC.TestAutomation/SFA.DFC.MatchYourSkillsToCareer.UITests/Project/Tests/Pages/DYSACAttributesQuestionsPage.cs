@@ -1,6 +1,6 @@
-﻿using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
@@ -14,8 +14,8 @@ namespace SFA.DFC.MatchYourSkillsToCareer.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private readonly By NextButton = By.Id("next");
-        private readonly By YesRadio = By.Id("yes");
+        private readonly By NextButton = By.ClassName("btn-next-question");
+        private readonly By YesRadio = By.Id("selected_answer-1");
 
         #endregion
 

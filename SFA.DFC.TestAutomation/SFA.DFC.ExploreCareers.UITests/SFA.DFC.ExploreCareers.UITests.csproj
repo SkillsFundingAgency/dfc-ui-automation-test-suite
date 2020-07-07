@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -23,13 +23,14 @@
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.24.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="79.0.3945.3600" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.0.225" />
-    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="83.0.4103.3900" />
+    <PackageReference Include="SpecFlow" Version="3.3.16-beta" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.3.16-beta" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.3.16-beta" />
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\SFA.DFC.UI.Framework\SFA.DFC.UI.Framework.csproj" />
+    <ProjectReference Include="..\DFC.TestAutomation.UI\DFC.TestAutomation.UI.csproj" />
   </ItemGroup>
   
   <ItemGroup>

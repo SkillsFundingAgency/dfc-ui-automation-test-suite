@@ -1,11 +1,7 @@
-﻿using FluentAssertions;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using FluentAssertions;
 using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
 using TechTalk.SpecFlow;
 namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
 {
@@ -21,7 +17,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         protected override string PageTitle => "";
         private By TechnicalPageTitle = By.ClassName("govuk-heading-xl");
         private By Message = By.Id("Message");
-        private By ContinueButton = By.ClassName("govuk-button");
+        private By ContinueButton = By.CssSelector("#userform .govuk-button");
 
 
         #endregion

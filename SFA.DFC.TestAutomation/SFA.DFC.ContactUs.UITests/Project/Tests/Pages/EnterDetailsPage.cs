@@ -1,11 +1,9 @@
-﻿using FluentAssertions;
+﻿using DFC.TestAutomation.UI.Helpers;
+using DFC.TestAutomation.UI.TestSupport;
+using FluentAssertions;
 using OpenQA.Selenium;
-using SFA.DFC.UI.Framework.TestSupport;
-using SFA.DFC.UI.FrameworkHelpers;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using TechTalk.SpecFlow;
 
 
@@ -42,7 +40,7 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Pages
         private By BirthDateError = By.ClassName("field-validation-error");
         private By ContactNo = By.Id("radio-inline-2");
         private IWebElement TermsCond => _webDriver.FindElement(By.ClassName("govuk-checkboxes__input"));
-        private By SendButton = By.ClassName("govuk-button");
+        private By SendButton = By.CssSelector("#userform .govuk-button");
         #endregion
         public EnterDetailsPage(ScenarioContext context): base(context)
         {

@@ -1,4 +1,4 @@
-﻿using SFA.DFC.UI.Framework.TestSupport;
+﻿using DFC.TestAutomation.UI.TestSupport;
 using System;
 using System.Collections.Generic;
 using System.Text;
