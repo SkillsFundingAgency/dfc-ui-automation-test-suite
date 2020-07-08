@@ -23,6 +23,7 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
 
         public ServiceStatusPage VerifyServicePageHeader()
         {
+            pageHelper.WaitForElementToContainText(PageHeader, "Service Status");
             pageHelper.VerifyText(PageHeader, "Service Status").Should().BeTrue();
             return this;
         }
