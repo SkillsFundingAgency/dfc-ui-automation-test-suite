@@ -72,16 +72,6 @@ jobs:
       publishWebProjects: False
       zipAfterPublish: False
 
-  # Publish Match Your Skills To Careers
-  - task: DotNetCoreCLI@2
-    displayName: 'Publish Match Your Skills To Careers UI tests'
-    inputs:
-      command: 'publish'
-      projects: '$(SolutionBaseName)\SFA.DFC.MatchYourSkillsToCareer.UITests\SFA.DFC.MatchYourSkillsToCareer.UITests.csproj'
-      arguments: '-o "$(build.artifactstagingdirectory)\$(SolutionBaseName)" $(PublishDriverArguments)'
-      publishWebProjects: False
-      zipAfterPublish: False
-
   # Package build output into a zip artifact
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: $(SolutionBaseName)'
