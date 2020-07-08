@@ -33,7 +33,7 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
         }
         public ServiceStatusPage NavigateToServiceStatusPage()
         {
-            _webDriver.Url = _config.BaseUrl + "health/servicestatus";
+            _webDriver.Url = _config.BaseUrl + "/health/servicestatus";
 
             return new ServiceStatusPage(_context);
         }
