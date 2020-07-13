@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
+namespace SFA.DFC.CompositeApps.UITests.CompositeApp.ContactUs.Features
 {
     using TechTalk.SpecFlow;
     
@@ -18,21 +18,21 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ViewSearchResultData")]
-    public partial class ViewSearchResultDataFeature
+    [NUnit.Framework.DescriptionAttribute("Send us a letter")]
+    public partial class SendUsALetterFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ViewSearchResultData.feature"
+#line 1 "SendUsALetter.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ViewSearchResultData", "\tIn order to find a course\r\n\tAs a website user\r\n\tI want to see the accurate infor" +
-                    "mation being displayed", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Send us a letter", "\tIn order to get information about careers from an area based adviser\r\n\tAs a webs" +
+                    "ite user\r\n\tI have choosen to send us a letter option", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,40 +70,24 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
-        {
-#line 6
-#line 7
- testRunner.Given("I make a request to the course search API with the keyword parameter \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.And("I am on the find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-        }
-        
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correctly")]
-        [NUnit.Framework.CategoryAttribute("Fac")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("Data")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        public virtual void TheTotalCountOfResultsIsDisplayedCorrectly()
+        [NUnit.Framework.DescriptionAttribute("On the Contact us homepage the user chooses the option to send us a letter")]
+        [NUnit.Framework.CategoryAttribute("CUS")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
+        public virtual void OnTheContactUsHomepageTheUserChoosesTheOptionToSendUsALetter()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correctly", null, new string[] {
-                        "Fac",
-                        "Search",
-                        "Data",
-                        "API"});
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("On the Contact us homepage the user chooses the option to send us a letter", null, new string[] {
+                        "CUS",
+                        "smoke"});
+#line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line 12
- testRunner.Given("I search for \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.Then("I am presented with search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
- testRunner.And("the showing courses label displays the correct number of results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+ testRunner.Given("I am on the contact us homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
+ testRunner.When("the user chooses the option Send us a letter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+    testRunner.Then("the user is presented with Send us a letter page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

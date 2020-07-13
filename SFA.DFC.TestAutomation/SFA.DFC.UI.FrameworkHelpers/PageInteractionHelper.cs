@@ -121,7 +121,7 @@ namespace SFA.DFC.UI.FrameworkHelpers
             TurnOffImplicitWaits();
             try
             {
-                return _webDriver.FindElement(locator).Displayed;
+              return _webDriver.FindElement(locator).Displayed;
             }
             catch (Exception)
             {

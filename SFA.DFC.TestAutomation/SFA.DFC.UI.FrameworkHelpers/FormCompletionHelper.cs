@@ -100,6 +100,21 @@ namespace SFA.DFC.UI.FrameworkHelpers
             }
         }
 
+        public void SelectCheckBox(By locator)
+        {
+            IWebElement checkbox = _webDriver.FindElement(locator);
+            SelectCheckBox(checkbox);
+        }
+
+        public void SelectCheckBoxByForAttribute(By locator, string forAttribute)
+        {
+            IList<IWebElement> checkboxes = _webDriver.FindElements(locator);
+            var checkboxToSelect = checkboxes.FirstOrDefault(checkbox => checkbox.GetAttribute("for") == forAttribute);
+
+            if (checkboxToSelect != null)
+                ClickElement(checkboxToSelect);
+        }
+
         public void SelectRadioOptionByForAttribute(By locator, string forAttribute)
         {
             IList<IWebElement> radios = _webDriver.FindElements(locator);
@@ -124,9 +139,21 @@ namespace SFA.DFC.UI.FrameworkHelpers
             }
         }
 
+
         private SelectElement SelectElement(IWebElement element)
         {
             return new SelectElement(element);
         }
+
+        /// <summary>
+        /// Execute Javascript
+        /// </summary>
+        /// <param name="script"></param>
+        public void ExecuteJavascript(string script)
+        {
+            IJavaScriptExecutor javaScriptExecutor = (IJavaScriptExecutor)_webDriver;
+            javaScriptExecutor.ExecuteScript(script);
+        }
+
     }
 }

@@ -13,7 +13,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         #region Helpers and Context
         private readonly PageInteractionHelper _pageInteractionHelper;
         private readonly FrameworkConfig _frameworkConfig;
-        private readonly IWebDriver _webDriver;
+        private readonly IWebDriver IWebDriver;
         private readonly ScreenShotTitleGenerator _screenShotTitleGenerator;
         private readonly string _directory;
         private readonly string _browser;
@@ -26,7 +26,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         public BasePage(ScenarioContext context)
         {
             _frameworkConfig = context.Get<FrameworkConfig>();
-            _webDriver = context.GetWebDriver();
+            IWebDriver = context.GetWebDriver();
             _pageInteractionHelper = context.Get<PageInteractionHelper>();
             _screenShotTitleGenerator = context.Get<ScreenShotTitleGenerator>();
             var objectContext = context.Get<ObjectContext>();
@@ -38,7 +38,7 @@ namespace SFA.DFC.UI.Framework.TestSupport
         {
             if (_frameworkConfig.TakeEveryPageScreenShot && !_browser.IsCloudExecution())
             {
-                ScreenshotHelper.TakeScreenShot(_webDriver, _directory, _screenShotTitleGenerator.GetNextCount());
+                ScreenshotHelper.TakeScreenShot(IWebDriver, _directory, _screenShotTitleGenerator.GetNextCount());
             }
 
             return _pageInteractionHelper.VerifyPage(PageHeader, PageTitle);

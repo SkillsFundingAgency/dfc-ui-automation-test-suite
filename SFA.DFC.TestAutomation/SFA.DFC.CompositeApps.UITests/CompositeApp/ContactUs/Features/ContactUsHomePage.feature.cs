@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
+namespace SFA.DFC.CompositeApps.UITests.CompositeApp.ContactUs.Features
 {
     using TechTalk.SpecFlow;
     
@@ -18,21 +18,21 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ViewSearchResultData")]
-    public partial class ViewSearchResultDataFeature
+    [NUnit.Framework.DescriptionAttribute("ContactUsHomePage")]
+    public partial class ContactUsHomePageFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ViewSearchResultData.feature"
+#line 1 "ContactUsHomePage.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ViewSearchResultData", "\tIn order to find a course\r\n\tAs a website user\r\n\tI want to see the accurate infor" +
-                    "mation being displayed", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ContactUsHomePage", "\tIn order to get information about careers\r\n\tAs a website user\r\n\tI want to choose" +
+                    " a specific option to get through to an adviser", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,40 +70,42 @@ namespace SFA.DFC.CompositeApps.UITests.CompositeApp.FindACourse.Features
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void FeatureBackground()
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("On the Contact us homepage the user is presented with options to get through to a" +
+            "n adviser")]
+        [NUnit.Framework.CategoryAttribute("CUS")]
+        public virtual void OnTheContactUsHomepageTheUserIsPresentedWithOptionsToGetThroughToAnAdviser()
         {
-#line 6
-#line 7
- testRunner.Given("I make a request to the course search API with the keyword parameter \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("On the Contact us homepage the user is presented with options to get through to a" +
+                    "n adviser", null, new string[] {
+                        "CUS"});
 #line 8
- testRunner.And("I am on the find a course page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 9
+ testRunner.Given("I am on the contact us homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 10
+ testRunner.Then("I am presented with the four options", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+            this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("The total count of results is displayed correctly")]
-        [NUnit.Framework.CategoryAttribute("Fac")]
-        [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("Data")]
-        [NUnit.Framework.CategoryAttribute("API")]
-        public virtual void TheTotalCountOfResultsIsDisplayedCorrectly()
+        [NUnit.Framework.DescriptionAttribute("Error messages on Contact-us homepage")]
+        [NUnit.Framework.CategoryAttribute("CUS")]
+        public virtual void ErrorMessagesOnContact_UsHomepage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The total count of results is displayed correctly", null, new string[] {
-                        "Fac",
-                        "Search",
-                        "Data",
-                        "API"});
-#line 11
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error messages on Contact-us homepage", null, new string[] {
+                        "CUS"});
+#line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 6
-this.FeatureBackground();
-#line 12
- testRunner.Given("I search for \'a\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
- testRunner.Then("I am presented with search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14
- testRunner.And("the showing courses label displays the correct number of results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am on the contact us homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+ testRunner.When("I click continue with nothing selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("an error message is displayed on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="CompositeApp\ContactUs\Features\ContactUsHomePage - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="CompositeApp\ContactUs\Features\SendUsALetter - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="CompositeApp\ContactUs\Features\SendUsOnlineMessage - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="..\NUnitConfigurator.cs" Link="NUnitConfigurator.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -24,7 +30,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Selenium.Firefox.WebDriver" Version="0.26.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="81.0.4044.6900" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="83.0.4103.3900" />
     <PackageReference Include="SpecFlow" Version="3.0.225" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.0.225" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
@@ -33,6 +39,21 @@
   <ItemGroup>
     <ProjectReference Include="..\SFA.DFC.UI.FrameworkHelpers\SFA.DFC.UI.FrameworkHelpers.csproj" />
     <ProjectReference Include="..\SFA.DFC.UI.Framework\SFA.DFC.UI.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CompositeApp\ContactUs\Features\AskUsToCallYou.feature.cs">
+      <DependentUpon>AskUsToCallYou.feature</DependentUpon>
+    </Compile>
+    <Compile Update="CompositeApp\ContactUs\Features\SpeakToAnAdviser.feature.cs">
+      <DependentUpon>SpeakToAnAdviser.feature</DependentUpon>
+    </Compile>
+    <Compile Update="CompositeApp\ContactUs\Features\SendUsALetter.feature.cs">
+      <DependentUpon>SendUsALetter.feature</DependentUpon>
+    </Compile>
+    <Compile Update="CompositeApp\ContactUs\Features\SendUsOnlineMessage.feature.cs">
+      <DependentUpon>SendUsOnlineMessage.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +66,25 @@
     <None Update="appsettings.Project.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="CompositeApp\ContactUs\Features\AskUsToCallYou.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="CompositeApp\ContactUs\Features\SpeakToAnAdviser.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="CompositeApp\ContactUs\Features\SendUsALetter.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="CompositeApp\ContactUs\Features\SendUsOnlineMessage.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
 </Project>
