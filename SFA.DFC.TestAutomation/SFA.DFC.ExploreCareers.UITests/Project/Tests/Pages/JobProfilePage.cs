@@ -22,7 +22,8 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         private By CourseSection => By.CssSelector(".dfc-code-jp-trainingCourse .opportunity-item");
         private By ListOfCourses => By.CssSelector(".dfc-code-jp-trainingCourse .opportunity-item .govuk-heading-s a");
         private By CoursesNearYouLink => By.PartialLinkText("courses near you");
-        private By ApprenticeshipSection => By.CssSelector("#appGeneric .opportunity-item");
+        private By ApprenticeshipSection => By.Id("appGeneric");
+        private By ApprenticeshipContainer => By.CssSelector("#appGeneric .opportunity-item");
         private By ListOfApprenticeships => By.CssSelector("#appGeneric .opportunity-item .govuk-heading-s a");
         private By ApprenticeshipNotDisplayedText => By.ClassName("dfc-code-jp-novacancyText");
         private By JPFeedbackYes => By.ClassName("yes");
@@ -105,6 +106,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public ApprenticeshipDetailsPage ClickApprenticeship(int appToSelect)
         {
             int appIndex = appToSelect - 1;
+            int apprenticeshipsCount = _pageHelper.GetCountOfElementsGroup(ApprenticeshipContainer);
+            
+            if(apprenticeshipsCount.Equals(0))
+            {
+                throw new NoSuchElementException($"Unable to click the apprenticeship at index {appToSelect} as there are no apprenticeships displayed for this job profile.");
+            }
+
             AddElementTextToContext("ApprenticeshipSelected", ListOfApprenticeships, appIndex);
             _formHelper.ClickElement(_pageHelper.FindElements(ListOfApprenticeships)[appIndex]);
             return new ApprenticeshipDetailsPage(_context);
