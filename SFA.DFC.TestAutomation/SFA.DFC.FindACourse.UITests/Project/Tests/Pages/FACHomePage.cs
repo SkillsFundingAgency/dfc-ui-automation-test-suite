@@ -1,6 +1,7 @@
 ﻿using DFC.TestAutomation.UI.Helpers;
 using DFC.TestAutomation.UI.TestSupport;
 using OpenQA.Selenium;
+using RestSharp.Extensions;
 using TechTalk.SpecFlow;
 
 namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
@@ -34,7 +35,9 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Pages
         }
         public FACHomePage NavigateToFACHomepage()
         {
-            _webDriver.Url = _config.BaseUrl + "/find-a-course/search";
+            var route = "find-a-course/search";
+            route = _config.BaseUrl.EndsWith("/") ? route : string.Concat("/", route);
+            _webDriver.Url = _config.BaseUrl + route;
             return this;
         }
         public FACHomePage EnterLocation(string strLocation)
