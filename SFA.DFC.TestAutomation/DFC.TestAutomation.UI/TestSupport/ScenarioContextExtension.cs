@@ -15,6 +15,7 @@ namespace DFC.TestAutomation.UI.TestSupport
         private const string SkillsAssessmentConfigKey = "skillsassessmentconfig";
         private const string ContactUsConfigKey = "contactusconfig";
         private const string MatchYourSkillsToCareerConfigKey = "matchyourskillstocareerconfig";
+        private const string PagesConfigKey = "pagesconfig";
         private const string MongoDbConfigKey = "mongodbconfig";
         private const string WebDriverKey = "webdriver";
         #endregion
@@ -59,6 +60,11 @@ namespace DFC.TestAutomation.UI.TestSupport
             Set(context, value, MatchYourSkillsToCareerConfigKey);
         }
 
+        public static void SetPages<T>(this ScenarioContext context, T value)
+        {
+            Set(context, value, PagesConfigKey);
+        }
+
         public static T GetExploreCareersConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, ExploreCareersConfigKey);
@@ -97,6 +103,11 @@ namespace DFC.TestAutomation.UI.TestSupport
         public static T GetMatchYourSkillsToCareerConfig<T>(this ScenarioContext context)
         {
             return Get<T>(context, MatchYourSkillsToCareerConfigKey);
+        }
+
+        public static T GetPagesConfig<T>(this ScenarioContext context)
+        {
+            return Get<T>(context, PagesConfigKey);
         }
 
         public static void SetMongoDbConfig(this ScenarioContext context, MongoDbConfig value)

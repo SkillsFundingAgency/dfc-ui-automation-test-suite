@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.CompositeApps.UITes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DFC.TestAutomation.UI", "DFC.TestAutomation.UI\DFC.TestAutomation.UI.csproj", "{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SFA.DFC.Pages.UITests", "SFA.DFC.Pages.UITests\SFA.DFC.Pages.UITests.csproj", "{708B706E-098F-4E51-86ED-D63F8ED9A596}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B4328F8-CC21-47E9-953F-45FA7DD9F61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{708B706E-098F-4E51-86ED-D63F8ED9A596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{708B706E-098F-4E51-86ED-D63F8ED9A596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{708B706E-098F-4E51-86ED-D63F8ED9A596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{708B706E-098F-4E51-86ED-D63F8ED9A596}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
