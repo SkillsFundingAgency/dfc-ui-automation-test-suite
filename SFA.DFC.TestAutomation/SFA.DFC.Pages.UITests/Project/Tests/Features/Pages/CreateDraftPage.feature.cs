@@ -75,15 +75,15 @@ namespace SFA.DFC.Pages.UITests.Project.Tests.Features.Pages
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Create a draft page and view on draft environment")]
-        [NUnit.Framework.CategoryAttribute("ExploreCareers")]
+        [NUnit.Framework.CategoryAttribute("Pages")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void CreateADraftPageAndViewOnDraftEnvironment()
         {
             string[] tagsOfScenario = new string[] {
-                    "ExploreCareers",
+                    "Pages",
                     "Smoke"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a draft page and view on draft environment", null, new string[] {
-                        "ExploreCareers",
+                        "Pages",
                         "Smoke"});
 #line 5
 this.ScenarioInitialize(scenarioInfo);

@@ -1,6 +1,6 @@
 ﻿Feature: CreateDraftPage
 
-@ExploreCareers
+@Pages
 @Smoke
 Scenario: Create a draft page and view on draft environment
 	Given I have naviagted to the service taxonomy editor
