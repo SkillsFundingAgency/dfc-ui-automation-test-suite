@@ -62,6 +62,16 @@ namespace SFA.DFC.Pages.UITests.Project.Tests.StepDefinitions
                 ;
         }
 
+        [Then(@"I delete the page")]
+        [When(@"I delete the page")]
+        public void WhenIDeleteThePage()
+        {
+            editorPages
+                .NavigateToManageContent()
+                .Delete()
+                ;
+        }
+
         #endregion
 
         #region Thens

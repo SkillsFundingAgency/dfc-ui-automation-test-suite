@@ -33,6 +33,7 @@ namespace SFA.DFC.Pages.UITests.Project.Tests.Pages
         private By PublishBtn => By.Name("submit.Publish");
         private By ActionsDropdown => By.CssSelector(".list-group-item:nth-child(2) .btn-secondary");
         private By UnpublishLink => By.LinkText("Unpublish");
+        private By DeleteLink => By.LinkText("Delete");
         private By ModalOKBtn => By.Id("modalOkButton");
         private By JobCategoryList => By.CssSelector(".homepage-jobcategories li a");
         private By SearchField => By.ClassName("search-input");
@@ -127,6 +128,16 @@ namespace SFA.DFC.Pages.UITests.Project.Tests.Pages
         {
             _formHelper.ClickElement(ActionsDropdown);
             _formHelper.ClickElement(UnpublishLink);
+            _formHelper.ClickElement(ModalOKBtn);
+
+            System.Threading.Thread.Sleep(5000);
+            return this;
+        }
+
+        public EditorPages Delete()
+        {
+            _formHelper.ClickElement(ActionsDropdown);
+            _formHelper.ClickElement(DeleteLink);
             _formHelper.ClickElement(ModalOKBtn);
 
             System.Threading.Thread.Sleep(5000);
