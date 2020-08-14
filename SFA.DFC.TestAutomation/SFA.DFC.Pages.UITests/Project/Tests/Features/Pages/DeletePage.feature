@@ -1,8 +1,10 @@
 ﻿Feature: DeletePage
+As a content editor
+When i delete a published page
+Then it is no longer visible on the live/published 
 
 @Pages
-@Smoke
-
+@Regression
 Scenario: Delete a published page and view on published environment
 	Given I have naviagted to the service taxonomy editor
 	And I have created a published page

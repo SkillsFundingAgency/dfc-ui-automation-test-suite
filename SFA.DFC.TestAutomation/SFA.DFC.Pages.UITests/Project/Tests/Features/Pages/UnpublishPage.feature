@@ -1,7 +1,10 @@
 ﻿Feature: UnpublishPage
+As a content editor
+When i unpublish a page
+Then it is not visible on the published environnment
 
 @Pages
-@Smoke
+@Regression
 Scenario: Unpublish a published page and view on published environment
 	Given I have naviagted to the service taxonomy editor
 	And I have created a published page
