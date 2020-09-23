@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using TechTalk.SpecFlow;
+using System.Globalization;
 
 namespace DFC.TestAutomation.UI.Hooks.AfterScenario
 {
@@ -46,7 +47,7 @@ namespace DFC.TestAutomation.UI.Hooks.AfterScenario
 
                 using (var writer = new StreamWriter(filePath))
                 {
-                    using (var csv = new CsvWriter(writer))
+                    using (var csv = new CsvWriter((TextWriter)writer, CultureInfo.CurrentCulture))
                     {
                         csv.WriteRecords(records);
                         writer?.Flush();
