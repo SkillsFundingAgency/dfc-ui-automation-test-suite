@@ -30,7 +30,11 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
 
         public ServiceStatusPage VerifyAllServicesAreRunning()
         {
-            ServicesList.Count.Should().Be(6);
+            var list = pageHelper.FindElements(By.ClassName("list-service"));
+            string innerHtml = list[0].GetAttribute("innerHTML");
+            innerHtml.Should().NotContain("list-service_Red", "A service is unavailable");
+            innerHtml.Should().NotContain("list-service_Amber", "A service is degraded");
+
             return this;
         }
     }
