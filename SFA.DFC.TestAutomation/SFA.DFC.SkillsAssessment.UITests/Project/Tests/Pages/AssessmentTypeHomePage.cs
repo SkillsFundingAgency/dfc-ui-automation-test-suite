@@ -17,8 +17,8 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By AssessmentPageTitle = By.CssSelector(".heading-xlarge");
-        private By CountofQues = By.CssSelector(".heading-secondary");
+        private By AssessmentPageTitle = By.CssSelector(".govuk-heading-xl");
+        private By CountofQues = By.CssSelector(".govuk-caption-xl");
         private List<IWebElement> SelectList => _pageHelper.FindElements(By.ClassName("block-label"));
         private By ContinueButton = By.Name("answerAction");
         private By ErrorMessage = By.Id("QuestionAnswer-error");

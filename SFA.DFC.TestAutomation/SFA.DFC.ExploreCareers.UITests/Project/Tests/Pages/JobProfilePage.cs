@@ -40,11 +40,11 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         #region JobProfile Segments
         private By JobProfileHeroContainer => By.ClassName("job-profile-hero");
         private By JobProfileAnchorLinks => By.ClassName("jump-links");
-        private By JobProfileHowToBecome => By.Id("HowToBecome");
-        private By JobProfileSkills => By.Id("WhatItTakes");
-        private By JobProfileWhatYouWillDo => By.Id("WhatYouWillDo");
-        private By JobProfileCareerPath => By.Id("CareerPathAndProgression");
-        private By JobProfileCurrentOpportunities => By.Id("CurrentOpportunities");
+        private By JobProfileHowToBecome => By.Id("job-profile-accordion-with-summary-sections-heading-1");
+        private By JobProfileSkills => By.Id("job-profile-accordion-with-summary-sections-heading-2");
+        private By JobProfileWhatYouWillDo => By.Id("job-profile-accordion-with-summary-sections-heading-3");
+        private By JobProfileCareerPath => By.Id("job-profile-accordion-with-summary-sections-heading-4");
+        private By JobProfileCurrentOpportunities => By.Id("job-profile-accordion-with-summary-sections-heading-5");
         private By JobProfileFeedbackSurvey => By.ClassName("job-profile-feedback");
 
 
@@ -99,6 +99,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public FindACourseHomePage ClickFindCoursesNearYouLink()
         {
+            _formHelper.ClickElement(JobProfileCurrentOpportunities);
             _formHelper.ClickElement(CoursesNearYouLink);
             return new FindACourseHomePage(_context);
         }
@@ -130,11 +131,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyCoursesAreDisplayed()
         {
+            _formHelper.ClickElement(JobProfileCurrentOpportunities);
             _pageHelper.IsElementDisplayed(CourseSection).Should().BeTrue();
         }
 
         public void VerifyApprenticeAreDisplayed()
         {
+            _formHelper.ClickElement(JobProfileCurrentOpportunities);
             _pageHelper.IsElementDisplayed(ApprenticeshipSection).Should().BeTrue();
         }
 
@@ -146,7 +149,6 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
         public void VerifyAllProfileSegments()
         {
             _pageHelper.IsElementDisplayed(JobProfileHeroContainer).Should().BeTrue();
-            _pageHelper.IsElementDisplayed(JobProfileAnchorLinks).Should().BeTrue();
             _pageHelper.IsElementDisplayed(JobProfileHowToBecome).Should().BeTrue();
             _pageHelper.IsElementDisplayed(JobProfileWhatYouWillDo).Should().BeTrue();
             _pageHelper.IsElementDisplayed(JobProfileSkills).Should().BeTrue();
@@ -157,6 +159,7 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Pages
 
         public void VerifyNoApprenticeshipsDisplayed()
         {
+            _formHelper.ClickElement(JobProfileCurrentOpportunities);
             _pageHelper.IsElementDisplayed(ApprenticeshipNotDisplayedText).Should().BeTrue();
             _pageHelper.VerifyText(ApprenticeshipNotDisplayedText, "We can't find any apprenticeship vacancies in England").Should().BeTrue();
         }

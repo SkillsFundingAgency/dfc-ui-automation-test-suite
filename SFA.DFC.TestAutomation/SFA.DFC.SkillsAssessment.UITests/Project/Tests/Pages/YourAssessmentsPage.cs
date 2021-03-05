@@ -19,7 +19,7 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         #endregion
         #region Page Elements
         protected override string PageTitle => "";
-        private By SHCPageTitle = By.CssSelector(".heading-xlarge");
+        private By SHCPageTitle = By.CssSelector(".govuk-heading-xl");
         private By DownloadReportButton = By.CssSelector("#skillsListForm .govuk-grid-column-full .govuk-button");
         private List<IWebElement> DocTypeList => _pageHelper.FindElements(By.Name("DownloadType"));
         #endregion
