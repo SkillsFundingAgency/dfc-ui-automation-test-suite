@@ -1,6 +1,7 @@
 ﻿Feature: Report a Technical Issue with Yes in Additonal Contact
 @Contactus
 @Smoke
+@ignore
 Scenario: Report a Technical Issue wth Yes for additonal contact
 	Given I have selected 'Report a technical issue' option to continue onto the first contact form
 	Then I am redirected to the first technical contact form

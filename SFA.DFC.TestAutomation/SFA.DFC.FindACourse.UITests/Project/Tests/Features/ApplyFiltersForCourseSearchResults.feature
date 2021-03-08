@@ -2,6 +2,7 @@
 	
 
 @Findacourse
+@ignore
 Scenario: Search for course and Apply filters
 	Given I have searched for 'Maths'
 	Then I should be able to view the results

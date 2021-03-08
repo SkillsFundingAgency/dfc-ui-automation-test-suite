@@ -1,6 +1,7 @@
 ﻿Feature: SearchForACourseWithOtherDetails	
 
 @Findacourse
+@ignore
 Scenario: Search for course and other information
 	Given I have searched for Maths and applied filters for provider Leicester College and location Leicester
 	Then the results for the course should be listed

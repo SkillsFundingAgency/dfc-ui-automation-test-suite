@@ -1,6 +1,7 @@
 ﻿Feature: Give Feedback with Yes in addtional contact
 @Contactus
 @Smoke
+@ignore
 Scenario: Submit a Give Feedback form with Yes in additional contact 
 	Given I have selected 'Give feedback' option to continue onto the first contact form
 	Then I am directed to the first contact form

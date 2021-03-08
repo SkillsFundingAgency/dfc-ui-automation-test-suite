@@ -2,6 +2,7 @@
 
 @Contactus
 @Smoke
+@ignore
 Scenario: Error Messages on Contact Forms
 	Given I have selected 'Contact an adviser' option to continue onto the first contact form
 	Then I am directed to the first contact form
