@@ -2,6 +2,7 @@
 	
 
 @Findacourse
+@ignore
 Scenario: Find a valid course and check course details page
 	Given I have searched for 'Maths' 
 	#with provider as '' and location as ''

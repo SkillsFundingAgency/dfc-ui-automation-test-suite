@@ -14,7 +14,7 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Pages
         #region Page Elements
         protected override string PageTitle => "";
         
-        private By StartSkillsHealthCheck = By.CssSelector(".button");
+        private By StartSkillsHealthCheck = By.CssSelector(".button-start");
 
         #endregion
         public SHCHomePage(ScenarioContext context) : base(context)

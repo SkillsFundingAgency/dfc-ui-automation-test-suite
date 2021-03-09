@@ -76,13 +76,15 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search for Invalid Course")]
         [NUnit.Framework.CategoryAttribute("Findacourse")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         public virtual void SearchForInvalidCourse()
         {
             string[] tagsOfScenario = new string[] {
-                    "Findacourse"};
+                    "Findacourse",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for Invalid Course", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,10 +104,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Given("I have searched for \'NoCourse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.Then("an error message should be returned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

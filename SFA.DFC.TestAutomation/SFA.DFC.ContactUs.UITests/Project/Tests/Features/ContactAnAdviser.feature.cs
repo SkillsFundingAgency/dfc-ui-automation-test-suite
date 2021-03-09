@@ -77,14 +77,16 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Contact an Adviser")]
         [NUnit.Framework.CategoryAttribute("Contactus")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         public virtual void ContactAnAdviser()
         {
             string[] tagsOfScenario = new string[] {
                     "Contactus",
-                    "Smoke"};
+                    "Smoke",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Contact an Adviser", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -104,25 +106,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Given("I have selected \'Contact an adviser\' option to continue onto the first contact fo" +
                         "rm", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.Then("I am directed to the first contact form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
+#line 9
  testRunner.When("I complete the first form with \'Funding\' option and \'Contact an Adviser Form\' que" +
                         "ry", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 10
   testRunner.And("I complete the form with details \'Automated Test\',\'automatedtestesfa@mailinator.c" +
                         "om\',\'automatedtestesfa@mailinator.com\',\'20/11/2000\',\'CV3 5FE\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 11
   testRunner.And("I click send", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 12
  testRunner.Then("I am directed to the confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

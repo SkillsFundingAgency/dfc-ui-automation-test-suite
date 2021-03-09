@@ -76,13 +76,15 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Search for course and other information")]
         [NUnit.Framework.CategoryAttribute("Findacourse")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         public virtual void SearchForCourseAndOtherInformation()
         {
             string[] tagsOfScenario = new string[] {
-                    "Findacourse"};
+                    "Findacourse",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search for course and other information", null, tagsOfScenario, argumentsOfScenario);
-#line 4
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,20 +104,20 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 6
  testRunner.Given("I have searched for Maths and applied filters for provider Leicester College and " +
                         "location Leicester", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
+#line 7
  testRunner.Then("the results for the course should be listed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 7
+#line 8
  testRunner.When("I change the provider \'Skills\' and location \'Birmingham\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 9
   testRunner.And("I have clicked the Apply Filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 9
+#line 10
  testRunner.Then("the results for the new provider and location should be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

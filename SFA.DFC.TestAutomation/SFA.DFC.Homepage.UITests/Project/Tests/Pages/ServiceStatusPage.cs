@@ -12,7 +12,7 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Pages
         private ScenarioContext _context;
         private PageInteractionHelper pageHelper;
         protected override string PageTitle => "";
-        private By PageHeader => By.ClassName("heading-medium");
+        private By PageHeader => By.ClassName("govuk-heading-m");
         private List<IWebElement> ServicesList => pageHelper.FindElements(By.ClassName("list-service_Green"));
 
         public ServiceStatusPage(ScenarioContext context) : base(context)
