@@ -2,7 +2,6 @@
 
 @ExploreCareers
 @Search
-@Smoke
 Scenario: Starting a search displays Auto Suggest, and when selected, populates the searchbox
 	Given I navigate to the explore careers homepage
 	When I enter an incomplete search 'pla'
