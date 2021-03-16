@@ -2,7 +2,6 @@
 
 @ExploreCareers
 @Search
-@Smoke
 Scenario:  Performing a search displays Job categories and clicking one takes you to the categories page
 	Given I search for 'plumber'
 	Then I can see job categories under the search results

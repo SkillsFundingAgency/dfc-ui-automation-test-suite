@@ -2,7 +2,6 @@
 
 @ExploreCareers
 @Search
-@Smoke
 Scenario: Performing incorrectly spelled search suggests a Did You Mean option
 	Given I search for 'nusre'
 	Then I am shown the did you mean option
