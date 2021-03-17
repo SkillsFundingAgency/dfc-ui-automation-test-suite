@@ -77,16 +77,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         [NUnit.Framework.DescriptionAttribute("Perform a search that will return 0 results")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void PerformASearchThatWillReturn0Results()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "Search",
-                    "Smoke"};
+                    "Search"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Perform a search that will return 0 results", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,16 +104,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I search for \'return0results\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.Then("I am redirected to the search results page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 8
   testRunner.And("the search term is displayed in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 9
   testRunner.And("the no results message is displaed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

@@ -77,16 +77,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.Search
         [NUnit.Framework.DescriptionAttribute("Performing incorrectly spelled search suggests a Did You Mean option")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("Search")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void PerformingIncorrectlySpelledSearchSuggestsADidYouMeanOption()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "Search",
-                    "Smoke"};
+                    "Search"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Performing incorrectly spelled search suggests a Did You Mean option", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,16 +104,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I search for \'nusre\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.Then("I am shown the did you mean option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 8
  testRunner.When("I click the did you mean suggestion", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 9
  testRunner.Then("the search term is displayed in the search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

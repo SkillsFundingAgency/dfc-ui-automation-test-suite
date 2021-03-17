@@ -103,6 +103,7 @@ namespace DFC.TestAutomation.UI.Helpers
             TurnOffImplicitWaits();
             try
             {
+                _webDriverWaitHelper.WaitForElementToBePresent(locator);
                 _webDriver.FindElement(locator);
                 return true;
             }
@@ -121,6 +122,7 @@ namespace DFC.TestAutomation.UI.Helpers
             TurnOffImplicitWaits();
             try
             {
+                _webDriverWaitHelper.WaitForElementToBePresent(locator);
                 return _webDriver.FindElement(locator).Displayed;
             }
             catch (Exception)
@@ -168,7 +170,11 @@ namespace DFC.TestAutomation.UI.Helpers
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.FrameToBeAvailableAndSwitchToIt(locator));
         }
 
-        public string GetText(By locator) => GetText(_webDriver.FindElement(locator));
+        public string GetText(By locator)
+        {
+            _webDriverWaitHelper.WaitForElementToBeDisplayed(locator);
+            return GetText(_webDriver.FindElement(locator));
+        }
 
         public string GetText(IWebElement webElement) => webElement.Text;
 

@@ -77,16 +77,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
         [NUnit.Framework.DescriptionAttribute("JP Survey - Answering NO to the survey")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("JobProfile")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void JPSurvey_AnsweringNOToTheSurvey()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "JobProfile",
-                    "Smoke"};
+                    "JobProfile"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("JP Survey - Answering NO to the survey", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,25 +104,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I navigate to the \'assistant-immigration-officer\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.When("I click no to job profile feedback", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 8
  testRunner.Then("the additional survey message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 9
  testRunner.When("I click to go to additional survey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 10
  testRunner.Then("I am redirected to the SurveyMonkey survey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 12
+#line 11
  testRunner.When("I enter the feedback \'National Careers Service Test Feedback\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 12
  testRunner.Then("I am redirected to the thank you page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

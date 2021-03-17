@@ -77,14 +77,16 @@ namespace SFA.DFC.Homepage.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Ensure Service Status page is up and running")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("Homepage")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void EnsureServiceStatusPageIsUpAndRunning()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "Homepage"};
+                    "Homepage",
+                    "Smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ensure Service Status page is up and running", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -104,10 +106,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Given("I navigate to the service status page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.Then("the service status page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

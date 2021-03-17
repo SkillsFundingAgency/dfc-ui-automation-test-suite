@@ -77,16 +77,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
         [NUnit.Framework.DescriptionAttribute("Selecting the Find a Course near you link takes you to the Find a Course product")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("JobProfile")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void SelectingTheFindACourseNearYouLinkTakesYouToTheFindACourseProduct()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "JobProfile",
-                    "Smoke"};
+                    "JobProfile"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Selecting the Find a Course near you link takes you to the Find a Course product", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,13 +104,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I navigate to the \'plumber\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.When("I click the Find courses near you link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 8
  testRunner.Then("I am taken to the Find a Course product", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
