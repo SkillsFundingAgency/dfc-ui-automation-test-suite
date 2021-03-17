@@ -77,16 +77,14 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
         [NUnit.Framework.DescriptionAttribute("Apprenticeship are not displayed on Job Profile Page and correct message shown")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("JobProfile")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void ApprenticeshipAreNotDisplayedOnJobProfilePageAndCorrectMessageShown()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "JobProfile",
-                    "Smoke"};
+                    "JobProfile"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Apprenticeship are not displayed on Job Profile Page and correct message shown", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,13 +104,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I navigate to the \'surgeon\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.Then("all the profile segments are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 8
   testRunner.And("the related apprenticeship section is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
