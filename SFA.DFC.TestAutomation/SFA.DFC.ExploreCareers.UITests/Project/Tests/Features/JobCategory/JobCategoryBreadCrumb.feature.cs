@@ -76,15 +76,13 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobCategory
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Job Category Breadcrumb should return to the Explore careers homepage")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
         public virtual void JobCategoryBreadcrumbShouldReturnToTheExploreCareersHomepage()
         {
             string[] tagsOfScenario = new string[] {
-                    "ExploreCareers",
-                    "Smoke"};
+                    "ExploreCareers"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Job Category Breadcrumb should return to the Explore careers homepage", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+#line 4
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -104,13 +102,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 5
  testRunner.Given("I navigate to the category \'Managerial\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 6
  testRunner.When("I click the \'job category\' breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 7
  testRunner.Then("I am redirected to the explore careers homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

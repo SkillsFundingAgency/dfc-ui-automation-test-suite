@@ -103,6 +103,7 @@ namespace DFC.TestAutomation.UI.Helpers
             TurnOffImplicitWaits();
             try
             {
+                _webDriverWaitHelper.WaitForElementToBePresent(locator);
                 _webDriver.FindElement(locator);
                 return true;
             }
@@ -121,6 +122,7 @@ namespace DFC.TestAutomation.UI.Helpers
             TurnOffImplicitWaits();
             try
             {
+                _webDriverWaitHelper.WaitForElementToBePresent(locator);
                 return _webDriver.FindElement(locator).Displayed;
             }
             catch (Exception)
