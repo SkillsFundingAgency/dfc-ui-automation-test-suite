@@ -3,6 +3,7 @@
 @ExploreCareers
 @JobProfile
 @Smoke
+@Ignore
 Scenario: Related careers are displayed on job profiles
 	Given I navigate to the 'gp' profile
 	Then the related careers section should be displayed

@@ -2,6 +2,7 @@
 
 @ExploreCareers
 @JobProfile
+@Ignore
 Scenario: JP Survey - Answering NO to the survey
 	Given I navigate to the 'assistant-immigration-officer' profile
 	When I click no to job profile feedback

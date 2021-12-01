@@ -3,6 +3,7 @@
 @ExploreCareers
 @JobProfile
 @Smoke
+@Ignore
 Scenario: Related aprenticeships are displayed on job profiles
 	Given I navigate to the 'bilingual-secretary' profile
 	Then the related apprenticeship section is displayed
