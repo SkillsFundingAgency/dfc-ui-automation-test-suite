@@ -78,15 +78,17 @@ namespace SFA.DFC.ExploreCareers.UITests.Project.Tests.Features.JobProfiles
             "xist")]
         [NUnit.Framework.CategoryAttribute("ExploreCareers")]
         [NUnit.Framework.CategoryAttribute("Homepage")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         public virtual void Ensure404PagesAreDisplayedCorrectlyWhenNavigatingToAPageThatDoesntExist()
         {
             string[] tagsOfScenario = new string[] {
                     "ExploreCareers",
-                    "Homepage"};
+                    "Homepage",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Ensure 404 pages are displayed correctly when navigating to a page that doesn\'t e" +
                     "xist", null, tagsOfScenario, argumentsOfScenario);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -106,16 +108,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Given("I navigate to the \'profile-does-not-exist\' profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.Then("I am redirected to the 404 page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 10
  testRunner.When("I click the \'jobprofile\' breadcrumb", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then("I am redirected to the national careers service homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
