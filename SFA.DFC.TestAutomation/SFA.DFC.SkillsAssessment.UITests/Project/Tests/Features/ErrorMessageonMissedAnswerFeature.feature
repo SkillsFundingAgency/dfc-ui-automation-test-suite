@@ -1,6 +1,7 @@
 ﻿Feature: SkillsHealthCheckwithError
 @Skillshealthcheck
 @Smoke
+@Ignore
 Scenario: Error Message on Unanswered question
 	Given I have navigated to the Skills Health check page
 		And I select 'Mechanical' assessment type with title 'Solving mechanical problems'
