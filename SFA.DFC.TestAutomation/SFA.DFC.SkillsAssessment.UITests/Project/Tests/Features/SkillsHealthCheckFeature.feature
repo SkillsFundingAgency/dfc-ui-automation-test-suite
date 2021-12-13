@@ -1,6 +1,7 @@
 ﻿Feature: SkillsHealthCheck
 @Skillshealthcheck
 @Smoke
+@Ignore
 Scenario: Complete and download 'Skills Health Check' 
 	Given I have navigated to the Skills Health check page
 		And I select 'Spatial' assessment type with title 'Working with shapes'
