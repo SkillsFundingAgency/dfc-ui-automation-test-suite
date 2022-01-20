@@ -1,7 +1,7 @@
 ﻿Feature: Report a Technical Issue with No in Additonal Contact
 @Contactus
 @Smoke
-@ignore
+@Ignore
 Scenario: Report a Technical Issue wth No for additonal contact
 	Given I have selected 'Report a technical issue' option to continue onto the first contact form
 	Then I am redirected to the first technical contact form

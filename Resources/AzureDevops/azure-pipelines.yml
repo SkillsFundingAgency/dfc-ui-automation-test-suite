@@ -19,6 +19,8 @@ jobs:
     demands:
     - msbuild
     - visualstudio
+  workspace:
+    clean: all
 
   steps:
 
