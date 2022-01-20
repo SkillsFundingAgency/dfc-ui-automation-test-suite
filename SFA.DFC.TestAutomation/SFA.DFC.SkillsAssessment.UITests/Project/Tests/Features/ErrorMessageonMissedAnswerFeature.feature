@@ -1,4 +1,5 @@
 ﻿Feature: SkillsHealthCheckwithError
+#These tests require migration to the new CUI skills healthcheck - setting Ignore tag here are they will no longer work with CUI skills health check apps
 @Skillshealthcheck
 @Smoke
 @Ignore

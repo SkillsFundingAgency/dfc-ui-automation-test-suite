@@ -77,14 +77,16 @@ namespace SFA.DFC.SkillsAssessment.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Complete and download \'Skills Health Check\'")]
         [NUnit.Framework.CategoryAttribute("Skillshealthcheck")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         public virtual void CompleteAndDownloadSkillsHealthCheck()
         {
             string[] tagsOfScenario = new string[] {
                     "Skillshealthcheck",
-                    "Smoke"};
+                    "Smoke",
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Complete and download \'Skills Health Check\'", null, tagsOfScenario, argumentsOfScenario);
-#line 4
+#line 5
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -104,25 +106,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 5
+#line 6
  testRunner.Given("I have navigated to the Skills Health check page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 6
+#line 7
   testRunner.And("I select \'Spatial\' assessment type with title \'Working with shapes\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 7
+#line 8
  testRunner.Then("I am redirected to the start page for the assessment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
+#line 9
  testRunner.When("I complete all the questions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 10
  testRunner.Then("I\'m redirected to Skills health check page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 11
   testRunner.And("I can download my completed assessment as a \'PDF\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 12
   testRunner.And("I can download my completed assessment as a \'Word\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
