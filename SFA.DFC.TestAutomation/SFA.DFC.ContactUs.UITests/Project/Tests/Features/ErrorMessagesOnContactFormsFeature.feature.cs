@@ -77,13 +77,13 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Error Messages on Contact Forms")]
         [NUnit.Framework.CategoryAttribute("Contactus")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("ignore")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         public virtual void ErrorMessagesOnContactForms()
         {
             string[] tagsOfScenario = new string[] {
                     "Contactus",
                     "Smoke",
-                    "ignore"};
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Error Messages on Contact Forms", null, tagsOfScenario, argumentsOfScenario);
 #line 6

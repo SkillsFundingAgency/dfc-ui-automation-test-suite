@@ -77,13 +77,13 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Report a Technical Issue wth No for additonal contact")]
         [NUnit.Framework.CategoryAttribute("Contactus")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("ignore")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         public virtual void ReportATechnicalIssueWthNoForAdditonalContact()
         {
             string[] tagsOfScenario = new string[] {
                     "Contactus",
                     "Smoke",
-                    "ignore"};
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Report a Technical Issue wth No for additonal contact", null, tagsOfScenario, argumentsOfScenario);
 #line 5

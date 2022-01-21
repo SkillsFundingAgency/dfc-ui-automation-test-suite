@@ -1,8 +1,8 @@
 ﻿Feature: ErrorMessagesOnContactFormsFeature	
-
+#These tests require migration to the new CUI skills healthcheck - setting Ignore tag here are they will no longer work with CUI skills health check apps
 @Contactus
 @Smoke
-@ignore
+@Ignore
 Scenario: Error Messages on Contact Forms
 	Given I have selected 'Contact an adviser' option to continue onto the first contact form
 	Then I am directed to the first contact form

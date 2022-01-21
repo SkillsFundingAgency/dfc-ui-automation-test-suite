@@ -76,12 +76,12 @@ namespace SFA.DFC.FindACourse.UITests.Project.Tests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Find a valid course and check course details page")]
         [NUnit.Framework.CategoryAttribute("Findacourse")]
-        [NUnit.Framework.CategoryAttribute("ignore")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         public virtual void FindAValidCourseAndCheckCourseDetailsPage()
         {
             string[] tagsOfScenario = new string[] {
                     "Findacourse",
-                    "ignore"};
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find a valid course and check course details page", null, tagsOfScenario, argumentsOfScenario);
 #line 6

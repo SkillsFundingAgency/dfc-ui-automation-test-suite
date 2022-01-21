@@ -77,13 +77,13 @@ namespace SFA.DFC.ContactUs.UITests.Project.Tests.Features
         [NUnit.Framework.DescriptionAttribute("Submit a Give Feedback form with Yes in additional contact")]
         [NUnit.Framework.CategoryAttribute("Contactus")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        [NUnit.Framework.CategoryAttribute("ignore")]
+        [NUnit.Framework.CategoryAttribute("Ignore")]
         public virtual void SubmitAGiveFeedbackFormWithYesInAdditionalContact()
         {
             string[] tagsOfScenario = new string[] {
                     "Contactus",
                     "Smoke",
-                    "ignore"};
+                    "Ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Submit a Give Feedback form with Yes in additional contact", null, tagsOfScenario, argumentsOfScenario);
 #line 5

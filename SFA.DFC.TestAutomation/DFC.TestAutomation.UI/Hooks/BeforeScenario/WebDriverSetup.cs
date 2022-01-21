@@ -86,8 +86,8 @@ namespace DFC.TestAutomation.UI.Hooks.BeforeScenario
 
             WebDriver.Manage().Window.Maximize();
             WebDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(_frameworkConfig.TimeOutConfig.PageNavigation);
-            var currentWindow = WebDriver.CurrentWindowHandle;
-            WebDriver.SwitchTo().Window(currentWindow);
+            //var currentWindow = WebDriver.CurrentWindowHandle;
+            //WebDriver.SwitchTo().Window(currentWindow);
             WebDriver.Manage().Cookies.DeleteAllCookies();
 
             if (!browser.IsCloudExecution())

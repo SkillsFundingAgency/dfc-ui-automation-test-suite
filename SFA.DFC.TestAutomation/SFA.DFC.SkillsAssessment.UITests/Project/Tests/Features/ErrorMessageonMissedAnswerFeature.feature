@@ -1,6 +1,8 @@
 ﻿Feature: SkillsHealthCheckwithError
+#These tests require migration to the new CUI skills healthcheck - setting Ignore tag here are they will no longer work with CUI skills health check apps
 @Skillshealthcheck
 @Smoke
+@Ignore
 Scenario: Error Message on Unanswered question
 	Given I have navigated to the Skills Health check page
 		And I select 'Mechanical' assessment type with title 'Solving mechanical problems'
